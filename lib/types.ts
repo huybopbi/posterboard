@@ -1,0 +1,26 @@
+export type PosterType = "collections" | "photos" | "mercury";
+
+export type PosterKind = "image" | "video" | "layered";
+
+export type WallpaperItem = {
+  id: string;
+  name: string;
+  type: PosterType;
+  kind: PosterKind;
+  width: number;
+  height: number;
+  poster: string;
+  bg?: string;
+  fg?: string;
+  unlockBg?: string;
+  unlockFg?: string;
+  transitionFrames?: Array<{ bg?: string; fg?: string }>;
+  video?: string;
+  download: string;
+  fileName: string;
+  bytes: number;
+};
+
+export type Catalog = {
+  items: WallpaperItem[];
+};

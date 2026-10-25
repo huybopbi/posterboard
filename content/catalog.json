@@ -1,0 +1,178 @@
+{
+  "items": [
+    {
+      "id": "hqyh",
+      "name": "hqyh",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "/previews/hqyh/poster.jpg",
+      "bg": "/previews/hqyh/bg.webp",
+      "fg": "/previews/hqyh/fg.webp",
+      "unlockBg": "/previews/hqyh/bg-unlock.webp",
+      "unlockFg": "/previews/hqyh/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "/previews/hqyh/transition-bg-01.webp",
+          "fg": "/previews/hqyh/transition-fg-01.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-02.webp",
+          "fg": "/previews/hqyh/transition-fg-02.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-03.webp",
+          "fg": "/previews/hqyh/transition-fg-03.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-04.webp",
+          "fg": "/previews/hqyh/transition-fg-04.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-05.webp",
+          "fg": "/previews/hqyh/transition-fg-05.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-06.webp",
+          "fg": "/previews/hqyh/transition-fg-06.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-07.webp",
+          "fg": "/previews/hqyh/transition-fg-07.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-08.webp",
+          "fg": "/previews/hqyh/transition-fg-08.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-09.webp",
+          "fg": "/previews/hqyh/transition-fg-09.webp"
+        },
+        {
+          "bg": "/previews/hqyh/transition-bg-10.webp",
+          "fg": "/previews/hqyh/transition-fg-10.webp"
+        }
+      ],
+      "download": "/tendies/hqyh.tendies",
+      "fileName": "hqyh.tendies",
+      "bytes": 5123044
+    },
+    {
+      "id": "45fa27c9",
+      "name": "后藤一里",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "/previews/45fa27c9/poster.jpg",
+      "bg": "/previews/45fa27c9/bg.webp",
+      "fg": "/previews/45fa27c9/fg.webp",
+      "unlockBg": "/previews/45fa27c9/bg-unlock.webp",
+      "unlockFg": "/previews/45fa27c9/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "/previews/45fa27c9/transition-bg-01.webp",
+          "fg": "/previews/45fa27c9/transition-fg-01.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-02.webp",
+          "fg": "/previews/45fa27c9/transition-fg-02.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-03.webp",
+          "fg": "/previews/45fa27c9/transition-fg-03.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-04.webp",
+          "fg": "/previews/45fa27c9/transition-fg-04.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-05.webp",
+          "fg": "/previews/45fa27c9/transition-fg-05.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-06.webp",
+          "fg": "/previews/45fa27c9/transition-fg-06.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-07.webp",
+          "fg": "/previews/45fa27c9/transition-fg-07.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-08.webp",
+          "fg": "/previews/45fa27c9/transition-fg-08.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-09.webp",
+          "fg": "/previews/45fa27c9/transition-fg-09.webp"
+        },
+        {
+          "bg": "/previews/45fa27c9/transition-bg-10.webp",
+          "fg": "/previews/45fa27c9/transition-fg-10.webp"
+        }
+      ],
+      "download": "/tendies/%E5%90%8E%E8%97%A4%E4%B8%80%E9%87%8C.tendies",
+      "fileName": "后藤一里.tendies",
+      "bytes": 6392957
+    },
+    {
+      "id": "9d8e57c2",
+      "name": "孤独摇滚",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "/previews/9d8e57c2/poster.jpg",
+      "bg": "/previews/9d8e57c2/bg.webp",
+      "fg": "/previews/9d8e57c2/fg.webp",
+      "unlockBg": "/previews/9d8e57c2/bg-unlock.webp",
+      "unlockFg": "/previews/9d8e57c2/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-01.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-01.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-02.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-02.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-03.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-03.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-04.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-04.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-05.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-05.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-06.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-06.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-07.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-07.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-08.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-08.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-09.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-09.webp"
+        },
+        {
+          "bg": "/previews/9d8e57c2/transition-bg-10.webp",
+          "fg": "/previews/9d8e57c2/transition-fg-10.webp"
+        }
+      ],
+      "download": "/tendies/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A.tendies",
+      "fileName": "孤独摇滚.tendies",
+      "bytes": 5134680
+    }
+  ]
+}
