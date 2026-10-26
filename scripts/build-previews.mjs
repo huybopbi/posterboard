@@ -689,6 +689,29 @@ async function uploadRendered(client, bucket, item, tendiesPath, outputRoot) {
   }
 }
 
+function workerCount() {
+  const fromEnv = Number(process.env.PUBLISH_CONCURRENCY);
+  if (Number.isInteger(fromEnv) && fromEnv > 0) return fromEnv;
+  const cpus = os.availableParallelism?.() ?? os.cpus().length;
+  const byCpu = Math.max(1, Math.floor(cpus / 2));
+  const byMem = Math.max(1, Math.floor(os.totalmem() / (2.5 * 1024 ** 3)));
+  return Math.min(4, byCpu, byMem);
+}
+
+async function mapPool(items, limit, fn) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  async function worker() {
+    while (cursor < items.length) {
+      const index = cursor;
+      cursor += 1;
+      results[index] = await fn(items[index]);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
+  return results;
+}
+
 async function main() {
   loadEnv();
   const config = requireConfig();
@@ -709,42 +732,66 @@ async function main() {
     credentials: { accessKeyId: config.accessKeyId, secretAccessKey: config.secretAccessKey },
   });
   const ffmpeg = hasFfmpeg();
+  const workers = workerCount();
+  const cpus = os.availableParallelism?.() ?? os.cpus().length;
+  sharp.concurrency(Math.max(1, Math.floor(cpus / workers)));
+  console.log(`rendering ${workers} wallpaper(s) at a time`);
   const outputRoot = fs.mkdtempSync(path.join(os.tmpdir(), "tendies-"));
   const usedIds = new Set();
-  const nextItems = [];
-  const staleItems = [];
+  const jobs = [];
+
+  for (const name of files) {
+    const filePath = path.join(srcDir, name);
+    const sha256 = sha256File(filePath);
+    const same = previous.items.filter((item) => item.fileName === name && item.sourceSha256 === sha256);
+    if (same.length) {
+      for (const item of same) usedIds.add(item.id);
+      jobs.push({ name, unchanged: same });
+      console.log(`${name} unchanged`);
+      continue;
+    }
+    jobs.push({
+      name,
+      filePath,
+      sha256,
+      preferredIds: previous.items.filter((item) => item.fileName === name).map((item) => item.id),
+    });
+  }
+
   let uploaded = 0;
   let failed = 0;
-
+  let settled = [];
   try {
-    for (const name of files) {
-      const filePath = path.join(srcDir, name);
-      const sha256 = sha256File(filePath);
-      const same = previous.items.filter((item) => item.fileName === name && item.sourceSha256 === sha256);
-      if (same.length) {
-        for (const item of same) usedIds.add(item.id);
-        nextItems.push(...same);
-        console.log(`${name} unchanged`);
-        continue;
-      }
+    settled = await mapPool(jobs, workers, async (job) => {
+      if (job.unchanged) return { items: job.unchanged, uploaded: false, failed: false, stale: [] };
       try {
-        const preferredIds = previous.items.filter((item) => item.fileName === name).map((item) => item.id);
-        const built = await buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds.slice());
-        const relocated = built.map((item) => relocateItem(item, sha256));
-        for (const item of relocated) await uploadRendered(client, config.bucket, item, filePath, outputRoot);
-        nextItems.push(...relocated);
-        staleItems.push(...previous.items.filter((item) => item.fileName === name));
-        uploaded += 1;
+        const built = await buildOne(job.filePath, usedIds, ffmpeg, outputRoot, job.preferredIds.slice());
+        const relocated = built.map((item) => relocateItem(item, job.sha256));
+        for (const item of relocated) await uploadRendered(client, config.bucket, item, job.filePath, outputRoot);
+        return {
+          items: relocated,
+          uploaded: true,
+          failed: false,
+          stale: previous.items.filter((item) => item.fileName === job.name),
+        };
       } catch (error) {
-        failed += 1;
-        console.error(`failed ${name}: ${error instanceof Error ? error.stack : error}`);
-        const keep = previous.items.filter((item) => item.fileName === name);
+        console.error(`failed ${job.name}: ${error instanceof Error ? error.stack : error}`);
+        const keep = previous.items.filter((item) => item.fileName === job.name);
         for (const item of keep) usedIds.add(item.id);
-        nextItems.push(...keep);
+        return { items: keep, uploaded: false, failed: true, stale: [] };
       }
-    }
+    });
   } finally {
     fs.rmSync(outputRoot, { recursive: true, force: true });
+  }
+
+  const nextItems = [];
+  const staleItems = [];
+  for (const result of settled) {
+    nextItems.push(...result.items);
+    staleItems.push(...result.stale);
+    if (result.uploaded) uploaded += 1;
+    if (result.failed) failed += 1;
   }
 
   if (uploaded === 0 && failed > 0) {

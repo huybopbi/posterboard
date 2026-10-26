@@ -29,7 +29,7 @@ R2_PUBLIC_BASE=https://files.example.com
 3. Bỏ file `.tendies` vào `content/tendies`.
 4. Chạy `npm run publish`.
 
-Script render preview, upload lên R2, rồi ghi lại catalog. File trùng `sourceSha256` thì bỏ qua. Upload xong toàn bộ thì script xóa `public/previews` và `public/tendies`.
+Script render vài wallpaper cùng lúc (trên máy này là 2), rồi upload lên R2 và ghi lại catalog. Máy nhiều nhân hơn sẽ tự tăng, tối đa 4. Muốn chỉnh thì đặt `PUBLISH_CONCURRENCY`. File trùng `sourceSha256` thì bỏ qua. Upload xong toàn bộ thì script xóa `public/previews` và `public/tendies`.
 
 5. Commit `content/catalog.json` và push `main`.
 
