@@ -5,6 +5,7 @@ import type { WallpaperItem } from "@/lib/types";
 
 type Props = {
   item: WallpaperItem;
+  eager?: boolean;
   onOpen: (item: WallpaperItem) => void;
 };
 
@@ -13,7 +14,7 @@ function formatBytes(bytes: number) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-export function WallpaperCard({ item, onOpen }: Props) {
+export function WallpaperCard({ item, eager = false, onOpen }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -48,6 +49,9 @@ export function WallpaperCard({ item, onOpen }: Props) {
           className={`card-img${loaded ? " done" : ""}`}
           src={item.poster}
           alt=""
+          loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : "low"}
+          decoding="async"
           onLoad={() => setLoaded(true)}
           onError={() => { setLoaded(true); setErrored(true); }}
         />

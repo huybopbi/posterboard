@@ -79,10 +79,11 @@ export function Gallery({ items, assetBase = "" }: Props) {
         <p className="empty">Không có wallpaper khớp bộ lọc.</p>
       ) : (
         <section className="grid">
-          {visible.map((item) => (
+          {visible.map((item, index) => (
             <WallpaperCard
               key={item.id}
               item={item}
+              eager={index < 6}
               onOpen={setActive}
             />
           ))}
