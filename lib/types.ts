@@ -19,8 +19,10 @@ export type WallpaperItem = {
   download: string;
   fileName: string;
   bytes: number;
+  sourceSha256?: string;
 };
 
 export type Catalog = {
+  assetBase?: string;
   items: WallpaperItem[];
 };

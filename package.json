@@ -2,9 +2,8 @@
   "name": "wallppweb",
   "private": true,
   "scripts": {
-    "previews": "node scripts/build-previews.mjs",
+    "publish": "node scripts/build-previews.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/build-previews.mjs",
     "build": "next build",
     "start": "next start"
   },
@@ -14,6 +13,7 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1156.0",
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

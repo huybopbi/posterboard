@@ -1,11 +1,20 @@
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { DeleteObjectsCommand, ListObjectsV2Command, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import AdmZip from "adm-zip";
 import { XMLParser } from "fast-xml-parser";
 import sharp from "sharp";
+import {
+  contentDisposition,
+  diskForPreviewKey,
+  itemObjectKeys,
+  prefixesForKeys,
+  relocateItem,
+} from "./r2-paths.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const srcDir = path.join(root, "content", "tendies");
@@ -27,11 +36,6 @@ const xmlParser = new XMLParser({
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
-}
-
-function resetDir(dir) {
-  fs.rmSync(dir, { recursive: true, force: true });
-  ensureDir(dir);
 }
 
 function attr(node, name) {
@@ -88,6 +92,17 @@ function uniqueId(base, used) {
   while (used.has(id)) id = `${base}-${n++}`;
   used.add(id);
   return id;
+}
+
+function takeId(preferredIds, usedIds, fileName) {
+  while (preferredIds.length) {
+    const id = preferredIds.shift();
+    if (!usedIds.has(id)) {
+      usedIds.add(id);
+      return id;
+    }
+  }
+  return uniqueId(slugFromName(fileName), usedIds);
 }
 
 function posterType(entryNames) {
@@ -402,7 +417,7 @@ async function renderStack(entries, byRole, canvas, state) {
   return { background, floating, foreground, fgBuffer };
 }
 
-async function buildOne(filePath, usedIds, ffmpeg) {
+async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
   const fileName = path.basename(filePath);
   const zip = new AdmZip(filePath);
   const entries = zip
@@ -434,13 +449,12 @@ async function buildOne(filePath, usedIds, ffmpeg) {
 
   const type = posterType(entries.map((entry) => entry.name));
   const bytes = fs.statSync(filePath).size;
-  fs.copyFileSync(filePath, path.join(downloadRoot, fileName));
   const items = [];
 
   for (const key of keys) {
-    const id = uniqueId(slugFromName(fileName), usedIds);
+    const id = takeId(preferredIds, usedIds, fileName);
     const { width, height } = screenSize(key);
-    const destDir = path.join(previewRoot, id);
+    const destDir = path.join(outputRoot, id);
     ensureDir(destDir);
     const caPrefixes = [
       ...new Set(
@@ -549,23 +563,220 @@ async function buildOne(filePath, usedIds, ffmpeg) {
   return items;
 }
 
+const CONTENT_TYPES = {
+  ".webp": "image/webp",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".png": "image/png",
+  ".mp4": "video/mp4",
+};
+
+function parseEnv(text) {
+  const values = {};
+  for (const line of text.split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const raw = trimmed.startsWith("export ") ? trimmed.slice(7) : trimmed;
+    const eq = raw.indexOf("=");
+    if (eq <= 0) continue;
+    const key = raw.slice(0, eq).trim();
+    let value = raw.slice(eq + 1).trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+    values[key] = value;
+  }
+  return values;
+}
+
+function loadEnv() {
+  const prior = new Set(Object.keys(process.env));
+  const merged = {};
+  for (const name of [".env", ".env.local"]) {
+    const file = path.join(root, name);
+    if (!fs.existsSync(file)) continue;
+    Object.assign(merged, parseEnv(fs.readFileSync(file, "utf8")));
+  }
+  for (const [key, value] of Object.entries(merged)) {
+    if (!prior.has(key)) process.env[key] = value;
+  }
+}
+
+function requireConfig() {
+  const names = ["R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET", "R2_PUBLIC_BASE"];
+  const missing = names.filter((name) => !process.env[name]);
+  if (missing.length) {
+    console.error(`Missing ${missing.join(", ")}. Copy .env.example to .env.local and fill in the R2 values.`);
+    process.exit(1);
+  }
+  let publicBase;
+  try {
+    const url = new URL(process.env.R2_PUBLIC_BASE);
+    const pathOnly = url.pathname === "/" || url.pathname === "";
+    if (url.protocol !== "https:" || url.username || url.password || url.search || url.hash || !pathOnly) throw new Error("bad origin");
+    publicBase = url.origin;
+  } catch {
+    console.error("R2_PUBLIC_BASE must be an https origin, for example https://files.example.com");
+    process.exit(1);
+  }
+  return {
+    accountId: process.env.R2_ACCOUNT_ID,
+    accessKeyId: process.env.R2_ACCESS_KEY_ID,
+    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+    bucket: process.env.R2_BUCKET,
+    publicBase,
+  };
+}
+
+function readCatalog() {
+  if (!fs.existsSync(catalogPath)) return { assetBase: "", items: [] };
+  const parsed = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+  return {
+    assetBase: typeof parsed.assetBase === "string" ? parsed.assetBase : "",
+    items: Array.isArray(parsed.items) ? parsed.items : [],
+  };
+}
+
+function sha256File(filePath) {
+  const hash = createHash("sha256");
+  hash.update(fs.readFileSync(filePath));
+  return hash.digest("hex");
+}
+
+async function uploadFile(client, bucket, key, filePath, disposition) {
+  await client.send(
+    new PutObjectCommand({
+      Bucket: bucket,
+      Key: key,
+      Body: fs.readFileSync(filePath),
+      ContentType: CONTENT_TYPES[path.posix.extname(key).toLowerCase()] ?? "application/octet-stream",
+      CacheControl: "public, max-age=31536000, immutable",
+      ...(disposition ? { ContentDisposition: disposition } : {}),
+    }),
+  );
+  console.log(`  put ${key}`);
+}
+
+async function deletePrefix(client, bucket, prefix) {
+  let token;
+  do {
+    const listed = await client.send(
+      new ListObjectsV2Command({ Bucket: bucket, Prefix: prefix, ContinuationToken: token }),
+    );
+    const objects = (listed.Contents ?? []).flatMap((entry) => (entry.Key ? [{ Key: entry.Key }] : []));
+    for (let index = 0; index < objects.length; index += 1000) {
+      const chunk = objects.slice(index, index + 1000);
+      if (!chunk.length) continue;
+      const result = await client.send(
+        new DeleteObjectsCommand({ Bucket: bucket, Delete: { Objects: chunk, Quiet: true } }),
+      );
+      for (const error of result.Errors ?? []) console.error(`  delete ${error.Key}: ${error.Message}`);
+    }
+    token = listed.IsTruncated ? listed.NextContinuationToken : undefined;
+  } while (token);
+  console.log(`  deleted ${prefix}`);
+}
+
+async function uploadRendered(client, bucket, item, tendiesPath, outputRoot) {
+  for (const key of itemObjectKeys(item)) {
+    if (key.startsWith("originals/")) {
+      await uploadFile(client, bucket, key, tendiesPath, contentDisposition(item.fileName));
+      continue;
+    }
+    const disk = diskForPreviewKey(outputRoot, key);
+    if (!fs.existsSync(disk)) throw new Error(`missing rendered file ${disk}`);
+    await uploadFile(client, bucket, key, disk);
+  }
+}
+
 async function main() {
+  loadEnv();
+  const config = requireConfig();
   ensureDir(srcDir);
-  resetDir(previewRoot);
-  resetDir(downloadRoot);
+  const files = fs
+    .readdirSync(srcDir)
+    .filter((name) => name.toLowerCase().endsWith(".tendies"))
+    .sort((a, b) => a.localeCompare(b, "en"));
+  if (!files.length) {
+    console.error("content/tendies has no .tendies files. Catalog was left unchanged.");
+    process.exit(1);
+  }
+
+  const previous = readCatalog();
+  const client = new S3Client({
+    region: "auto",
+    endpoint: `https://${config.accountId}.r2.cloudflarestorage.com`,
+    credentials: { accessKeyId: config.accessKeyId, secretAccessKey: config.secretAccessKey },
+  });
   const ffmpeg = hasFfmpeg();
-  const files = fs.readdirSync(srcDir).filter((name) => name.toLowerCase().endsWith(".tendies")).sort((a, b) => a.localeCompare(b, "en"));
+  const outputRoot = fs.mkdtempSync(path.join(os.tmpdir(), "tendies-"));
   const usedIds = new Set();
-  const items = [];
-  for (const name of files) {
+  const nextItems = [];
+  const staleItems = [];
+  let uploaded = 0;
+  let failed = 0;
+
+  try {
+    for (const name of files) {
+      const filePath = path.join(srcDir, name);
+      const sha256 = sha256File(filePath);
+      const same = previous.items.filter((item) => item.fileName === name && item.sourceSha256 === sha256);
+      if (same.length) {
+        for (const item of same) usedIds.add(item.id);
+        nextItems.push(...same);
+        console.log(`${name} unchanged`);
+        continue;
+      }
+      try {
+        const preferredIds = previous.items.filter((item) => item.fileName === name).map((item) => item.id);
+        const built = await buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds.slice());
+        const relocated = built.map((item) => relocateItem(item, sha256));
+        for (const item of relocated) await uploadRendered(client, config.bucket, item, filePath, outputRoot);
+        nextItems.push(...relocated);
+        staleItems.push(...previous.items.filter((item) => item.fileName === name));
+        uploaded += 1;
+      } catch (error) {
+        failed += 1;
+        console.error(`failed ${name}: ${error instanceof Error ? error.stack : error}`);
+        const keep = previous.items.filter((item) => item.fileName === name);
+        for (const item of keep) usedIds.add(item.id);
+        nextItems.push(...keep);
+      }
+    }
+  } finally {
+    fs.rmSync(outputRoot, { recursive: true, force: true });
+  }
+
+  if (uploaded === 0 && failed > 0) {
+    console.error("No file uploaded. Catalog was left unchanged.");
+    process.exit(1);
+  }
+
+  for (const item of previous.items) {
+    if (!files.includes(item.fileName)) staleItems.push(item);
+  }
+
+  fs.writeFileSync(catalogPath, `${JSON.stringify({ assetBase: config.publicBase, items: nextItems }, null, 2)}\n`);
+  console.log(`catalog: ${nextItems.length} wallpaper(s), uploaded ${uploaded}, ffmpeg ${ffmpeg ? "yes" : "no"}`);
+
+  if (failed > 0) return;
+
+  const keep = new Set(nextItems.flatMap((item) => prefixesForKeys(itemObjectKeys(item))));
+  for (const prefix of new Set(staleItems.flatMap((item) => prefixesForKeys(itemObjectKeys(item))))) {
+    if (keep.has(prefix)) continue;
     try {
-      items.push(...(await buildOne(path.join(srcDir, name), usedIds, ffmpeg)));
+      await deletePrefix(client, config.bucket, prefix);
     } catch (error) {
-      console.error(`failed ${name}: ${error instanceof Error ? error.stack : error}`);
+      console.error(`failed to delete ${prefix}: ${error instanceof Error ? error.message : error}`);
     }
   }
-  fs.writeFileSync(catalogPath, `${JSON.stringify({ items }, null, 2)}\n`);
-  console.log(`catalog: ${items.length} wallpaper(s), ffmpeg ${ffmpeg ? "yes" : "no"}`);
+
+  const stillLocal = nextItems.some((item) => itemObjectKeys(item).some((key) => key.startsWith("/")));
+  if (!stillLocal) {
+    fs.rmSync(previewRoot, { recursive: true, force: true });
+    fs.rmSync(downloadRoot, { recursive: true, force: true });
+    console.log("removed local public/previews and public/tendies");
+  }
 }
 
 main();

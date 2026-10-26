@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { resolveWallpaper } from "@/lib/assets";
 import type { PosterType, WallpaperItem } from "@/lib/types";
 import { PhoneFrame } from "./PhoneFrame";
 import { WallpaperCard } from "./WallpaperCard";
@@ -14,9 +15,11 @@ const filters: Array<{ id: "all" | PosterType; label: string }> = [
 
 type Props = {
   items: WallpaperItem[];
+  assetBase?: string;
 };
 
-export function Gallery({ items }: Props) {
+export function Gallery({ items, assetBase = "" }: Props) {
+  const ready = useMemo(() => items.map((item) => resolveWallpaper(assetBase, item)), [items, assetBase]);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof filters)[number]["id"]>("all");
   const [active, setActive] = useState<WallpaperItem | null>(null);
@@ -38,12 +41,12 @@ export function Gallery({ items }: Props) {
 
   const visible = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    return items.filter((item) => {
+    return ready.filter((item) => {
       if (filter !== "all" && item.type !== filter) return false;
       if (!needle) return true;
       return item.name.toLowerCase().includes(needle);
     });
-  }, [items, query, filter]);
+  }, [ready, query, filter]);
 
   return (
     <main className="page">
@@ -73,8 +76,8 @@ export function Gallery({ items }: Props) {
           ))}
         </div>
       </div>
-      {items.length === 0 ? (
-        <p className="empty">Chưa có file. Thêm .tendies vào content/tendies rồi chạy npm run previews.</p>
+      {ready.length === 0 ? (
+        <p className="empty">Chưa có file. Thêm .tendies vào content/tendies rồi chạy npm run publish.</p>
       ) : visible.length === 0 ? (
         <p className="empty">Không có wallpaper khớp bộ lọc.</p>
       ) : (
