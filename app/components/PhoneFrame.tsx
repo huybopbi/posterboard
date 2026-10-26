@@ -7,9 +7,7 @@ type Props = {
   item: WallpaperItem;
   interactive?: boolean;
   mode?: "locked" | "unlock";
-  /** Increment to restart the animation from the beginning. */
   replayKey?: number;
-  /** Called once when all frame images have finished preloading. */
   onReady?: () => void;
 };
 
@@ -18,6 +16,61 @@ function formatClock(date: Date) {
     time: date.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit", hour12: false }),
     date: date.toLocaleDateString("vi-VN", { weekday: "long", day: "numeric", month: "long" }),
   };
+}
+
+/**
+ * Renders two overlapping <img> elements and crossfades between them
+ * whenever `src` changes — smoothing over the discrete frame jumps.
+ */
+function CrossfadeImg({
+  src,
+  className,
+  style,
+}: {
+  src?: string;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const [a, setA] = useState(src);
+  const [b, setB] = useState<string | undefined>();
+  const [aFront, setAFront] = useState(true);
+  const prevRef = useRef(src);
+
+  useEffect(() => {
+    if (src === prevRef.current) return;
+    prevRef.current = src;
+    if (aFront) {
+      setB(src);
+      setAFront(false);
+    } else {
+      setA(src);
+      setAFront(true);
+    }
+  }, [src]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (!a && !b) return null;
+
+  const FADE = "55ms linear";
+  return (
+    <>
+      {a && (
+        <img
+          className={className}
+          src={a}
+          alt=""
+          style={{ ...style, opacity: aFront ? 1 : 0, transition: `opacity ${FADE}` }}
+        />
+      )}
+      {b && (
+        <img
+          className={className}
+          src={b}
+          alt=""
+          style={{ ...style, opacity: aFront ? 0 : 1, transition: `opacity ${FADE}` }}
+        />
+      )}
+    </>
+  );
 }
 
 export function PhoneFrame({
@@ -31,14 +84,15 @@ export function PhoneFrame({
   const [now, setNow] = useState(() => formatClock(new Date()));
   const [progress, setProgress] = useState(0);
   const progressRef = useRef(0);
+  const rafRef = useRef(0);
 
-  // Clock tick
+  // Clock tick every 30 seconds
   useEffect(() => {
     const id = window.setInterval(() => setNow(formatClock(new Date())), 30_000);
     return () => window.clearInterval(id);
   }, []);
 
-  // Build frame list
+  // Frame list
   const frames = useMemo(
     () => [
       { bg: item.bg, fg: item.fg },
@@ -55,29 +109,25 @@ export function PhoneFrame({
     const sources = frames
       .flatMap((f) => [f.bg, f.fg])
       .filter(Boolean) as string[];
-
     if (!sources.length) { onReadyRef.current?.(); return; }
-
     let remaining = sources.length;
     for (const src of sources) {
       const img = new Image();
-      img.onload = img.onerror = () => {
-        remaining -= 1;
-        if (remaining <= 0) onReadyRef.current?.();
-      };
+      img.onload = img.onerror = () => { if (--remaining <= 0) onReadyRef.current?.(); };
       img.src = src;
     }
   }, [frames]);
 
-  // Animation: runs on item change, mode change, or replay
+  // Smooth animation with requestAnimationFrame
   const prevRef = useRef({ id: item.id, mode, replayKey });
   useEffect(() => {
     const prev = prevRef.current;
     const target = mode === "unlock" ? 1 : 0;
 
-    // New item: snap to target, no animation
+    // New item → snap instantly, no animation
     if (prev.id !== item.id) {
       prevRef.current = { id: item.id, mode, replayKey };
+      cancelAnimationFrame(rafRef.current);
       progressRef.current = 0;
       setProgress(0);
       return;
@@ -85,28 +135,29 @@ export function PhoneFrame({
 
     prevRef.current = { id: item.id, mode, replayKey };
 
-    // Replay: rewind to opposite end before animating
+    // Replay → rewind to opposite end before animating
     const isReplay = prev.replayKey !== replayKey;
     const startFrom = isReplay ? (1 - target) : progressRef.current;
     if (isReplay) { progressRef.current = startFrom; setProgress(startFrom); }
 
-    if (Math.abs(startFrom - target) < 0.01) return;
+    if (Math.abs(startFrom - target) < 0.005) return;
 
+    cancelAnimationFrame(rafRef.current);
     const startedAt = performance.now();
-    const duration = 720;
+    const duration = 820; // ms — slightly longer than before for more natural feel
 
-    const animate = () => {
+    const tick = () => {
       const t = Math.max(0, Math.min(1, (performance.now() - startedAt) / duration));
+      // Cubic ease-out: fast start, gentle deceleration
       const eased = 1 - Math.pow(1 - t, 3);
       const next = startFrom + (target - startFrom) * eased;
       progressRef.current = next;
       setProgress(next);
-      if (t >= 1) window.clearInterval(timer);
+      if (t < 1) rafRef.current = requestAnimationFrame(tick);
     };
 
-    const timer = window.setInterval(animate, 1000 / 30);
-    animate();
-    return () => window.clearInterval(timer);
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
   }, [item.id, mode, replayKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const bgShift = interactive ? `translate(${shift.x * -10}px, ${shift.y * -10}px)` : "none";
@@ -134,6 +185,7 @@ export function PhoneFrame({
       }
       onPointerLeave={interactive ? () => setShift({ x: 0, y: 0 }) : undefined}
     >
+      {/* Background layer — crossfade between frames */}
       {item.video ? (
         <video
           className="layer"
@@ -146,9 +198,10 @@ export function PhoneFrame({
           style={{ transform: bgShift }}
         />
       ) : (
-        bgSrc && <img className="layer" src={bgSrc} alt="" style={{ transform: bgShift }} />
+        <CrossfadeImg className="layer" src={bgSrc} style={{ transform: bgShift }} />
       )}
 
+      {/* Clock — continuous fade/slide driven by progress (60 fps via rAF) */}
       <div
         className="clock"
         style={{
@@ -160,6 +213,7 @@ export function PhoneFrame({
         <time>{now.time}</time>
       </div>
 
+      {/* Dock — slides up smoothly */}
       <div
         className="dock"
         aria-hidden="true"
@@ -168,7 +222,9 @@ export function PhoneFrame({
         <span /><span /><span /><span />
       </div>
 
-      {fgSrc && <img className="layer fg" src={fgSrc} alt="" style={{ transform: fgShift }} />}
+      {/* Foreground depth layer — crossfade between frames */}
+      <CrossfadeImg className="layer fg" src={fgSrc} style={{ transform: fgShift }} />
+
       <div className="island" />
     </div>
   );
