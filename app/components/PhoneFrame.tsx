@@ -18,9 +18,24 @@ function formatClock(date: Date) {
   };
 }
 
+const CROSSFADE_MS = 22; // short enough that early frames (≥12 ms) never overlap
+
 /**
- * Renders two overlapping <img> elements and crossfades between them
- * whenever `src` changes — smoothing over the discrete frame jumps.
+ * Flicker-free two-slot crossfade.
+ *
+ * Root causes of the previous flickering:
+ *  1. Stale closure: `aFront` was always the initial value inside the effect,
+ *     so new src kept being written into `b` even while `b` was the visible
+ *     front slot → src changed on a displayed img → flash.
+ *  2. No busy-guard: rapid frames arrived before the previous 55 ms crossfade
+ *     finished, overwriting mid-transition imgs → visible at partial opacity → flash.
+ *
+ * Fix:
+ *  - Track which slot is front with a ref (never stale).
+ *  - `busy` flag: only one crossfade runs at a time.
+ *  - `pending`: queue the LATEST src; drain after crossfade completes.
+ *  - RAF before flip: back slot is painted at opacity 0 before we switch
+ *    `aFront`, so the CSS transition fires correctly (0 → 1, no flash-at-full-opacity).
  */
 function CrossfadeImg({
   src,
@@ -34,23 +49,45 @@ function CrossfadeImg({
   const [a, setA] = useState(src);
   const [b, setB] = useState<string | undefined>();
   const [aFront, setAFront] = useState(true);
-  const prevRef = useRef(src);
 
+  const st = useRef({ aFront: true, busy: false, cur: src, pending: undefined as string | undefined });
+
+  // Stable reference — always reads current ref values, safe inside setTimeout/RAF
+  const runNext = useRef<() => void>(() => {});
+  runNext.current = () => {
+    const s = st.current;
+    if (s.pending === s.cur) { s.pending = undefined; return; }
+    const incoming = s.pending;
+    s.pending = undefined;
+    s.cur = incoming;
+    s.busy = true;
+
+    // Write new src into BACK slot (opacity 0 → invisible → no flash)
+    if (s.aFront) { setB(incoming); } else { setA(incoming); }
+
+    // One browser paint later, flip — CSS transition fires cleanly
+    requestAnimationFrame(() => {
+      s.aFront = !s.aFront;
+      setAFront(s.aFront);
+
+      // After transition finishes, release lock and drain any queued src
+      setTimeout(() => {
+        s.busy = false;
+        if (s.pending !== undefined) runNext.current();
+      }, CROSSFADE_MS + 4);
+    });
+  };
+
+  const prevRef = useRef(src);
   useEffect(() => {
     if (src === prevRef.current) return;
     prevRef.current = src;
-    if (aFront) {
-      setB(src);
-      setAFront(false);
-    } else {
-      setA(src);
-      setAFront(true);
-    }
+    st.current.pending = src;
+    if (!st.current.busy) runNext.current();
   }, [src]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!a && !b) return null;
 
-  const FADE = "55ms linear";
   return (
     <>
       {a && (
@@ -58,7 +95,7 @@ function CrossfadeImg({
           className={className}
           src={a}
           alt=""
-          style={{ ...style, opacity: aFront ? 1 : 0, transition: `opacity ${FADE}` }}
+          style={{ ...style, opacity: aFront ? 1 : 0, transition: `opacity ${CROSSFADE_MS}ms linear` }}
         />
       )}
       {b && (
@@ -66,7 +103,7 @@ function CrossfadeImg({
           className={className}
           src={b}
           alt=""
-          style={{ ...style, opacity: aFront ? 0 : 1, transition: `opacity ${FADE}` }}
+          style={{ ...style, opacity: aFront ? 0 : 1, transition: `opacity ${CROSSFADE_MS}ms linear` }}
         />
       )}
     </>
