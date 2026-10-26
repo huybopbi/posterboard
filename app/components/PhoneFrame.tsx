@@ -7,6 +7,10 @@ type Props = {
   item: WallpaperItem;
   interactive?: boolean;
   mode?: "locked" | "unlock";
+  /** Increment to restart the animation from the beginning. */
+  replayKey?: number;
+  /** Called once when all frame images have finished preloading. */
+  onReady?: () => void;
 };
 
 function formatClock(date: Date) {
@@ -16,48 +20,25 @@ function formatClock(date: Date) {
   };
 }
 
-export function PhoneFrame({ item, interactive = false, mode = "locked" }: Props) {
+export function PhoneFrame({
+  item,
+  interactive = false,
+  mode = "locked",
+  replayKey = 0,
+  onReady,
+}: Props) {
   const [shift, setShift] = useState({ x: 0, y: 0 });
   const [now, setNow] = useState(() => formatClock(new Date()));
-  const [progress, setProgress] = useState(mode === "unlock" ? 1 : 0);
-  const progressRef = useRef(progress);
-  const itemRef = useRef(item.id);
+  const [progress, setProgress] = useState(0);
+  const progressRef = useRef(0);
 
+  // Clock tick
   useEffect(() => {
-    const timer = window.setInterval(() => setNow(formatClock(new Date())), 30_000);
-    return () => window.clearInterval(timer);
+    const id = window.setInterval(() => setNow(formatClock(new Date())), 30_000);
+    return () => window.clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    if (itemRef.current !== item.id) {
-      itemRef.current = item.id;
-      const initial = mode === "unlock" ? 1 : 0;
-      progressRef.current = initial;
-      setProgress(initial);
-      return;
-    }
-
-    const target = mode === "unlock" ? 1 : 0;
-    const start = progressRef.current;
-    if (start === target) return;
-    const startedAt = performance.now();
-    const duration = 720;
-
-    const animate = () => {
-      const elapsed = Math.max(0, Math.min(1, (performance.now() - startedAt) / duration));
-      const eased = 1 - Math.pow(1 - elapsed, 3);
-      const next = start + (target - start) * eased;
-      progressRef.current = next;
-      setProgress(next);
-      if (elapsed >= 1) window.clearInterval(timer);
-    };
-    const timer = window.setInterval(animate, 1000 / 30);
-    animate();
-    return () => window.clearInterval(timer);
-  }, [item.id, mode]);
-
-  const bgShift = interactive ? `translate(${shift.x * -10}px, ${shift.y * -10}px)` : "none";
-  const fgShift = interactive ? `translate(${shift.x * 16}px, ${shift.y * 16}px)` : "none";
+  // Build frame list
   const frames = useMemo(
     () => [
       { bg: item.bg, fg: item.fg },
@@ -66,27 +47,87 @@ export function PhoneFrame({ item, interactive = false, mode = "locked" }: Props
     ],
     [item],
   );
+
+  // Preload all frame images; fire onReady when done
+  const onReadyRef = useRef(onReady);
+  onReadyRef.current = onReady;
+  useEffect(() => {
+    const sources = frames
+      .flatMap((f) => [f.bg, f.fg])
+      .filter(Boolean) as string[];
+
+    if (!sources.length) { onReadyRef.current?.(); return; }
+
+    let remaining = sources.length;
+    for (const src of sources) {
+      const img = new Image();
+      img.onload = img.onerror = () => {
+        remaining -= 1;
+        if (remaining <= 0) onReadyRef.current?.();
+      };
+      img.src = src;
+    }
+  }, [frames]);
+
+  // Animation: runs on item change, mode change, or replay
+  const prevRef = useRef({ id: item.id, mode, replayKey });
+  useEffect(() => {
+    const prev = prevRef.current;
+    const target = mode === "unlock" ? 1 : 0;
+
+    // New item: snap to target, no animation
+    if (prev.id !== item.id) {
+      prevRef.current = { id: item.id, mode, replayKey };
+      progressRef.current = 0;
+      setProgress(0);
+      return;
+    }
+
+    prevRef.current = { id: item.id, mode, replayKey };
+
+    // Replay: rewind to opposite end before animating
+    const isReplay = prev.replayKey !== replayKey;
+    const startFrom = isReplay ? (1 - target) : progressRef.current;
+    if (isReplay) { progressRef.current = startFrom; setProgress(startFrom); }
+
+    if (Math.abs(startFrom - target) < 0.01) return;
+
+    const startedAt = performance.now();
+    const duration = 720;
+
+    const animate = () => {
+      const t = Math.max(0, Math.min(1, (performance.now() - startedAt) / duration));
+      const eased = 1 - Math.pow(1 - t, 3);
+      const next = startFrom + (target - startFrom) * eased;
+      progressRef.current = next;
+      setProgress(next);
+      if (t >= 1) window.clearInterval(timer);
+    };
+
+    const timer = window.setInterval(animate, 1000 / 30);
+    animate();
+    return () => window.clearInterval(timer);
+  }, [item.id, mode, replayKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const bgShift = interactive ? `translate(${shift.x * -10}px, ${shift.y * -10}px)` : "none";
+  const fgShift = interactive ? `translate(${shift.x * 16}px, ${shift.y * 16}px)` : "none";
+
   const frame = frames[Math.round(progress * (frames.length - 1))];
   const bgSrc = frame?.bg;
   const fgSrc = frame?.fg;
 
-  useEffect(() => {
-    for (const source of frames.flatMap((value) => [value.bg, value.fg]).filter(Boolean)) {
-      const image = new Image();
-      image.src = source as string;
-    }
-  }, [frames]);
+  const clockOpacity = Math.max(0, Math.min(1, 1 - progress * 1.6));
 
   return (
     <div
       className="phone"
       onPointerMove={
         interactive
-          ? (event) => {
-              const rect = event.currentTarget.getBoundingClientRect();
+          ? (e) => {
+              const r = e.currentTarget.getBoundingClientRect();
               setShift({
-                x: (event.clientX - rect.left) / rect.width - 0.5,
-                y: (event.clientY - rect.top) / rect.height - 0.5,
+                x: (e.clientX - r.left) / r.width - 0.5,
+                y: (e.clientY - r.top) / r.height - 0.5,
               });
             }
           : undefined
@@ -107,26 +148,26 @@ export function PhoneFrame({ item, interactive = false, mode = "locked" }: Props
       ) : (
         bgSrc && <img className="layer" src={bgSrc} alt="" style={{ transform: bgShift }} />
       )}
+
       <div
         className="clock"
         style={{
-          opacity: Math.max(0, Math.min(1, 1 - progress * 1.6)),
-          transform: `translateY(${-progress * 20}px) scale(${1 - progress * 0.08})`,
+          opacity: clockOpacity,
+          transform: `translateY(${-progress * 20}px) scale(${1 - progress * 0.06})`,
         }}
       >
         <span>{now.date}</span>
         <time>{now.time}</time>
       </div>
+
       <div
         className="dock"
         aria-hidden="true"
         style={{ opacity: progress, transform: `translateY(${(1 - progress) * 28}px)` }}
       >
-          <span />
-          <span />
-          <span />
-          <span />
+        <span /><span /><span /><span />
       </div>
+
       {fgSrc && <img className="layer fg" src={fgSrc} alt="" style={{ transform: fgShift }} />}
       <div className="island" />
     </div>
