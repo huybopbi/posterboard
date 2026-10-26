@@ -1,5 +1,5 @@
 {
-  "assetBase": "",
+  "assetBase": "https://pub-5f180f45be4140f1a74f2194843ec9f0.r2.dev",
   "items": [
     {
       "id": "hqyh",
@@ -8,56 +8,57 @@
       "kind": "layered",
       "width": 390,
       "height": 844,
-      "poster": "/previews/hqyh/poster.jpg",
-      "bg": "/previews/hqyh/bg.webp",
-      "fg": "/previews/hqyh/fg.webp",
-      "unlockBg": "/previews/hqyh/bg-unlock.webp",
-      "unlockFg": "/previews/hqyh/fg-unlock.webp",
+      "poster": "previews/hqyh/7fcf15de358e/poster.jpg",
+      "bg": "previews/hqyh/7fcf15de358e/bg.webp",
+      "fg": "previews/hqyh/7fcf15de358e/fg.webp",
+      "unlockBg": "previews/hqyh/7fcf15de358e/bg-unlock.webp",
+      "unlockFg": "previews/hqyh/7fcf15de358e/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "/previews/hqyh/transition-bg-01.webp",
-          "fg": "/previews/hqyh/transition-fg-01.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-01.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-01.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-02.webp",
-          "fg": "/previews/hqyh/transition-fg-02.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-02.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-02.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-03.webp",
-          "fg": "/previews/hqyh/transition-fg-03.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-03.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-03.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-04.webp",
-          "fg": "/previews/hqyh/transition-fg-04.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-04.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-04.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-05.webp",
-          "fg": "/previews/hqyh/transition-fg-05.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-05.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-05.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-06.webp",
-          "fg": "/previews/hqyh/transition-fg-06.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-06.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-06.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-07.webp",
-          "fg": "/previews/hqyh/transition-fg-07.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-07.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-07.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-08.webp",
-          "fg": "/previews/hqyh/transition-fg-08.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-08.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-08.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-09.webp",
-          "fg": "/previews/hqyh/transition-fg-09.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-09.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-09.webp"
         },
         {
-          "bg": "/previews/hqyh/transition-bg-10.webp",
-          "fg": "/previews/hqyh/transition-fg-10.webp"
+          "bg": "previews/hqyh/7fcf15de358e/transition-bg-10.webp",
+          "fg": "previews/hqyh/7fcf15de358e/transition-fg-10.webp"
         }
       ],
-      "download": "/tendies/hqyh.tendies",
+      "download": "originals/hqyh/7fcf15de358e/hqyh.tendies",
       "fileName": "hqyh.tendies",
-      "bytes": 5123044
+      "bytes": 5123044,
+      "sourceSha256": "7fcf15de358ec03ebc0e1d2819c844d24ea46cac2b655537af08aa8162525013"
     },
     {
       "id": "45fa27c9",
@@ -66,56 +67,57 @@
       "kind": "layered",
       "width": 390,
       "height": 844,
-      "poster": "/previews/45fa27c9/poster.jpg",
-      "bg": "/previews/45fa27c9/bg.webp",
-      "fg": "/previews/45fa27c9/fg.webp",
-      "unlockBg": "/previews/45fa27c9/bg-unlock.webp",
-      "unlockFg": "/previews/45fa27c9/fg-unlock.webp",
+      "poster": "previews/45fa27c9/6088a1e62c02/poster.jpg",
+      "bg": "previews/45fa27c9/6088a1e62c02/bg.webp",
+      "fg": "previews/45fa27c9/6088a1e62c02/fg.webp",
+      "unlockBg": "previews/45fa27c9/6088a1e62c02/bg-unlock.webp",
+      "unlockFg": "previews/45fa27c9/6088a1e62c02/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "/previews/45fa27c9/transition-bg-01.webp",
-          "fg": "/previews/45fa27c9/transition-fg-01.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-01.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-01.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-02.webp",
-          "fg": "/previews/45fa27c9/transition-fg-02.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-02.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-02.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-03.webp",
-          "fg": "/previews/45fa27c9/transition-fg-03.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-03.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-03.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-04.webp",
-          "fg": "/previews/45fa27c9/transition-fg-04.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-04.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-04.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-05.webp",
-          "fg": "/previews/45fa27c9/transition-fg-05.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-05.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-05.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-06.webp",
-          "fg": "/previews/45fa27c9/transition-fg-06.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-06.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-06.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-07.webp",
-          "fg": "/previews/45fa27c9/transition-fg-07.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-07.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-07.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-08.webp",
-          "fg": "/previews/45fa27c9/transition-fg-08.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-08.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-08.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-09.webp",
-          "fg": "/previews/45fa27c9/transition-fg-09.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-09.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-09.webp"
         },
         {
-          "bg": "/previews/45fa27c9/transition-bg-10.webp",
-          "fg": "/previews/45fa27c9/transition-fg-10.webp"
+          "bg": "previews/45fa27c9/6088a1e62c02/transition-bg-10.webp",
+          "fg": "previews/45fa27c9/6088a1e62c02/transition-fg-10.webp"
         }
       ],
-      "download": "/tendies/%E5%90%8E%E8%97%A4%E4%B8%80%E9%87%8C.tendies",
+      "download": "originals/45fa27c9/6088a1e62c02/后藤一里.tendies",
       "fileName": "后藤一里.tendies",
-      "bytes": 6392957
+      "bytes": 6392957,
+      "sourceSha256": "6088a1e62c027f1e62f462f306857f76c65059864bd31c56d93f3048630698a0"
     },
     {
       "id": "9d8e57c2",
@@ -124,56 +126,57 @@
       "kind": "layered",
       "width": 390,
       "height": 844,
-      "poster": "/previews/9d8e57c2/poster.jpg",
-      "bg": "/previews/9d8e57c2/bg.webp",
-      "fg": "/previews/9d8e57c2/fg.webp",
-      "unlockBg": "/previews/9d8e57c2/bg-unlock.webp",
-      "unlockFg": "/previews/9d8e57c2/fg-unlock.webp",
+      "poster": "previews/9d8e57c2/9b9f6e96cdff/poster.jpg",
+      "bg": "previews/9d8e57c2/9b9f6e96cdff/bg.webp",
+      "fg": "previews/9d8e57c2/9b9f6e96cdff/fg.webp",
+      "unlockBg": "previews/9d8e57c2/9b9f6e96cdff/bg-unlock.webp",
+      "unlockFg": "previews/9d8e57c2/9b9f6e96cdff/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "/previews/9d8e57c2/transition-bg-01.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-01.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-01.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-01.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-02.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-02.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-02.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-02.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-03.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-03.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-03.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-03.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-04.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-04.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-04.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-04.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-05.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-05.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-05.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-05.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-06.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-06.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-06.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-06.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-07.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-07.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-07.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-07.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-08.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-08.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-08.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-08.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-09.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-09.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-09.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-09.webp"
         },
         {
-          "bg": "/previews/9d8e57c2/transition-bg-10.webp",
-          "fg": "/previews/9d8e57c2/transition-fg-10.webp"
+          "bg": "previews/9d8e57c2/9b9f6e96cdff/transition-bg-10.webp",
+          "fg": "previews/9d8e57c2/9b9f6e96cdff/transition-fg-10.webp"
         }
       ],
-      "download": "/tendies/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A.tendies",
+      "download": "originals/9d8e57c2/9b9f6e96cdff/孤独摇滚.tendies",
       "fileName": "孤独摇滚.tendies",
-      "bytes": 5134680
+      "bytes": 5134680,
+      "sourceSha256": "9b9f6e96cdff466862cece1b94cc2856781a1fc364cac5749bdd45740d12ce48"
     }
   ]
 }
