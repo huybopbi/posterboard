@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { resolveWallpaper } from "@/lib/assets";
-import { copyCount, isHiddenDuplicate } from "@/lib/duplicates";
+import { isHiddenDuplicate } from "@/lib/duplicates";
 import type { PosterType, WallpaperItem } from "@/lib/types";
 import { WallpaperCard } from "./WallpaperCard";
 import { WallpaperPreview } from "./WallpaperPreview";
@@ -27,18 +27,17 @@ export function Gallery({ items, assetBase = "" }: Props) {
 
   const [query,  setQuery]  = useState("");
   const [filter, setFilter] = useState<(typeof filters)[number]["id"]>("all");
-  const [hideDuplicates, setHideDuplicates] = useState(true);
   const [active, setActive] = useState<WallpaperItem | null>(null);
 
   const visible = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return ready.filter((item) => {
-      if (hideDuplicates && isHiddenDuplicate(item.id)) return false;
+      if (isHiddenDuplicate(item.id)) return false;
       if (filter !== "all" && item.type !== filter) return false;
       if (!needle) return true;
       return item.name.toLowerCase().includes(needle);
     });
-  }, [ready, query, filter, hideDuplicates]);
+  }, [ready, query, filter]);
 
   return (
     <main className="page">
@@ -47,12 +46,7 @@ export function Gallery({ items, assetBase = "" }: Props) {
         <h1>Tendies</h1>
         <p>Thư viện wallpaper PosterBoard cho iPhone. Xem lớp nền và lớp nổi, rồi tải file .tendies gốc.</p>
         {ready.length > 0 && (
-          <span className="site-header-count">
-            {visible.length} wallpaper
-            {hideDuplicates && !query.trim() && filter === "all" && visible.length < ready.length
-              ? ` · ${ready.length - visible.length} bản trùng đang ẩn`
-              : ""}
-          </span>
+          <span className="site-header-count">{visible.length} wallpaper</span>
         )}
       </header>
 
@@ -77,14 +71,6 @@ export function Gallery({ items, assetBase = "" }: Props) {
               {f.label}
             </button>
           ))}
-          <button
-            className="filter"
-            type="button"
-            aria-pressed={hideDuplicates}
-            onClick={() => setHideDuplicates((value) => !value)}
-          >
-            Ẩn trùng
-          </button>
         </div>
       </div>
 
@@ -100,7 +86,6 @@ export function Gallery({ items, assetBase = "" }: Props) {
               key={item.id}
               item={item}
               eager={index < 6}
-              copies={hideDuplicates ? copyCount(item.id) : 1}
               onOpen={setActive}
             />
           ))}
