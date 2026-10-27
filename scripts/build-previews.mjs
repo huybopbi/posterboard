@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 import { DeleteObjectsCommand, ListObjectsV2Command, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import AdmZip from "adm-zip";
 import { XMLParser } from "fast-xml-parser";
+import convert from "heic-convert";
 import sharp from "sharp";
 import {
   contentDisposition,
@@ -178,13 +179,7 @@ function imageFromContents(contents) {
 }
 
 function imageSrc(layer) {
-  const own = imageFromContents(layer?.contents);
-  if (own) return own;
-  for (const cell of asArray(layer?.emitterCells?.CAEmitterCell)) {
-    const src = imageFromContents(cell?.contents);
-    if (src) return src;
-  }
-  return null;
+  return imageFromContents(layer?.contents);
 }
 
 function childLayers(layer) {
@@ -276,6 +271,107 @@ function intersects(box, canvasW, canvasH, scale) {
   const cx = box.cssX * scale;
   const cy = box.cssY * scale;
   return cx + radius > 0 && cy + radius > 0 && cx - radius < canvasW && cy - radius < canvasH;
+}
+
+const HEIC_BRANDS = new Set(["heic", "heix", "hevc", "hevx", "mif1", "msf1"]);
+const rasterCache = new WeakMap();
+
+function isHeic(buf) {
+  if (!buf || buf.length < 12) return false;
+  if (buf.toString("ascii", 4, 8) !== "ftyp") return false;
+  const brand = buf.toString("ascii", 8, 12).replace("\0", " ").trim().toLowerCase();
+  return HEIC_BRANDS.has(brand);
+}
+
+async function rasterInput(buf) {
+  if (!isHeic(buf)) return buf;
+  let pending = rasterCache.get(buf);
+  if (!pending) {
+    pending = convert({ buffer: Buffer.from(buf), format: "PNG", quality: 1 }).then((output) => Buffer.from(output));
+    rasterCache.set(buf, pending);
+  }
+  return pending;
+}
+
+function stackCount(stack, field) {
+  return (stack.background?.[field] ?? 0) + (stack.floating?.[field] ?? 0) + (stack.foreground?.[field] ?? 0);
+}
+
+function bundleImages(entries, key, mode) {
+  const referenced = mode === "referenced" ? referencedNames(entries, key) : null;
+  return entries
+    .filter((entry) => {
+      const base = path.posix.basename(entry.name);
+      if (base.startsWith("._") || /thumbnail/i.test(base)) return false;
+      if (!IMAGE_EXT.has(path.posix.extname(base).toLowerCase())) return false;
+      if (mode === "loose-zip") return !entry.name.toLowerCase().includes(".ca/");
+      if (!entry.name.startsWith(`${key}/`)) return false;
+      const rel = entry.name.slice(key.length + 1);
+      if (mode === "loose" && rel.toLowerCase().includes(".ca/")) return false;
+      if (referenced && !referenced.has(base)) return false;
+      return true;
+    })
+    .sort((a, b) => b.header.size - a.header.size);
+}
+
+function referencedNames(entries, key) {
+  const names = new Set();
+  for (const entry of entries) {
+    if (!entry.name.startsWith(`${key}/`) || !entry.name.toLowerCase().endsWith(".caml")) continue;
+    const text = entry.getData().toString("utf8");
+    for (const match of text.matchAll(/src="([^"]+)"/g)) {
+      let src = match[1];
+      try {
+        src = decodeURIComponent(src);
+      } catch {
+        // Keep the raw basename when the attribute is not percent-encoded.
+      }
+      names.add(path.posix.basename(src));
+    }
+  }
+  return names;
+}
+
+async function coverFromImage(image, width, height) {
+  const input = await rasterInput(image.getData());
+  return sharp(input, { failOn: "none", limitInputPixels: false })
+    .rotate()
+    .resize(width, height, { fit: "cover", position: "centre" })
+    .webp({ quality: 82 })
+    .toBuffer();
+}
+
+async function imageStdev(input) {
+  const stats = await sharp(input).stats();
+  return Math.max(...stats.channels.map((channel) => channel.stdev ?? 0));
+}
+
+async function dominantFraction(input) {
+  const raw = await sharp(input).resize(24, 32, { fit: "fill" }).removeAlpha().raw().toBuffer();
+  const bins = new Map();
+  for (let index = 0; index < raw.length; index += 3) {
+    const key = `${raw[index] >> 4},${raw[index + 1] >> 4},${raw[index + 2] >> 4}`;
+    bins.set(key, (bins.get(key) ?? 0) + 1);
+  }
+  return Math.max(0, ...bins.values()) / (raw.length / 3);
+}
+
+async function posterIsFlat(input) {
+  const [stdev, fraction] = await Promise.all([imageStdev(input), dominantFraction(input)]);
+  return stdev < 4.5 || fraction >= 0.85;
+}
+
+async function coverFromLargest(entries, key, width, height, mode = "any") {
+  for (const image of bundleImages(entries, key, mode)) {
+    try {
+      const cover = await coverFromImage(image, width, height);
+      if (await posterIsFlat(cover)) continue;
+      return cover;
+    } catch (error) {
+      console.warn(`  skip fallback ${image.name}: ${error instanceof Error ? error.message : error}`);
+    }
+  }
+  return null;
 }
 
 async function applyOpacity(image, opacity) {
@@ -455,7 +551,7 @@ async function drawLayers(layer, parentOrigin, overrides, transition, canvas, en
     if (!asset) console.warn(`  missing asset ${src}`);
     else {
       try {
-        const placed = await rasterLayer(asset.getData(), box, canvas.scale);
+        const placed = await rasterLayer(await rasterInput(asset.getData()), box, canvas.scale);
         const clipped = await clipToCanvas(placed.png, placed.left, placed.top, canvasW, canvasH);
         if (clipped) {
           overlays.push(clipped);
@@ -514,7 +610,7 @@ async function renderBundle(entries, caPrefix, keySize, transparent, state) {
       .filter((entry) => entry.name.startsWith(`${caPrefix}/`) && IMAGE_EXT.has(path.posix.extname(entry.name).toLowerCase()))
       .sort((a, b) => b.header.size - a.header.size);
     if (images[0]) {
-      const png = await sharp(images[0].getData(), { failOn: "none", limitInputPixels: false })
+      const png = await sharp(await rasterInput(images[0].getData()), { failOn: "none", limitInputPixels: false })
         .rotate()
         .resize(canvasW, canvasH, { fit: "cover" })
         .ensureAlpha()
@@ -603,11 +699,14 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
   const entries = zip
     .getEntries()
     .filter((entry) => !entry.isDirectory)
-    .map((entry) => ({
-      name: entry.entryName.replace(/\\/g, "/"),
-      header: entry.header,
-      getData: () => entry.getData(),
-    }))
+    .map((entry) => {
+      let cached;
+      return {
+        name: entry.entryName.replace(/\\/g, "/"),
+        header: entry.header,
+        getData: () => (cached ??= entry.getData()),
+      };
+    })
     .filter((entry) => !entry.name.startsWith("__MACOSX/") && !path.posix.basename(entry.name).startsWith("."));
 
   const wallpaperKeys = [
@@ -647,10 +746,6 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
     const byRole = assignRoles(caPrefixes);
     const keySize = { width, height };
 
-    const locked = await renderStack(entries, byRole, keySize, "Locked");
-    const unlocked = await renderStack(entries, byRole, keySize, "Unlock");
-    const { background, fgBuffer, points } = locked;
-
     const videos = entries
       .filter((entry) => entry.name.startsWith(`${key}/`) && VIDEO_EXT.has(path.posix.extname(entry.name).toLowerCase()))
       .sort((a, b) => b.header.size - a.header.size);
@@ -662,58 +757,99 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       videoPoster = video.posterPath;
     }
 
+    const coverW = Math.round(width * RENDER_SCALE);
+    const coverH = Math.round(height * RENDER_SCALE);
+    let photoFallback = null;
+    const looseImage = bundleImages(entries, key, "loose")[0];
+    if (looseImage) {
+      try {
+        photoFallback = await coverFromImage(looseImage, coverW, coverH);
+      } catch (error) {
+        console.warn(`  skip loose ${looseImage.name}: ${error instanceof Error ? error.message : error}`);
+      }
+    }
+
+    let locked = { background: null, floating: null, foreground: null };
+    let unlocked = locked;
+    let background = null;
+    let fgBuffer = null;
+    let points = { width, height, scale: RENDER_SCALE };
+    let painted = Boolean(photoFallback);
+    if (!photoFallback) {
+      locked = await renderStack(entries, byRole, keySize, "Locked");
+      unlocked = await renderStack(entries, byRole, keySize, "Unlock");
+      ({ background, fgBuffer, points } = locked);
+      painted = stackCount(locked, "drawn") > 0;
+    }
+
     const bgPath = path.join(destDir, "bg.webp");
     const fgPath = path.join(destDir, "fg.webp");
     const unlockBgPath = path.join(destDir, "bg-unlock.webp");
     const unlockFgPath = path.join(destDir, "fg-unlock.webp");
     const posterPath = path.join(destDir, "poster.jpg");
-    if (background?.webp) fs.writeFileSync(bgPath, background.webp);
-    else if (!fgBuffer && !videoPoster) {
-      fs.writeFileSync(
-        bgPath,
-        await sharp({
-          create: {
-            width: Math.max(1, Math.round(points.width * points.scale)),
-            height: Math.max(1, Math.round(points.height * points.scale)),
-            channels: 3,
-            background: { r: 28, g: 28, b: 30 },
-          },
-        })
-          .webp()
-          .toBuffer(),
-      );
-    }
-    if (fgBuffer) fs.writeFileSync(fgPath, fgBuffer);
-    if (unlocked.background?.webp) fs.writeFileSync(unlockBgPath, unlocked.background.webp);
-    if (unlocked.fgBuffer) fs.writeFileSync(unlockFgPath, unlocked.fgBuffer);
-
     const transitionFrames = [];
-    for (let frame = 1; frame <= 10; frame += 1) {
-      const rendered = await renderStack(
-        entries,
-        byRole,
-        { width, height },
-        { from: "Locked", to: "Unlock", progress: frame / 11 },
-      );
-      const suffix = String(frame).padStart(2, "0");
-      const frameBgPath = path.join(destDir, `transition-bg-${suffix}.webp`);
-      const frameFgPath = path.join(destDir, `transition-fg-${suffix}.webp`);
-      if (rendered.background?.webp) fs.writeFileSync(frameBgPath, rendered.background.webp);
-      if (rendered.fgBuffer) fs.writeFileSync(frameFgPath, rendered.fgBuffer);
-      transitionFrames.push({
-        ...(fs.existsSync(frameBgPath) ? { bg: `/previews/${id}/transition-bg-${suffix}.webp` } : {}),
-        ...(fs.existsSync(frameFgPath) ? { fg: `/previews/${id}/transition-fg-${suffix}.webp` } : {}),
-      });
+
+    if (photoFallback) {
+      fs.writeFileSync(bgPath, photoFallback);
+      fs.writeFileSync(unlockBgPath, photoFallback);
+      await sharp(bgPath).jpeg({ quality: 82 }).toFile(posterPath);
+    } else if (!painted && videoPoster) {
+      fs.copyFileSync(videoPoster, posterPath);
+    } else {
+      if (background?.webp) fs.writeFileSync(bgPath, background.webp);
+      if (fgBuffer) fs.writeFileSync(fgPath, fgBuffer);
+      if (unlocked.background?.webp) fs.writeFileSync(unlockBgPath, unlocked.background.webp);
+      if (unlocked.fgBuffer) fs.writeFileSync(unlockFgPath, unlocked.fgBuffer);
+
+      for (let frame = 1; frame <= 10; frame += 1) {
+        const rendered = await renderStack(
+          entries,
+          byRole,
+          { width, height },
+          { from: "Locked", to: "Unlock", progress: frame / 11 },
+        );
+        const suffix = String(frame).padStart(2, "0");
+        const frameBgPath = path.join(destDir, `transition-bg-${suffix}.webp`);
+        const frameFgPath = path.join(destDir, `transition-fg-${suffix}.webp`);
+        if (rendered.background?.webp) fs.writeFileSync(frameBgPath, rendered.background.webp);
+        if (rendered.fgBuffer) fs.writeFileSync(frameFgPath, rendered.fgBuffer);
+        transitionFrames.push({
+          ...(fs.existsSync(frameBgPath) ? { bg: `/previews/${id}/transition-bg-${suffix}.webp` } : {}),
+          ...(fs.existsSync(frameFgPath) ? { fg: `/previews/${id}/transition-fg-${suffix}.webp` } : {}),
+        });
+      }
+
+      if (fs.existsSync(bgPath)) {
+        let poster = sharp(bgPath);
+        if (fs.existsSync(fgPath)) poster = poster.composite([{ input: fgPath, left: 0, top: 0 }]);
+        await poster.jpeg({ quality: 82 }).toFile(posterPath);
+      } else if (fs.existsSync(fgPath)) {
+        await sharp(fgPath).flatten({ background: "#000" }).jpeg({ quality: 82 }).toFile(posterPath);
+      } else if (videoPoster) {
+        fs.copyFileSync(videoPoster, posterPath);
+      }
+      if (fs.existsSync(posterPath) && (await posterIsFlat(posterPath))) {
+        photoFallback =
+          (await coverFromLargest(entries, key, coverW, coverH, "loose-zip")) ??
+          (await coverFromLargest(entries, key, coverW, coverH, "referenced")) ??
+          (await coverFromLargest(entries, key, coverW, coverH, "any"));
+        if (photoFallback) {
+          for (const file of fs.readdirSync(destDir)) {
+            if (file === "video.mp4" || file.startsWith("source") || file === "video-poster.jpg") continue;
+            fs.rmSync(path.join(destDir, file));
+          }
+          transitionFrames.length = 0;
+          fs.writeFileSync(bgPath, photoFallback);
+          fs.writeFileSync(unlockBgPath, photoFallback);
+          await sharp(bgPath).jpeg({ quality: 82 }).toFile(posterPath);
+        } else if (!videoPoster) {
+          throw new Error(`empty poster for ${fileName} (${id})`);
+        }
+      }
     }
 
-    if (fs.existsSync(bgPath)) {
-      let poster = sharp(bgPath);
-      if (fs.existsSync(fgPath)) poster = poster.composite([{ input: fgPath, left: 0, top: 0 }]);
-      await poster.jpeg({ quality: 82 }).toFile(posterPath);
-    } else if (fs.existsSync(fgPath)) {
-      await sharp(fgPath).flatten({ background: "#000" }).jpeg({ quality: 82 }).toFile(posterPath);
-    } else if (videoPoster) {
-      fs.copyFileSync(videoPoster, posterPath);
+    if (!painted && !photoFallback && !videoPoster) {
+      throw new Error(`empty poster for ${fileName} (${id})`);
     }
 
     const stem = path.basename(fileName, path.extname(fileName));
@@ -721,7 +857,7 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       id,
       name: stem,
       type,
-      kind: videoName ? "video" : fgBuffer ? "layered" : "image",
+      kind: videoName ? "video" : photoFallback ? "image" : fgBuffer ? "layered" : "image",
       width: Math.round(points.width),
       height: Math.round(points.height),
       poster: `/previews/${id}/poster.jpg`,
@@ -736,7 +872,7 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       bytes,
     });
     console.log(
-      `${fileName} -> ${id} (lock bg ${locked.background?.drawn ?? 0}/fg ${locked.floating?.drawn ?? 0}+${locked.foreground?.drawn ?? 0}, unlock bg ${unlocked.background?.drawn ?? 0}/fg ${unlocked.floating?.drawn ?? 0}+${unlocked.foreground?.drawn ?? 0})`,
+      `${fileName} -> ${id} (lock bg ${locked.background?.drawn ?? 0}/fg ${locked.floating?.drawn ?? 0}+${locked.foreground?.drawn ?? 0}, unlock bg ${unlocked.background?.drawn ?? 0}/fg ${unlocked.floating?.drawn ?? 0}+${unlocked.foreground?.drawn ?? 0}${photoFallback ? ", photo fallback" : ""})`,
     );
   }
   return items;

@@ -23,7 +23,7 @@ export function previewObjectKey(publicPath, sha256) {
   const id = parts[1];
   const file = parts.slice(2).join("/");
   // Revision segment busts the immutable cache when a preview is rendered again.
-  return { id, file, key: `previews/${id}/${sha12(sha256)}-r2/${file}` };
+  return { id, file, key: `previews/${id}/${sha12(sha256)}-r3/${file}` };
 }
 
 export function originalObjectKey(id, sha256, fileName) {
