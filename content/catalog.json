@@ -453,44 +453,13 @@
       "id": "applelogo",
       "name": "AppleLogo",
       "type": "collections",
-      "kind": "layered",
+      "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/applelogo/964ba4b602a2-r2/poster.jpg",
-      "fg": "previews/applelogo/964ba4b602a2-r2/fg.webp",
-      "unlockFg": "previews/applelogo/964ba4b602a2-r2/fg-unlock.webp",
-      "transitionFrames": [
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-01.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-02.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-03.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-04.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-05.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-06.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-07.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-08.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-09.webp"
-        },
-        {
-          "fg": "previews/applelogo/964ba4b602a2-r2/transition-fg-10.webp"
-        }
-      ],
+      "poster": "previews/applelogo/964ba4b602a2-r3/poster.jpg",
+      "bg": "previews/applelogo/964ba4b602a2-r3/bg.webp",
+      "unlockBg": "previews/applelogo/964ba4b602a2-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/applelogo/964ba4b602a2/AppleLogo.tendies",
       "fileName": "AppleLogo.tendies",
       "bytes": 3800386,
@@ -1009,41 +978,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/boykisser/60f4c9065eeb-r2/poster.jpg",
-      "bg": "previews/boykisser/60f4c9065eeb-r2/bg.webp",
-      "unlockBg": "previews/boykisser/60f4c9065eeb-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/boykisser/60f4c9065eeb-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/boykisser/60f4c9065eeb-r3/poster.jpg",
+      "bg": "previews/boykisser/60f4c9065eeb-r3/bg.webp",
+      "unlockBg": "previews/boykisser/60f4c9065eeb-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/boykisser/60f4c9065eeb/boykisser.tendies",
       "fileName": "boykisser.tendies",
       "bytes": 140025,
@@ -1362,39 +1300,39 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/dark/2512eafd8e02-r2/poster.jpg",
-      "bg": "previews/dark/2512eafd8e02-r2/bg.webp",
-      "unlockBg": "previews/dark/2512eafd8e02-r2/bg-unlock.webp",
+      "poster": "previews/dark/2512eafd8e02-r3/poster.jpg",
+      "bg": "previews/dark/2512eafd8e02-r3/bg.webp",
+      "unlockBg": "previews/dark/2512eafd8e02-r3/bg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-01.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-01.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-02.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-02.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-03.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-03.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-04.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-04.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-05.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-05.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-06.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-06.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-07.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-07.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-08.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-08.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-09.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-09.webp"
         },
         {
-          "bg": "previews/dark/2512eafd8e02-r2/transition-bg-10.webp"
+          "bg": "previews/dark/2512eafd8e02-r3/transition-bg-10.webp"
         }
       ],
       "download": "originals/dark/2512eafd8e02/Dark.tendies",
@@ -1453,42 +1391,54 @@
       "id": "defaults",
       "name": "Defaults",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 390,
       "height": 844,
-      "poster": "previews/defaults/ef7a823847f6-r2/poster.jpg",
-      "bg": "previews/defaults/ef7a823847f6-r2/bg.webp",
-      "unlockBg": "previews/defaults/ef7a823847f6-r2/bg-unlock.webp",
+      "poster": "previews/defaults/ef7a823847f6-r3/poster.jpg",
+      "bg": "previews/defaults/ef7a823847f6-r3/bg.webp",
+      "fg": "previews/defaults/ef7a823847f6-r3/fg.webp",
+      "unlockBg": "previews/defaults/ef7a823847f6-r3/bg-unlock.webp",
+      "unlockFg": "previews/defaults/ef7a823847f6-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-01.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-01.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-02.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-02.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-03.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-03.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-04.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-04.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-05.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-05.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-06.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-06.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-07.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-07.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-08.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-08.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-09.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-09.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/defaults/ef7a823847f6-r2/transition-bg-10.webp"
+          "bg": "previews/defaults/ef7a823847f6-r3/transition-bg-10.webp",
+          "fg": "previews/defaults/ef7a823847f6-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/defaults/ef7a823847f6/Defaults.tendies",
@@ -1562,20 +1512,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/desert/45498df618dd-r2/poster.jpg",
-      "bg": "previews/desert/45498df618dd-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/desert/45498df618dd-r3/poster.jpg",
+      "bg": "previews/desert/45498df618dd-r3/bg.webp",
+      "unlockBg": "previews/desert/45498df618dd-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/desert/45498df618dd/Desert.tendies",
       "fileName": "Desert.tendies",
       "bytes": 37406920,
@@ -1588,20 +1528,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/desert-2/45498df618dd-r2/poster.jpg",
-      "bg": "previews/desert-2/45498df618dd-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/desert-2/45498df618dd-r3/poster.jpg",
+      "bg": "previews/desert-2/45498df618dd-r3/bg.webp",
+      "unlockBg": "previews/desert-2/45498df618dd-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/desert-2/45498df618dd/Desert.tendies",
       "fileName": "Desert.tendies",
       "bytes": 37406920,
@@ -1614,20 +1544,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/desert-3/45498df618dd-r2/poster.jpg",
-      "bg": "previews/desert-3/45498df618dd-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/desert-3/45498df618dd-r3/poster.jpg",
+      "bg": "previews/desert-3/45498df618dd-r3/bg.webp",
+      "unlockBg": "previews/desert-3/45498df618dd-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/desert-3/45498df618dd/Desert.tendies",
       "fileName": "Desert.tendies",
       "bytes": 37406920,
@@ -1640,20 +1560,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/desert-4/45498df618dd-r2/poster.jpg",
-      "bg": "previews/desert-4/45498df618dd-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/desert-4/45498df618dd-r3/poster.jpg",
+      "bg": "previews/desert-4/45498df618dd-r3/bg.webp",
+      "unlockBg": "previews/desert-4/45498df618dd-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/desert-4/45498df618dd/Desert.tendies",
       "fileName": "Desert.tendies",
       "bytes": 37406920,
@@ -2458,44 +2368,13 @@
       "id": "github",
       "name": "GitHub",
       "type": "collections",
-      "kind": "layered",
+      "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/github/8646f9f77026-r2/poster.jpg",
-      "fg": "previews/github/8646f9f77026-r2/fg.webp",
-      "unlockFg": "previews/github/8646f9f77026-r2/fg-unlock.webp",
-      "transitionFrames": [
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-01.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-02.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-03.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-04.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-05.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-06.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-07.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-08.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-09.webp"
-        },
-        {
-          "fg": "previews/github/8646f9f77026-r2/transition-fg-10.webp"
-        }
-      ],
+      "poster": "previews/github/8646f9f77026-r3/poster.jpg",
+      "bg": "previews/github/8646f9f77026-r3/bg.webp",
+      "unlockBg": "previews/github/8646f9f77026-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/github/8646f9f77026/GitHub.tendies",
       "fileName": "GitHub.tendies",
       "bytes": 165677,
@@ -2767,41 +2646,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/homebrewchannel/f662f84805b5-r2/poster.jpg",
-      "bg": "previews/homebrewchannel/f662f84805b5-r2/bg.webp",
-      "unlockBg": "previews/homebrewchannel/f662f84805b5-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/homebrewchannel/f662f84805b5-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/homebrewchannel/f662f84805b5-r3/poster.jpg",
+      "bg": "previews/homebrewchannel/f662f84805b5-r3/bg.webp",
+      "unlockBg": "previews/homebrewchannel/f662f84805b5-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/homebrewchannel/f662f84805b5/HomebrewChannel.tendies",
       "fileName": "HomebrewChannel.tendies",
       "bytes": 14599819,
@@ -2814,41 +2662,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/homebrewchannelred/31a46208266f-r2/poster.jpg",
-      "bg": "previews/homebrewchannelred/31a46208266f-r2/bg.webp",
-      "unlockBg": "previews/homebrewchannelred/31a46208266f-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/homebrewchannelred/31a46208266f-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/homebrewchannelred/31a46208266f-r3/poster.jpg",
+      "bg": "previews/homebrewchannelred/31a46208266f-r3/bg.webp",
+      "unlockBg": "previews/homebrewchannelred/31a46208266f-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/homebrewchannelred/31a46208266f/HomebrewChannelRed.tendies",
       "fileName": "HomebrewChannelRed.tendies",
       "bytes": 6213023,
@@ -3014,20 +2831,10 @@
       "kind": "image",
       "width": 375,
       "height": 812,
-      "poster": "previews/ios13/50d66ec8c084-r2/poster.jpg",
-      "bg": "previews/ios13/50d66ec8c084-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios13/50d66ec8c084-r3/poster.jpg",
+      "bg": "previews/ios13/50d66ec8c084-r3/bg.webp",
+      "unlockBg": "previews/ios13/50d66ec8c084-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios13/50d66ec8c084/iOS13.tendies",
       "fileName": "iOS13.tendies",
       "bytes": 39754850,
@@ -3040,20 +2847,10 @@
       "kind": "image",
       "width": 375,
       "height": 812,
-      "poster": "previews/ios13-2/50d66ec8c084-r2/poster.jpg",
-      "bg": "previews/ios13-2/50d66ec8c084-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios13-2/50d66ec8c084-r3/poster.jpg",
+      "bg": "previews/ios13-2/50d66ec8c084-r3/bg.webp",
+      "unlockBg": "previews/ios13-2/50d66ec8c084-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios13-2/50d66ec8c084/iOS13.tendies",
       "fileName": "iOS13.tendies",
       "bytes": 39754850,
@@ -3066,20 +2863,10 @@
       "kind": "image",
       "width": 375,
       "height": 812,
-      "poster": "previews/ios13-3/50d66ec8c084-r2/poster.jpg",
-      "bg": "previews/ios13-3/50d66ec8c084-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios13-3/50d66ec8c084-r3/poster.jpg",
+      "bg": "previews/ios13-3/50d66ec8c084-r3/bg.webp",
+      "unlockBg": "previews/ios13-3/50d66ec8c084-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios13-3/50d66ec8c084/iOS13.tendies",
       "fileName": "iOS13.tendies",
       "bytes": 39754850,
@@ -3092,20 +2879,10 @@
       "kind": "image",
       "width": 375,
       "height": 812,
-      "poster": "previews/ios13-4/50d66ec8c084-r2/poster.jpg",
-      "bg": "previews/ios13-4/50d66ec8c084-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios13-4/50d66ec8c084-r3/poster.jpg",
+      "bg": "previews/ios13-4/50d66ec8c084-r3/bg.webp",
+      "unlockBg": "previews/ios13-4/50d66ec8c084-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios13-4/50d66ec8c084/iOS13.tendies",
       "fileName": "iOS13.tendies",
       "bytes": 39754850,
@@ -3118,20 +2895,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ios14/1250d47fa884-r2/poster.jpg",
-      "bg": "previews/ios14/1250d47fa884-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios14/1250d47fa884-r3/poster.jpg",
+      "bg": "previews/ios14/1250d47fa884-r3/bg.webp",
+      "unlockBg": "previews/ios14/1250d47fa884-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios14/1250d47fa884/iOS14.tendies",
       "fileName": "iOS14.tendies",
       "bytes": 50017494,
@@ -3144,20 +2911,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ios14-2/1250d47fa884-r2/poster.jpg",
-      "bg": "previews/ios14-2/1250d47fa884-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios14-2/1250d47fa884-r3/poster.jpg",
+      "bg": "previews/ios14-2/1250d47fa884-r3/bg.webp",
+      "unlockBg": "previews/ios14-2/1250d47fa884-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios14-2/1250d47fa884/iOS14.tendies",
       "fileName": "iOS14.tendies",
       "bytes": 50017494,
@@ -3170,20 +2927,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ios14-3/1250d47fa884-r2/poster.jpg",
-      "bg": "previews/ios14-3/1250d47fa884-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios14-3/1250d47fa884-r3/poster.jpg",
+      "bg": "previews/ios14-3/1250d47fa884-r3/bg.webp",
+      "unlockBg": "previews/ios14-3/1250d47fa884-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios14-3/1250d47fa884/iOS14.tendies",
       "fileName": "iOS14.tendies",
       "bytes": 50017494,
@@ -3196,20 +2943,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ios15/71800debe85f-r2/poster.jpg",
-      "bg": "previews/ios15/71800debe85f-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ios15/71800debe85f-r3/poster.jpg",
+      "bg": "previews/ios15/71800debe85f-r3/bg.webp",
+      "unlockBg": "previews/ios15/71800debe85f-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios15/71800debe85f/iOS15.tendies",
       "fileName": "iOS15.tendies",
       "bytes": 20043988,
@@ -3222,41 +2959,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ios16/b5636fb1f03d-r2/poster.jpg",
-      "bg": "previews/ios16/b5636fb1f03d-r2/bg.webp",
-      "unlockBg": "previews/ios16/b5636fb1f03d-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/ios16/b5636fb1f03d-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/ios16/b5636fb1f03d-r3/poster.jpg",
+      "bg": "previews/ios16/b5636fb1f03d-r3/bg.webp",
+      "unlockBg": "previews/ios16/b5636fb1f03d-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ios16/b5636fb1f03d/iOS16.tendies",
       "fileName": "iOS16.tendies",
       "bytes": 12042929,
@@ -3266,42 +2972,54 @@
       "id": "ios17",
       "name": "iOS17",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 3174,
       "height": 3174,
-      "poster": "previews/ios17/93fa81f99259-r2/poster.jpg",
-      "bg": "previews/ios17/93fa81f99259-r2/bg.webp",
-      "unlockBg": "previews/ios17/93fa81f99259-r2/bg-unlock.webp",
+      "poster": "previews/ios17/93fa81f99259-r3/poster.jpg",
+      "bg": "previews/ios17/93fa81f99259-r3/bg.webp",
+      "fg": "previews/ios17/93fa81f99259-r3/fg.webp",
+      "unlockBg": "previews/ios17/93fa81f99259-r3/bg-unlock.webp",
+      "unlockFg": "previews/ios17/93fa81f99259-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-01.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-01.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-02.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-02.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-03.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-03.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-04.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-04.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-05.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-05.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-06.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-06.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-07.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-07.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-08.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-08.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-09.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-09.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/ios17/93fa81f99259-r2/transition-bg-10.webp"
+          "bg": "previews/ios17/93fa81f99259-r3/transition-bg-10.webp",
+          "fg": "previews/ios17/93fa81f99259-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/ios17/93fa81f99259/iOS17.tendies",
@@ -3434,20 +3152,10 @@
       "kind": "image",
       "width": 820,
       "height": 1180,
-      "poster": "previews/ipadairgen4/bafa63da7693-r2/poster.jpg",
-      "bg": "previews/ipadairgen4/bafa63da7693-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen4/bafa63da7693-r3/poster.jpg",
+      "bg": "previews/ipadairgen4/bafa63da7693-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen4/bafa63da7693-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen4/bafa63da7693/iPadAirGen4.tendies",
       "fileName": "iPadAirGen4.tendies",
       "bytes": 35903148,
@@ -3460,20 +3168,10 @@
       "kind": "image",
       "width": 820,
       "height": 1180,
-      "poster": "previews/ipadairgen4-2/bafa63da7693-r2/poster.jpg",
-      "bg": "previews/ipadairgen4-2/bafa63da7693-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen4-2/bafa63da7693-r3/poster.jpg",
+      "bg": "previews/ipadairgen4-2/bafa63da7693-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen4-2/bafa63da7693-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen4-2/bafa63da7693/iPadAirGen4.tendies",
       "fileName": "iPadAirGen4.tendies",
       "bytes": 35903148,
@@ -3486,20 +3184,10 @@
       "kind": "image",
       "width": 820,
       "height": 1180,
-      "poster": "previews/ipadairgen4-3/bafa63da7693-r2/poster.jpg",
-      "bg": "previews/ipadairgen4-3/bafa63da7693-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen4-3/bafa63da7693-r3/poster.jpg",
+      "bg": "previews/ipadairgen4-3/bafa63da7693-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen4-3/bafa63da7693-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen4-3/bafa63da7693/iPadAirGen4.tendies",
       "fileName": "iPadAirGen4.tendies",
       "bytes": 35903148,
@@ -3512,20 +3200,10 @@
       "kind": "image",
       "width": 820,
       "height": 1180,
-      "poster": "previews/ipadairgen4-4/bafa63da7693-r2/poster.jpg",
-      "bg": "previews/ipadairgen4-4/bafa63da7693-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen4-4/bafa63da7693-r3/poster.jpg",
+      "bg": "previews/ipadairgen4-4/bafa63da7693-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen4-4/bafa63da7693-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen4-4/bafa63da7693/iPadAirGen4.tendies",
       "fileName": "iPadAirGen4.tendies",
       "bytes": 35903148,
@@ -3538,20 +3216,10 @@
       "kind": "image",
       "width": 820,
       "height": 1180,
-      "poster": "previews/ipadairgen4-5/bafa63da7693-r2/poster.jpg",
-      "bg": "previews/ipadairgen4-5/bafa63da7693-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen4-5/bafa63da7693-r3/poster.jpg",
+      "bg": "previews/ipadairgen4-5/bafa63da7693-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen4-5/bafa63da7693-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen4-5/bafa63da7693/iPadAirGen4.tendies",
       "fileName": "iPadAirGen4.tendies",
       "bytes": 35903148,
@@ -3564,20 +3232,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadairgen5/d55dab9ca24d-r2/poster.jpg",
-      "bg": "previews/ipadairgen5/d55dab9ca24d-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen5/d55dab9ca24d-r3/poster.jpg",
+      "bg": "previews/ipadairgen5/d55dab9ca24d-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen5/d55dab9ca24d-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen5/d55dab9ca24d/iPadAirGen5.tendies",
       "fileName": "iPadAirGen5.tendies",
       "bytes": 40045063,
@@ -3590,20 +3248,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadairgen5-2/d55dab9ca24d-r2/poster.jpg",
-      "bg": "previews/ipadairgen5-2/d55dab9ca24d-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen5-2/d55dab9ca24d-r3/poster.jpg",
+      "bg": "previews/ipadairgen5-2/d55dab9ca24d-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen5-2/d55dab9ca24d-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen5-2/d55dab9ca24d/iPadAirGen5.tendies",
       "fileName": "iPadAirGen5.tendies",
       "bytes": 40045063,
@@ -3616,20 +3264,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadairgen5-3/d55dab9ca24d-r2/poster.jpg",
-      "bg": "previews/ipadairgen5-3/d55dab9ca24d-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen5-3/d55dab9ca24d-r3/poster.jpg",
+      "bg": "previews/ipadairgen5-3/d55dab9ca24d-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen5-3/d55dab9ca24d-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen5-3/d55dab9ca24d/iPadAirGen5.tendies",
       "fileName": "iPadAirGen5.tendies",
       "bytes": 40045063,
@@ -3642,20 +3280,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadairgen5-4/d55dab9ca24d-r2/poster.jpg",
-      "bg": "previews/ipadairgen5-4/d55dab9ca24d-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen5-4/d55dab9ca24d-r3/poster.jpg",
+      "bg": "previews/ipadairgen5-4/d55dab9ca24d-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen5-4/d55dab9ca24d-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen5-4/d55dab9ca24d/iPadAirGen5.tendies",
       "fileName": "iPadAirGen5.tendies",
       "bytes": 40045063,
@@ -3668,20 +3296,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadairgen5-5/d55dab9ca24d-r2/poster.jpg",
-      "bg": "previews/ipadairgen5-5/d55dab9ca24d-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadairgen5-5/d55dab9ca24d-r3/poster.jpg",
+      "bg": "previews/ipadairgen5-5/d55dab9ca24d-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen5-5/d55dab9ca24d-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen5-5/d55dab9ca24d/iPadAirGen5.tendies",
       "fileName": "iPadAirGen5.tendies",
       "bytes": 40045063,
@@ -3694,41 +3312,10 @@
       "kind": "image",
       "width": 3350,
       "height": 3350,
-      "poster": "previews/ipadairgen6/8ace517dced7-r2/poster.jpg",
-      "bg": "previews/ipadairgen6/8ace517dced7-r2/bg.webp",
-      "unlockBg": "previews/ipadairgen6/8ace517dced7-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6/8ace517dced7-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/ipadairgen6/8ace517dced7-r3/poster.jpg",
+      "bg": "previews/ipadairgen6/8ace517dced7-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen6/8ace517dced7-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen6/8ace517dced7/iPadAirGen6.tendies",
       "fileName": "iPadAirGen6.tendies",
       "bytes": 12368075,
@@ -3741,41 +3328,10 @@
       "kind": "image",
       "width": 3350,
       "height": 3350,
-      "poster": "previews/ipadairgen6-2/8ace517dced7-r2/poster.jpg",
-      "bg": "previews/ipadairgen6-2/8ace517dced7-r2/bg.webp",
-      "unlockBg": "previews/ipadairgen6-2/8ace517dced7-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-2/8ace517dced7-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/ipadairgen6-2/8ace517dced7-r3/poster.jpg",
+      "bg": "previews/ipadairgen6-2/8ace517dced7-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen6-2/8ace517dced7-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen6-2/8ace517dced7/iPadAirGen6.tendies",
       "fileName": "iPadAirGen6.tendies",
       "bytes": 12368075,
@@ -3788,41 +3344,10 @@
       "kind": "image",
       "width": 3350,
       "height": 3350,
-      "poster": "previews/ipadairgen6-3/8ace517dced7-r2/poster.jpg",
-      "bg": "previews/ipadairgen6-3/8ace517dced7-r2/bg.webp",
-      "unlockBg": "previews/ipadairgen6-3/8ace517dced7-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-3/8ace517dced7-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/ipadairgen6-3/8ace517dced7-r3/poster.jpg",
+      "bg": "previews/ipadairgen6-3/8ace517dced7-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen6-3/8ace517dced7-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen6-3/8ace517dced7/iPadAirGen6.tendies",
       "fileName": "iPadAirGen6.tendies",
       "bytes": 12368075,
@@ -3835,41 +3360,10 @@
       "kind": "image",
       "width": 3350,
       "height": 3350,
-      "poster": "previews/ipadairgen6-4/8ace517dced7-r2/poster.jpg",
-      "bg": "previews/ipadairgen6-4/8ace517dced7-r2/bg.webp",
-      "unlockBg": "previews/ipadairgen6-4/8ace517dced7-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/ipadairgen6-4/8ace517dced7-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/ipadairgen6-4/8ace517dced7-r3/poster.jpg",
+      "bg": "previews/ipadairgen6-4/8ace517dced7-r3/bg.webp",
+      "unlockBg": "previews/ipadairgen6-4/8ace517dced7-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadairgen6-4/8ace517dced7/iPadAirGen6.tendies",
       "fileName": "iPadAirGen6.tendies",
       "bytes": 12368075,
@@ -3882,20 +3376,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadminigen6/d87c5be74804-r2/poster.jpg",
-      "bg": "previews/ipadminigen6/d87c5be74804-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadminigen6/d87c5be74804-r3/poster.jpg",
+      "bg": "previews/ipadminigen6/d87c5be74804-r3/bg.webp",
+      "unlockBg": "previews/ipadminigen6/d87c5be74804-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadminigen6/d87c5be74804/iPadMiniGen6.tendies",
       "fileName": "iPadMiniGen6.tendies",
       "bytes": 21327418,
@@ -3908,20 +3392,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadminigen6-2/d87c5be74804-r2/poster.jpg",
-      "bg": "previews/ipadminigen6-2/d87c5be74804-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadminigen6-2/d87c5be74804-r3/poster.jpg",
+      "bg": "previews/ipadminigen6-2/d87c5be74804-r3/bg.webp",
+      "unlockBg": "previews/ipadminigen6-2/d87c5be74804-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadminigen6-2/d87c5be74804/iPadMiniGen6.tendies",
       "fileName": "iPadMiniGen6.tendies",
       "bytes": 21327418,
@@ -3934,20 +3408,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadminigen6-3/d87c5be74804-r2/poster.jpg",
-      "bg": "previews/ipadminigen6-3/d87c5be74804-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadminigen6-3/d87c5be74804-r3/poster.jpg",
+      "bg": "previews/ipadminigen6-3/d87c5be74804-r3/bg.webp",
+      "unlockBg": "previews/ipadminigen6-3/d87c5be74804-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadminigen6-3/d87c5be74804/iPadMiniGen6.tendies",
       "fileName": "iPadMiniGen6.tendies",
       "bytes": 21327418,
@@ -3960,20 +3424,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ipadminigen6-4/d87c5be74804-r2/poster.jpg",
-      "bg": "previews/ipadminigen6-4/d87c5be74804-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/ipadminigen6-4/d87c5be74804-r3/poster.jpg",
+      "bg": "previews/ipadminigen6-4/d87c5be74804-r3/bg.webp",
+      "unlockBg": "previews/ipadminigen6-4/d87c5be74804-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ipadminigen6-4/d87c5be74804/iPadMiniGen6.tendies",
       "fileName": "iPadMiniGen6.tendies",
       "bytes": 21327418,
@@ -3986,41 +3440,10 @@
       "kind": "image",
       "width": 1170,
       "height": 2532,
-      "poster": "previews/iphone-16e/863a173d3bc0-r2/poster.jpg",
-      "bg": "previews/iphone-16e/863a173d3bc0-r2/bg.webp",
-      "unlockBg": "previews/iphone-16e/863a173d3bc0-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/iphone-16e/863a173d3bc0-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/iphone-16e/863a173d3bc0-r3/poster.jpg",
+      "bg": "previews/iphone-16e/863a173d3bc0-r3/bg.webp",
+      "unlockBg": "previews/iphone-16e/863a173d3bc0-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphone-16e/863a173d3bc0/iPhone 16e.tendies",
       "fileName": "iPhone 16e.tendies",
       "bytes": 10762508,
@@ -4033,39 +3456,39 @@
       "kind": "image",
       "width": 2412,
       "height": 5244,
-      "poster": "previews/iphone-17/b98d543795dd-r2/poster.jpg",
-      "bg": "previews/iphone-17/b98d543795dd-r2/bg.webp",
-      "unlockBg": "previews/iphone-17/b98d543795dd-r2/bg-unlock.webp",
+      "poster": "previews/iphone-17/b98d543795dd-r3/poster.jpg",
+      "bg": "previews/iphone-17/b98d543795dd-r3/bg.webp",
+      "unlockBg": "previews/iphone-17/b98d543795dd-r3/bg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-01.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-01.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-02.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-02.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-03.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-03.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-04.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-04.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-05.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-05.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-06.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-06.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-07.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-07.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-08.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-08.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-09.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-09.webp"
         },
         {
-          "bg": "previews/iphone-17/b98d543795dd-r2/transition-bg-10.webp"
+          "bg": "previews/iphone-17/b98d543795dd-r3/transition-bg-10.webp"
         }
       ],
       "download": "originals/iphone-17/b98d543795dd/iPhone 17.tendies",
@@ -4080,39 +3503,39 @@
       "kind": "image",
       "width": 2412,
       "height": 5244,
-      "poster": "previews/iphone-17-2/b98d543795dd-r2/poster.jpg",
-      "bg": "previews/iphone-17-2/b98d543795dd-r2/bg.webp",
-      "unlockBg": "previews/iphone-17-2/b98d543795dd-r2/bg-unlock.webp",
+      "poster": "previews/iphone-17-2/b98d543795dd-r3/poster.jpg",
+      "bg": "previews/iphone-17-2/b98d543795dd-r3/bg.webp",
+      "unlockBg": "previews/iphone-17-2/b98d543795dd-r3/bg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-01.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-01.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-02.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-02.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-03.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-03.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-04.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-04.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-05.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-05.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-06.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-06.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-07.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-07.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-08.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-08.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-09.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-09.webp"
         },
         {
-          "bg": "previews/iphone-17-2/b98d543795dd-r2/transition-bg-10.webp"
+          "bg": "previews/iphone-17-2/b98d543795dd-r3/transition-bg-10.webp"
         }
       ],
       "download": "originals/iphone-17-2/b98d543795dd/iPhone 17.tendies",
@@ -4127,39 +3550,39 @@
       "kind": "image",
       "width": 2412,
       "height": 5244,
-      "poster": "previews/iphone-17-3/b98d543795dd-r2/poster.jpg",
-      "bg": "previews/iphone-17-3/b98d543795dd-r2/bg.webp",
-      "unlockBg": "previews/iphone-17-3/b98d543795dd-r2/bg-unlock.webp",
+      "poster": "previews/iphone-17-3/b98d543795dd-r3/poster.jpg",
+      "bg": "previews/iphone-17-3/b98d543795dd-r3/bg.webp",
+      "unlockBg": "previews/iphone-17-3/b98d543795dd-r3/bg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-01.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-01.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-02.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-02.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-03.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-03.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-04.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-04.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-05.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-05.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-06.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-06.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-07.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-07.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-08.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-08.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-09.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-09.webp"
         },
         {
-          "bg": "previews/iphone-17-3/b98d543795dd-r2/transition-bg-10.webp"
+          "bg": "previews/iphone-17-3/b98d543795dd-r3/transition-bg-10.webp"
         }
       ],
       "download": "originals/iphone-17-3/b98d543795dd/iPhone 17.tendies",
@@ -4174,39 +3597,39 @@
       "kind": "image",
       "width": 2412,
       "height": 5244,
-      "poster": "previews/iphone-17-4/b98d543795dd-r2/poster.jpg",
-      "bg": "previews/iphone-17-4/b98d543795dd-r2/bg.webp",
-      "unlockBg": "previews/iphone-17-4/b98d543795dd-r2/bg-unlock.webp",
+      "poster": "previews/iphone-17-4/b98d543795dd-r3/poster.jpg",
+      "bg": "previews/iphone-17-4/b98d543795dd-r3/bg.webp",
+      "unlockBg": "previews/iphone-17-4/b98d543795dd-r3/bg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-01.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-01.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-02.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-02.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-03.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-03.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-04.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-04.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-05.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-05.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-06.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-06.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-07.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-07.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-08.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-08.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-09.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-09.webp"
         },
         {
-          "bg": "previews/iphone-17-4/b98d543795dd-r2/transition-bg-10.webp"
+          "bg": "previews/iphone-17-4/b98d543795dd-r3/transition-bg-10.webp"
         }
       ],
       "download": "originals/iphone-17-4/b98d543795dd/iPhone 17.tendies",
@@ -4221,39 +3644,39 @@
       "kind": "image",
       "width": 2412,
       "height": 5244,
-      "poster": "previews/iphone-17-5/b98d543795dd-r2/poster.jpg",
-      "bg": "previews/iphone-17-5/b98d543795dd-r2/bg.webp",
-      "unlockBg": "previews/iphone-17-5/b98d543795dd-r2/bg-unlock.webp",
+      "poster": "previews/iphone-17-5/b98d543795dd-r3/poster.jpg",
+      "bg": "previews/iphone-17-5/b98d543795dd-r3/bg.webp",
+      "unlockBg": "previews/iphone-17-5/b98d543795dd-r3/bg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-01.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-01.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-02.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-02.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-03.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-03.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-04.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-04.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-05.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-05.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-06.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-06.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-07.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-07.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-08.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-08.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-09.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-09.webp"
         },
         {
-          "bg": "previews/iphone-17-5/b98d543795dd-r2/transition-bg-10.webp"
+          "bg": "previews/iphone-17-5/b98d543795dd-r3/transition-bg-10.webp"
         }
       ],
       "download": "originals/iphone-17-5/b98d543795dd/iPhone 17.tendies",
@@ -4483,41 +3906,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphone14/3460994d8893-r2/poster.jpg",
-      "bg": "previews/iphone14/3460994d8893-r2/bg.webp",
-      "unlockBg": "previews/iphone14/3460994d8893-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/iphone14/3460994d8893-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/iphone14/3460994d8893-r3/poster.jpg",
+      "bg": "previews/iphone14/3460994d8893-r3/bg.webp",
+      "unlockBg": "previews/iphone14/3460994d8893-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphone14/3460994d8893/iPhone14.tendies",
       "fileName": "iPhone14.tendies",
       "bytes": 15367663,
@@ -4530,41 +3922,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphone14-2/3460994d8893-r2/poster.jpg",
-      "bg": "previews/iphone14-2/3460994d8893-r2/bg.webp",
-      "unlockBg": "previews/iphone14-2/3460994d8893-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/iphone14-2/3460994d8893-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/iphone14-2/3460994d8893-r3/poster.jpg",
+      "bg": "previews/iphone14-2/3460994d8893-r3/bg.webp",
+      "unlockBg": "previews/iphone14-2/3460994d8893-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphone14-2/3460994d8893/iPhone14.tendies",
       "fileName": "iPhone14.tendies",
       "bytes": 15367663,
@@ -4577,41 +3938,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphone14-3/3460994d8893-r2/poster.jpg",
-      "bg": "previews/iphone14-3/3460994d8893-r2/bg.webp",
-      "unlockBg": "previews/iphone14-3/3460994d8893-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/iphone14-3/3460994d8893-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/iphone14-3/3460994d8893-r3/poster.jpg",
+      "bg": "previews/iphone14-3/3460994d8893-r3/bg.webp",
+      "unlockBg": "previews/iphone14-3/3460994d8893-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphone14-3/3460994d8893/iPhone14.tendies",
       "fileName": "iPhone14.tendies",
       "bytes": 15367663,
@@ -4624,41 +3954,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphone14-4/3460994d8893-r2/poster.jpg",
-      "bg": "previews/iphone14-4/3460994d8893-r2/bg.webp",
-      "unlockBg": "previews/iphone14-4/3460994d8893-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/iphone14-4/3460994d8893-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/iphone14-4/3460994d8893-r3/poster.jpg",
+      "bg": "previews/iphone14-4/3460994d8893-r3/bg.webp",
+      "unlockBg": "previews/iphone14-4/3460994d8893-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphone14-4/3460994d8893/iPhone14.tendies",
       "fileName": "iPhone14.tendies",
       "bytes": 15367663,
@@ -4671,41 +3970,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphone14-5/3460994d8893-r2/poster.jpg",
-      "bg": "previews/iphone14-5/3460994d8893-r2/bg.webp",
-      "unlockBg": "previews/iphone14-5/3460994d8893-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/iphone14-5/3460994d8893-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/iphone14-5/3460994d8893-r3/poster.jpg",
+      "bg": "previews/iphone14-5/3460994d8893-r3/bg.webp",
+      "unlockBg": "previews/iphone14-5/3460994d8893-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphone14-5/3460994d8893/iPhone14.tendies",
       "fileName": "iPhone14.tendies",
       "bytes": 15367663,
@@ -4718,41 +3986,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphone14-6/3460994d8893-r2/poster.jpg",
-      "bg": "previews/iphone14-6/3460994d8893-r2/bg.webp",
-      "unlockBg": "previews/iphone14-6/3460994d8893-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/iphone14-6/3460994d8893-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/iphone14-6/3460994d8893-r3/poster.jpg",
+      "bg": "previews/iphone14-6/3460994d8893-r3/bg.webp",
+      "unlockBg": "previews/iphone14-6/3460994d8893-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphone14-6/3460994d8893/iPhone14.tendies",
       "fileName": "iPhone14.tendies",
       "bytes": 15367663,
@@ -4950,42 +4187,54 @@
       "id": "iphone15",
       "name": "iPhone15",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 3462,
       "height": 3462,
-      "poster": "previews/iphone15/488caf0c892e-r2/poster.jpg",
-      "bg": "previews/iphone15/488caf0c892e-r2/bg.webp",
-      "unlockBg": "previews/iphone15/488caf0c892e-r2/bg-unlock.webp",
+      "poster": "previews/iphone15/488caf0c892e-r3/poster.jpg",
+      "bg": "previews/iphone15/488caf0c892e-r3/bg.webp",
+      "fg": "previews/iphone15/488caf0c892e-r3/fg.webp",
+      "unlockBg": "previews/iphone15/488caf0c892e-r3/bg-unlock.webp",
+      "unlockFg": "previews/iphone15/488caf0c892e-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-01.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-01.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-02.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-02.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-03.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-03.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-04.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-04.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-05.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-05.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-06.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-06.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-07.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-07.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-08.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-08.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-09.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-09.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/iphone15/488caf0c892e-r2/transition-bg-10.webp"
+          "bg": "previews/iphone15/488caf0c892e-r3/transition-bg-10.webp",
+          "fg": "previews/iphone15/488caf0c892e-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/iphone15/488caf0c892e/iPhone15.tendies",
@@ -4997,42 +4246,54 @@
       "id": "iphone15-2",
       "name": "iPhone15",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 3462,
       "height": 3462,
-      "poster": "previews/iphone15-2/488caf0c892e-r2/poster.jpg",
-      "bg": "previews/iphone15-2/488caf0c892e-r2/bg.webp",
-      "unlockBg": "previews/iphone15-2/488caf0c892e-r2/bg-unlock.webp",
+      "poster": "previews/iphone15-2/488caf0c892e-r3/poster.jpg",
+      "bg": "previews/iphone15-2/488caf0c892e-r3/bg.webp",
+      "fg": "previews/iphone15-2/488caf0c892e-r3/fg.webp",
+      "unlockBg": "previews/iphone15-2/488caf0c892e-r3/bg-unlock.webp",
+      "unlockFg": "previews/iphone15-2/488caf0c892e-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-01.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-01.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-02.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-02.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-03.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-03.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-04.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-04.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-05.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-05.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-06.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-06.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-07.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-07.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-08.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-08.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-09.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-09.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/iphone15-2/488caf0c892e-r2/transition-bg-10.webp"
+          "bg": "previews/iphone15-2/488caf0c892e-r3/transition-bg-10.webp",
+          "fg": "previews/iphone15-2/488caf0c892e-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/iphone15-2/488caf0c892e/iPhone15.tendies",
@@ -5044,42 +4305,54 @@
       "id": "iphone15-3",
       "name": "iPhone15",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 3462,
       "height": 3462,
-      "poster": "previews/iphone15-3/488caf0c892e-r2/poster.jpg",
-      "bg": "previews/iphone15-3/488caf0c892e-r2/bg.webp",
-      "unlockBg": "previews/iphone15-3/488caf0c892e-r2/bg-unlock.webp",
+      "poster": "previews/iphone15-3/488caf0c892e-r3/poster.jpg",
+      "bg": "previews/iphone15-3/488caf0c892e-r3/bg.webp",
+      "fg": "previews/iphone15-3/488caf0c892e-r3/fg.webp",
+      "unlockBg": "previews/iphone15-3/488caf0c892e-r3/bg-unlock.webp",
+      "unlockFg": "previews/iphone15-3/488caf0c892e-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-01.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-01.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-02.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-02.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-03.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-03.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-04.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-04.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-05.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-05.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-06.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-06.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-07.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-07.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-08.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-08.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-09.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-09.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/iphone15-3/488caf0c892e-r2/transition-bg-10.webp"
+          "bg": "previews/iphone15-3/488caf0c892e-r3/transition-bg-10.webp",
+          "fg": "previews/iphone15-3/488caf0c892e-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/iphone15-3/488caf0c892e/iPhone15.tendies",
@@ -5091,42 +4364,54 @@
       "id": "iphone15-4",
       "name": "iPhone15",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 3462,
       "height": 3462,
-      "poster": "previews/iphone15-4/488caf0c892e-r2/poster.jpg",
-      "bg": "previews/iphone15-4/488caf0c892e-r2/bg.webp",
-      "unlockBg": "previews/iphone15-4/488caf0c892e-r2/bg-unlock.webp",
+      "poster": "previews/iphone15-4/488caf0c892e-r3/poster.jpg",
+      "bg": "previews/iphone15-4/488caf0c892e-r3/bg.webp",
+      "fg": "previews/iphone15-4/488caf0c892e-r3/fg.webp",
+      "unlockBg": "previews/iphone15-4/488caf0c892e-r3/bg-unlock.webp",
+      "unlockFg": "previews/iphone15-4/488caf0c892e-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-01.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-01.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-02.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-02.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-03.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-03.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-04.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-04.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-05.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-05.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-06.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-06.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-07.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-07.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-08.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-08.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-09.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-09.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/iphone15-4/488caf0c892e-r2/transition-bg-10.webp"
+          "bg": "previews/iphone15-4/488caf0c892e-r3/transition-bg-10.webp",
+          "fg": "previews/iphone15-4/488caf0c892e-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/iphone15-4/488caf0c892e/iPhone15.tendies",
@@ -5138,42 +4423,54 @@
       "id": "iphone15-5",
       "name": "iPhone15",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 3462,
       "height": 3462,
-      "poster": "previews/iphone15-5/488caf0c892e-r2/poster.jpg",
-      "bg": "previews/iphone15-5/488caf0c892e-r2/bg.webp",
-      "unlockBg": "previews/iphone15-5/488caf0c892e-r2/bg-unlock.webp",
+      "poster": "previews/iphone15-5/488caf0c892e-r3/poster.jpg",
+      "bg": "previews/iphone15-5/488caf0c892e-r3/bg.webp",
+      "fg": "previews/iphone15-5/488caf0c892e-r3/fg.webp",
+      "unlockBg": "previews/iphone15-5/488caf0c892e-r3/bg-unlock.webp",
+      "unlockFg": "previews/iphone15-5/488caf0c892e-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-01.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-01.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-02.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-02.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-03.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-03.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-04.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-04.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-05.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-05.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-06.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-06.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-07.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-07.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-08.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-08.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-09.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-09.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/iphone15-5/488caf0c892e-r2/transition-bg-10.webp"
+          "bg": "previews/iphone15-5/488caf0c892e-r3/transition-bg-10.webp",
+          "fg": "previews/iphone15-5/488caf0c892e-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/iphone15-5/488caf0c892e/iPhone15.tendies",
@@ -5848,20 +5145,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen2/2ba30afea3c9-r2/poster.jpg",
-      "bg": "previews/iphonesegen2/2ba30afea3c9-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen2/2ba30afea3c9-r3/poster.jpg",
+      "bg": "previews/iphonesegen2/2ba30afea3c9-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen2/2ba30afea3c9-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen2/2ba30afea3c9/iPhoneSEGen2.tendies",
       "fileName": "iPhoneSEGen2.tendies",
       "bytes": 23303551,
@@ -5874,20 +5161,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen2-2/2ba30afea3c9-r2/poster.jpg",
-      "bg": "previews/iphonesegen2-2/2ba30afea3c9-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen2-2/2ba30afea3c9-r3/poster.jpg",
+      "bg": "previews/iphonesegen2-2/2ba30afea3c9-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen2-2/2ba30afea3c9-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen2-2/2ba30afea3c9/iPhoneSEGen2.tendies",
       "fileName": "iPhoneSEGen2.tendies",
       "bytes": 23303551,
@@ -5900,20 +5177,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen2-3/2ba30afea3c9-r2/poster.jpg",
-      "bg": "previews/iphonesegen2-3/2ba30afea3c9-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen2-3/2ba30afea3c9-r3/poster.jpg",
+      "bg": "previews/iphonesegen2-3/2ba30afea3c9-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen2-3/2ba30afea3c9-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen2-3/2ba30afea3c9/iPhoneSEGen2.tendies",
       "fileName": "iPhoneSEGen2.tendies",
       "bytes": 23303551,
@@ -5926,20 +5193,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen2-4/2ba30afea3c9-r2/poster.jpg",
-      "bg": "previews/iphonesegen2-4/2ba30afea3c9-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen2-4/2ba30afea3c9-r3/poster.jpg",
+      "bg": "previews/iphonesegen2-4/2ba30afea3c9-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen2-4/2ba30afea3c9-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen2-4/2ba30afea3c9/iPhoneSEGen2.tendies",
       "fileName": "iPhoneSEGen2.tendies",
       "bytes": 23303551,
@@ -5952,20 +5209,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen2-5/2ba30afea3c9-r2/poster.jpg",
-      "bg": "previews/iphonesegen2-5/2ba30afea3c9-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen2-5/2ba30afea3c9-r3/poster.jpg",
+      "bg": "previews/iphonesegen2-5/2ba30afea3c9-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen2-5/2ba30afea3c9-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen2-5/2ba30afea3c9/iPhoneSEGen2.tendies",
       "fileName": "iPhoneSEGen2.tendies",
       "bytes": 23303551,
@@ -5978,20 +5225,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen2-6/2ba30afea3c9-r2/poster.jpg",
-      "bg": "previews/iphonesegen2-6/2ba30afea3c9-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen2-6/2ba30afea3c9-r3/poster.jpg",
+      "bg": "previews/iphonesegen2-6/2ba30afea3c9-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen2-6/2ba30afea3c9-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen2-6/2ba30afea3c9/iPhoneSEGen2.tendies",
       "fileName": "iPhoneSEGen2.tendies",
       "bytes": 23303551,
@@ -6004,20 +5241,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen3/bec6bb4bcb75-r2/poster.jpg",
-      "bg": "previews/iphonesegen3/bec6bb4bcb75-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen3/bec6bb4bcb75-r3/poster.jpg",
+      "bg": "previews/iphonesegen3/bec6bb4bcb75-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen3/bec6bb4bcb75-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen3/bec6bb4bcb75/iPhoneSEGen3.tendies",
       "fileName": "iPhoneSEGen3.tendies",
       "bytes": 11507697,
@@ -6030,20 +5257,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen3-2/bec6bb4bcb75-r2/poster.jpg",
-      "bg": "previews/iphonesegen3-2/bec6bb4bcb75-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen3-2/bec6bb4bcb75-r3/poster.jpg",
+      "bg": "previews/iphonesegen3-2/bec6bb4bcb75-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen3-2/bec6bb4bcb75-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen3-2/bec6bb4bcb75/iPhoneSEGen3.tendies",
       "fileName": "iPhoneSEGen3.tendies",
       "bytes": 11507697,
@@ -6056,20 +5273,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/iphonesegen3-3/bec6bb4bcb75-r2/poster.jpg",
-      "bg": "previews/iphonesegen3-3/bec6bb4bcb75-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/iphonesegen3-3/bec6bb4bcb75-r3/poster.jpg",
+      "bg": "previews/iphonesegen3-3/bec6bb4bcb75-r3/bg.webp",
+      "unlockBg": "previews/iphonesegen3-3/bec6bb4bcb75-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/iphonesegen3-3/bec6bb4bcb75/iPhoneSEGen3.tendies",
       "fileName": "iPhoneSEGen3.tendies",
       "bytes": 11507697,
@@ -6082,41 +5289,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/isoda/48e3b5e5cfe6-r2/poster.jpg",
-      "bg": "previews/isoda/48e3b5e5cfe6-r2/bg.webp",
-      "unlockBg": "previews/isoda/48e3b5e5cfe6-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/isoda/48e3b5e5cfe6-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/isoda/48e3b5e5cfe6-r3/poster.jpg",
+      "bg": "previews/isoda/48e3b5e5cfe6-r3/bg.webp",
+      "unlockBg": "previews/isoda/48e3b5e5cfe6-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/isoda/48e3b5e5cfe6/iSoda.tendies",
       "fileName": "iSoda.tendies",
       "bytes": 11355331,
@@ -6129,41 +5305,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/isoda-2/48e3b5e5cfe6-r2/poster.jpg",
-      "bg": "previews/isoda-2/48e3b5e5cfe6-r2/bg.webp",
-      "unlockBg": "previews/isoda-2/48e3b5e5cfe6-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/isoda-2/48e3b5e5cfe6-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/isoda-2/48e3b5e5cfe6-r3/poster.jpg",
+      "bg": "previews/isoda-2/48e3b5e5cfe6-r3/bg.webp",
+      "unlockBg": "previews/isoda-2/48e3b5e5cfe6-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/isoda-2/48e3b5e5cfe6/iSoda.tendies",
       "fileName": "iSoda.tendies",
       "bytes": 11355331,
@@ -6176,41 +5321,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/isoda-3/48e3b5e5cfe6-r2/poster.jpg",
-      "bg": "previews/isoda-3/48e3b5e5cfe6-r2/bg.webp",
-      "unlockBg": "previews/isoda-3/48e3b5e5cfe6-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/isoda-3/48e3b5e5cfe6-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/isoda-3/48e3b5e5cfe6-r3/poster.jpg",
+      "bg": "previews/isoda-3/48e3b5e5cfe6-r3/bg.webp",
+      "unlockBg": "previews/isoda-3/48e3b5e5cfe6-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/isoda-3/48e3b5e5cfe6/iSoda.tendies",
       "fileName": "iSoda.tendies",
       "bytes": 11355331,
@@ -6223,41 +5337,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/isoda-4/48e3b5e5cfe6-r2/poster.jpg",
-      "bg": "previews/isoda-4/48e3b5e5cfe6-r2/bg.webp",
-      "unlockBg": "previews/isoda-4/48e3b5e5cfe6-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/isoda-4/48e3b5e5cfe6-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/isoda-4/48e3b5e5cfe6-r3/poster.jpg",
+      "bg": "previews/isoda-4/48e3b5e5cfe6-r3/bg.webp",
+      "unlockBg": "previews/isoda-4/48e3b5e5cfe6-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/isoda-4/48e3b5e5cfe6/iSoda.tendies",
       "fileName": "iSoda.tendies",
       "bytes": 11355331,
@@ -6529,20 +5612,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/lake/a3394fc8d2cb-r2/poster.jpg",
-      "bg": "previews/lake/a3394fc8d2cb-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/lake/a3394fc8d2cb-r3/poster.jpg",
+      "bg": "previews/lake/a3394fc8d2cb-r3/bg.webp",
+      "unlockBg": "previews/lake/a3394fc8d2cb-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/lake/a3394fc8d2cb/Lake.tendies",
       "fileName": "Lake.tendies",
       "bytes": 27532576,
@@ -6555,20 +5628,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/lake-2/a3394fc8d2cb-r2/poster.jpg",
-      "bg": "previews/lake-2/a3394fc8d2cb-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/lake-2/a3394fc8d2cb-r3/poster.jpg",
+      "bg": "previews/lake-2/a3394fc8d2cb-r3/bg.webp",
+      "unlockBg": "previews/lake-2/a3394fc8d2cb-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/lake-2/a3394fc8d2cb/Lake.tendies",
       "fileName": "Lake.tendies",
       "bytes": 27532576,
@@ -6581,20 +5644,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/lake-3/a3394fc8d2cb-r2/poster.jpg",
-      "bg": "previews/lake-3/a3394fc8d2cb-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/lake-3/a3394fc8d2cb-r3/poster.jpg",
+      "bg": "previews/lake-3/a3394fc8d2cb-r3/bg.webp",
+      "unlockBg": "previews/lake-3/a3394fc8d2cb-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/lake-3/a3394fc8d2cb/Lake.tendies",
       "fileName": "Lake.tendies",
       "bytes": 27532576,
@@ -6607,20 +5660,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/lake-4/a3394fc8d2cb-r2/poster.jpg",
-      "bg": "previews/lake-4/a3394fc8d2cb-r2/bg.webp",
-      "transitionFrames": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "poster": "previews/lake-4/a3394fc8d2cb-r3/poster.jpg",
+      "bg": "previews/lake-4/a3394fc8d2cb-r3/bg.webp",
+      "unlockBg": "previews/lake-4/a3394fc8d2cb-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/lake-4/a3394fc8d2cb/Lake.tendies",
       "fileName": "Lake.tendies",
       "bytes": 27532576,
@@ -8247,41 +7290,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/skelet/456475513224-r2/poster.jpg",
-      "bg": "previews/skelet/456475513224-r2/bg.webp",
-      "unlockBg": "previews/skelet/456475513224-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/skelet/456475513224-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/skelet/456475513224-r3/poster.jpg",
+      "bg": "previews/skelet/456475513224-r3/bg.webp",
+      "unlockBg": "previews/skelet/456475513224-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/skelet/456475513224/Skelet.tendies",
       "fileName": "Skelet.tendies",
       "bytes": 90626966,
@@ -8353,41 +7365,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/snoopy/2d83542c3d82-r2/poster.jpg",
-      "bg": "previews/snoopy/2d83542c3d82-r2/bg.webp",
-      "unlockBg": "previews/snoopy/2d83542c3d82-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/snoopy/2d83542c3d82-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/snoopy/2d83542c3d82-r3/poster.jpg",
+      "bg": "previews/snoopy/2d83542c3d82-r3/bg.webp",
+      "unlockBg": "previews/snoopy/2d83542c3d82-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/snoopy/2d83542c3d82/Snoopy.tendies",
       "fileName": "Snoopy.tendies",
       "bytes": 294784,
@@ -8604,41 +7585,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/stars/310befb6ac2e-r2/poster.jpg",
-      "bg": "previews/stars/310befb6ac2e-r2/bg.webp",
-      "unlockBg": "previews/stars/310befb6ac2e-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/stars/310befb6ac2e-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/stars/310befb6ac2e-r3/poster.jpg",
+      "bg": "previews/stars/310befb6ac2e-r3/bg.webp",
+      "unlockBg": "previews/stars/310befb6ac2e-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/stars/310befb6ac2e/Stars.tendies",
       "fileName": "Stars.tendies",
       "bytes": 872098,
@@ -8698,41 +7648,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/stonksdown/cfc0f400c085-r2/poster.jpg",
-      "bg": "previews/stonksdown/cfc0f400c085-r2/bg.webp",
-      "unlockBg": "previews/stonksdown/cfc0f400c085-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/stonksdown/cfc0f400c085-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/stonksdown/cfc0f400c085-r3/poster.jpg",
+      "bg": "previews/stonksdown/cfc0f400c085-r3/bg.webp",
+      "unlockBg": "previews/stonksdown/cfc0f400c085-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/stonksdown/cfc0f400c085/StonksDown.tendies",
       "fileName": "StonksDown.tendies",
       "bytes": 3022624,
@@ -8745,41 +7664,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/stonksup/5275121771b0-r2/poster.jpg",
-      "bg": "previews/stonksup/5275121771b0-r2/bg.webp",
-      "unlockBg": "previews/stonksup/5275121771b0-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/stonksup/5275121771b0-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/stonksup/5275121771b0-r3/poster.jpg",
+      "bg": "previews/stonksup/5275121771b0-r3/bg.webp",
+      "unlockBg": "previews/stonksup/5275121771b0-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/stonksup/5275121771b0/StonksUp.tendies",
       "fileName": "StonksUp.tendies",
       "bytes": 2786115,
@@ -8792,41 +7680,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/supermariobros/a69e96ddddd6-r2/poster.jpg",
-      "bg": "previews/supermariobros/a69e96ddddd6-r2/bg.webp",
-      "unlockBg": "previews/supermariobros/a69e96ddddd6-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/supermariobros/a69e96ddddd6-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/supermariobros/a69e96ddddd6-r3/poster.jpg",
+      "bg": "previews/supermariobros/a69e96ddddd6-r3/bg.webp",
+      "unlockBg": "previews/supermariobros/a69e96ddddd6-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/supermariobros/a69e96ddddd6/SuperMarioBros.tendies",
       "fileName": "SuperMarioBros.tendies",
       "bytes": 901958,
@@ -9095,44 +7952,13 @@
       "id": "ubuntu",
       "name": "ubuntu",
       "type": "collections",
-      "kind": "layered",
+      "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/ubuntu/cdcd98eebd63-r2/poster.jpg",
-      "fg": "previews/ubuntu/cdcd98eebd63-r2/fg.webp",
-      "unlockFg": "previews/ubuntu/cdcd98eebd63-r2/fg-unlock.webp",
-      "transitionFrames": [
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-01.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-02.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-03.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-04.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-05.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-06.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-07.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-08.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-09.webp"
-        },
-        {
-          "fg": "previews/ubuntu/cdcd98eebd63-r2/transition-fg-10.webp"
-        }
-      ],
+      "poster": "previews/ubuntu/cdcd98eebd63-r3/poster.jpg",
+      "bg": "previews/ubuntu/cdcd98eebd63-r3/bg.webp",
+      "unlockBg": "previews/ubuntu/cdcd98eebd63-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/ubuntu/cdcd98eebd63/ubuntu.tendies",
       "fileName": "ubuntu.tendies",
       "bytes": 1991684,
@@ -9145,41 +7971,10 @@
       "kind": "image",
       "width": 390,
       "height": 844,
-      "poster": "previews/undertaleruins/b53e0bff3237-r2/poster.jpg",
-      "bg": "previews/undertaleruins/b53e0bff3237-r2/bg.webp",
-      "unlockBg": "previews/undertaleruins/b53e0bff3237-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/undertaleruins/b53e0bff3237-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/undertaleruins/b53e0bff3237-r3/poster.jpg",
+      "bg": "previews/undertaleruins/b53e0bff3237-r3/bg.webp",
+      "unlockBg": "previews/undertaleruins/b53e0bff3237-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/undertaleruins/b53e0bff3237/UndertaleRuins.tendies",
       "fileName": "UndertaleRuins.tendies",
       "bytes": 30647905,
@@ -9580,41 +8375,10 @@
       "kind": "image",
       "width": 3176,
       "height": 3176,
-      "poster": "previews/wiibeer/5e6401df43f7-r2/poster.jpg",
-      "bg": "previews/wiibeer/5e6401df43f7-r2/bg.webp",
-      "unlockBg": "previews/wiibeer/5e6401df43f7-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/wiibeer/5e6401df43f7-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/wiibeer/5e6401df43f7-r3/poster.jpg",
+      "bg": "previews/wiibeer/5e6401df43f7-r3/bg.webp",
+      "unlockBg": "previews/wiibeer/5e6401df43f7-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/wiibeer/5e6401df43f7/WiiBeer.tendies",
       "fileName": "WiiBeer.tendies",
       "bytes": 6404466,
@@ -9627,41 +8391,10 @@
       "kind": "image",
       "width": 428,
       "height": 926,
-      "poster": "previews/wiifix/b59688d31293-r2/poster.jpg",
-      "bg": "previews/wiifix/b59688d31293-r2/bg.webp",
-      "unlockBg": "previews/wiifix/b59688d31293-r2/bg-unlock.webp",
-      "transitionFrames": [
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-01.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-02.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-03.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-04.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-05.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-06.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-07.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-08.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-09.webp"
-        },
-        {
-          "bg": "previews/wiifix/b59688d31293-r2/transition-bg-10.webp"
-        }
-      ],
+      "poster": "previews/wiifix/b59688d31293-r3/poster.jpg",
+      "bg": "previews/wiifix/b59688d31293-r3/bg.webp",
+      "unlockBg": "previews/wiifix/b59688d31293-r3/bg-unlock.webp",
+      "transitionFrames": [],
       "download": "originals/wiifix/b59688d31293/wiiFIX.tendies",
       "fileName": "wiiFIX.tendies",
       "bytes": 160917,
@@ -9671,42 +8404,42 @@
       "id": "windows11",
       "name": "windows11",
       "type": "collections",
-      "kind": "image",
+      "kind": "layered",
       "width": 390,
       "height": 844,
-      "poster": "previews/windows11/3b4dd2892845-r2/poster.jpg",
-      "bg": "previews/windows11/3b4dd2892845-r2/bg.webp",
-      "unlockBg": "previews/windows11/3b4dd2892845-r2/bg-unlock.webp",
+      "poster": "previews/windows11/3b4dd2892845-r3/poster.jpg",
+      "fg": "previews/windows11/3b4dd2892845-r3/fg.webp",
+      "unlockFg": "previews/windows11/3b4dd2892845-r3/fg-unlock.webp",
       "transitionFrames": [
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-01.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-01.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-02.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-02.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-03.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-03.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-04.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-04.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-05.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-05.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-06.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-06.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-07.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-07.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-08.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-08.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-09.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-09.webp"
         },
         {
-          "bg": "previews/windows11/3b4dd2892845-r2/transition-bg-10.webp"
+          "fg": "previews/windows11/3b4dd2892845-r3/transition-fg-10.webp"
         }
       ],
       "download": "originals/windows11/3b4dd2892845/windows11.tendies",
