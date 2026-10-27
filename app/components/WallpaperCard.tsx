@@ -19,13 +19,12 @@ export function WallpaperCard({ item, eager = false, onOpen }: Props) {
   const [errored, setErrored] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
-  // Handle images that load from cache (onLoad may not fire)
+  // Cached images can finish before onLoad is attached. A lazy image that
+  // has not started yet also reports complete with naturalWidth 0, so only
+  // a decoded frame counts here; real failures still come through onError.
   useEffect(() => {
     const img = imgRef.current;
-    if (img?.complete) {
-      if (img.naturalWidth > 0) setLoaded(true);
-      else setErrored(true);
-    }
+    if (img?.complete && img.naturalWidth > 0) setLoaded(true);
   }, []);
 
   return (

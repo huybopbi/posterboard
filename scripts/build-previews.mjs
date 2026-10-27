@@ -67,9 +67,11 @@ function parsePair(value, fallbackA, fallbackB) {
 }
 
 function parseBounds(value) {
-  if (typeof value !== "string") return { w: 0, h: 0 };
+  if (typeof value !== "string") return { x: 0, y: 0, w: 0, h: 0 };
   const parts = value.trim().split(/\s+/).map(Number);
   return {
+    x: Number.isFinite(parts[0]) ? parts[0] : 0,
+    y: Number.isFinite(parts[1]) ? parts[1] : 0,
     w: Number.isFinite(parts[2]) ? parts[2] : 0,
     h: Number.isFinite(parts[3]) ? parts[3] : 0,
   };
@@ -152,31 +154,54 @@ function collectStateOverrides(layer, stateName, into) {
       into.set(targetId, current);
     }
   }
-  for (const child of asArray(layer.sublayers?.CALayer)) collectStateOverrides(child, stateName, into);
+  for (const child of childLayers(layer)) collectStateOverrides(child, stateName, into);
+}
+
+function decodeSrc(src) {
+  if (typeof src !== "string" || src === "") return null;
+  try {
+    return decodeURIComponent(src);
+  } catch {
+    return src;
+  }
+}
+
+function imageFromContents(contents) {
+  if (!contents || typeof contents !== "object") return null;
+  const image = contents.CGImage ?? contents.image ?? contents;
+  return decodeSrc(attr(image, "src"));
 }
 
 function imageSrc(layer) {
-  const image = layer.contents?.CGImage ?? layer.contents?.image;
-  if (!image || typeof image !== "object") return null;
-  const src = attr(image, "src");
-  return typeof src === "string" ? src : null;
+  const own = imageFromContents(layer?.contents);
+  if (own) return own;
+  for (const cell of asArray(layer?.emitterCells?.CAEmitterCell)) {
+    const src = imageFromContents(cell?.contents);
+    if (src) return src;
+  }
+  return null;
 }
 
-function paintOrder(layer, acc) {
-  if (String(attr(layer, "hidden")) === "1") return;
-  if (imageSrc(layer)) acc.push(layer);
-  const children = [...asArray(layer.sublayers?.CALayer)].sort(
-    (a, b) => num(attr(a, "zPosition")) - num(attr(b, "zPosition")),
-  );
-  for (const child of children) paintOrder(child, acc);
+function childLayers(layer) {
+  const sublayers = layer?.sublayers;
+  if (!sublayers || typeof sublayers !== "object") return [];
+  const children = [];
+  for (const [key, value] of Object.entries(sublayers)) {
+    if (key.startsWith("@_")) continue;
+    for (const child of asArray(value)) {
+      if (child && typeof child === "object") children.push(child);
+    }
+  }
+  children.sort((a, b) => num(attr(a, "zPosition")) - num(attr(b, "zPosition")));
+  return children;
 }
 
-function layerBox(layer, overrides, canvasHeight, transition) {
+function placedBox(layer, parentOrigin, overrides, canvasHeight, transition) {
   const over = overrides.get(attr(layer, "id")) ?? {};
   const from = transition?.from.get(attr(layer, "id")) ?? {};
   const to = transition?.to.get(attr(layer, "id")) ?? {};
   const bounds = parseBounds(attr(layer, "bounds"));
-  const [px, py] = parsePair(attr(layer, "position"), 0, 0);
+  const [px0, py0] = parsePair(attr(layer, "position"), 0, 0);
   const [ax, ay] = parsePair(attr(layer, "anchorPoint"), 0.5, 0.5);
   const value = (key, fallback) => {
     if (!transition) return over[key] ?? fallback;
@@ -184,16 +209,47 @@ function layerBox(layer, overrides, canvasHeight, transition) {
     const end = to[key] ?? fallback;
     return start + (end - start) * transition.progress;
   };
+  const w = value("bounds.size.width", bounds.w);
+  const h = value("bounds.size.height", bounds.h);
+  const ox = value("bounds.origin.x", bounds.x);
+  const oy = value("bounds.origin.y", bounds.y);
+  const px = value("position.x", px0);
+  const py = value("position.y", py0);
+  const parentW = parentOrigin.w ?? 0;
+  const parentH = parentOrigin.h ?? 0;
+  const parentOx = parentOrigin.ox ?? 0;
+  const parentOy = parentOrigin.oy ?? 0;
+  const hasParent = parentW > 1 && parentH > 1;
+  const inside =
+    !hasParent ||
+    (px >= parentOx - parentW * 0.25 &&
+      px <= parentOx + parentW * 1.25 &&
+      py >= parentOy - parentH * 0.25 &&
+      py <= parentOy + parentH * 1.25);
+  const localX = inside ? px - parentOx : px;
+  const localY = inside ? py - parentOy : py;
+  const anchorX = (inside ? parentOrigin.x : 0) + localX;
+  const anchorY =
+    inside && parentOrigin.flipped ? parentOrigin.y + parentOrigin.h - localY : (inside ? parentOrigin.y : 0) + localY;
   return {
-    w: value("bounds.size.width", bounds.w),
-    h: value("bounds.size.height", bounds.h),
-    cssX: value("position.x", px),
-    cssY: canvasHeight - value("position.y", py),
+    w,
+    h,
     ax,
     ay,
+    cssX: anchorX,
+    cssY: canvasHeight - anchorY,
     rot: value("transform.rotation.z", num(attr(layer, "transform.rotation.z"), 0)),
     opacity: value("opacity", num(attr(layer, "opacity"), 1)),
     hidden: value("hidden", num(attr(layer, "hidden"), 0)),
+    childOrigin: {
+      x: anchorX - ax * w,
+      y: anchorY - ay * h,
+      w,
+      h,
+      ox,
+      oy,
+      flipped: String(attr(layer, "geometryFlipped")) === "1",
+    },
   };
 }
 
@@ -227,7 +283,10 @@ async function applyOpacity(image, opacity) {
 async function rasterLayer(buf, box, scale) {
   const width = Math.max(1, Math.round(box.w * scale));
   const height = Math.max(1, Math.round(box.h * scale));
-  const resized = sharp(buf, { failOn: "none" }).rotate().resize(width, height, { fit: "fill" }).ensureAlpha();
+  const resized = sharp(buf, { failOn: "none", limitInputPixels: false })
+    .rotate()
+    .resize(width, height, { fit: "fill" })
+    .ensureAlpha();
   let png = await applyOpacity(resized, box.opacity);
   const anchorX = box.ax * width;
   const anchorY = (1 - box.ay) * height;
@@ -299,77 +358,166 @@ async function clipToCanvas(png, left, top, canvasW, canvasH) {
 
 function lookupEntry(entries, caPrefix, src) {
   const wanted = `${caPrefix}/${src}`.replace(/\/+/g, "/");
-  return (
+  const exact =
     entries.find((entry) => entry.name === wanted) ??
-    entries.find((entry) => entry.name.toLowerCase() === wanted.toLowerCase()) ??
+    entries.find((entry) => entry.name.toLowerCase() === wanted.toLowerCase());
+  if (exact) return exact;
+  const base = path.posix.basename(wanted);
+  return (
+    entries.find((entry) => entry.name.startsWith(`${caPrefix}/`) && path.posix.basename(entry.name) === base) ??
     null
   );
 }
 
-async function renderBundle(entries, caPrefix, canvas, transparent, state) {
+function bundleRoot(entries, caPrefix) {
   const caml = entries.find((entry) => entry.name === `${caPrefix}/main.caml`);
-  const canvasW = Math.round(canvas.width * RENDER_SCALE);
-  const canvasH = Math.round(canvas.height * RENDER_SCALE);
-  let background = { r: 0, g: 0, b: 0, alpha: transparent ? 0 : 1 };
-  const overlays = [];
-  let drawn = 0;
-
-  if (caml) {
+  if (!caml) return null;
+  try {
     const parsed = xmlParser.parse(caml.getData().toString("utf8"));
-    const root = asArray(parsed?.caml?.CALayer)[0];
-    if (root) {
-      if (!transparent) background = colorFrom(attr(root, "backgroundColor")) ?? background;
-      const overrides = new Map();
-      let transition = null;
-      if (typeof state === "string") {
-        collectStateOverrides(root, state, overrides);
-      } else {
-        const from = new Map();
-        const to = new Map();
-        collectStateOverrides(root, state.from, from);
-        collectStateOverrides(root, state.to, to);
-        transition = { from, to, progress: state.progress };
-      }
-      const layers = [];
-      paintOrder(root, layers);
-      for (const layer of layers) {
-        const src = imageSrc(layer);
-        if (!src) continue;
-        const asset = lookupEntry(entries, caPrefix, src);
-        if (!asset) {
-          console.warn(`  missing asset ${src}`);
-          continue;
-        }
-        const box = layerBox(layer, overrides, canvas.height, transition);
-        if (box.hidden >= 0.5) continue;
-        if (box.w < 1 || box.h < 1 || box.opacity <= 0) continue;
-        if (!intersects(box, canvasW, canvasH, RENDER_SCALE)) continue;
-        try {
-          const placed = await rasterLayer(asset.getData(), box, RENDER_SCALE);
-          const clipped = await clipToCanvas(placed.png, placed.left, placed.top, canvasW, canvasH);
-          if (!clipped) continue;
+    return asArray(parsed?.caml?.CALayer)[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+
+function canvasFor(root, keySize) {
+  const bounds = root ? parseBounds(attr(root, "bounds")) : { w: 0, h: 0 };
+  const similar =
+    bounds.w > 1 &&
+    bounds.h > 1 &&
+    Math.abs(bounds.w - keySize.width) / keySize.width < 0.2 &&
+    Math.abs(bounds.h - keySize.height) / keySize.height < 0.2;
+  if (!root || bounds.w < 2 || bounds.h < 2 || similar) {
+    return { width: keySize.width, height: keySize.height, scale: RENDER_SCALE };
+  }
+  const scale = Math.min(RENDER_SCALE, 1600 / Math.max(bounds.w, bounds.h));
+  return { width: bounds.w, height: bounds.h, scale: Math.max(0.2, scale) };
+}
+
+function assignRoles(caPrefixes) {
+  const byRole = { background: null, floating: null, foreground: null };
+  const leftover = [];
+  for (const prefix of caPrefixes) {
+    const role = roleFromCaPath(prefix);
+    if (role && !byRole[role]) byRole[role] = prefix;
+    else leftover.push(prefix);
+  }
+  for (const prefix of leftover) {
+    if (!byRole.background) byRole.background = prefix;
+    else if (!byRole.floating) byRole.floating = prefix;
+    else if (!byRole.foreground) byRole.foreground = prefix;
+  }
+  return byRole;
+}
+
+function layerColor(layer) {
+  const direct = colorFrom(attr(layer, "backgroundColor"));
+  if (direct) return direct;
+  const node = layer?.backgroundColor;
+  if (!node || typeof node !== "object") return null;
+  const color = colorFrom(attr(node, "value"));
+  if (!color) return null;
+  return { ...color, alpha: color.alpha * num(attr(node, "opacity"), 1) };
+}
+
+async function drawLayers(layer, parentOrigin, overrides, transition, canvas, entries, caPrefix, overlays, stats) {
+  if (!layer || typeof layer !== "object") return 0;
+  if (String(attr(layer, "hidden")) === "1") return 0;
+  const canvasW = Math.round(canvas.width * canvas.scale);
+  const canvasH = Math.round(canvas.height * canvas.scale);
+  const box = placedBox(layer, parentOrigin, overrides, canvas.height, transition);
+  const visible = box.hidden < 0.5 && box.w >= 1 && box.h >= 1 && box.opacity > 0 && intersects(box, canvasW, canvasH, canvas.scale);
+  const fill = layerColor(layer);
+  if (visible && fill && fill.alpha > 0.01) {
+    const pw = Math.max(1, Math.round(box.w * canvas.scale));
+    const ph = Math.max(1, Math.round(box.h * canvas.scale));
+    const radius = Math.max(0, num(attr(layer, "cornerRadius"), 0) * canvas.scale);
+    const svg = Buffer.from(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="${pw}" height="${ph}"><rect width="${pw}" height="${ph}" rx="${radius}" ry="${radius}" fill="rgb(${fill.r},${fill.g},${fill.b})" fill-opacity="${Math.max(0, Math.min(1, fill.alpha * box.opacity))}"/></svg>`,
+    );
+    const png = await sharp(svg).png().toBuffer();
+    const left = Math.round(box.cssX * canvas.scale - box.ax * pw);
+    const top = Math.round(box.cssY * canvas.scale - (1 - box.ay) * ph);
+    const clipped = await clipToCanvas(png, left, top, canvasW, canvasH);
+    if (clipped) {
+      overlays.push(clipped);
+      stats.shapes += 1;
+    }
+  }
+  const src = imageSrc(layer);
+  if (src && visible) {
+    const asset = lookupEntry(entries, caPrefix, src);
+    if (!asset) console.warn(`  missing asset ${src}`);
+    else {
+      try {
+        const placed = await rasterLayer(asset.getData(), box, canvas.scale);
+        const clipped = await clipToCanvas(placed.png, placed.left, placed.top, canvasW, canvasH);
+        if (clipped) {
           overlays.push(clipped);
-          drawn += 1;
-        } catch (error) {
-          console.warn(`  skip ${src}: ${error instanceof Error ? error.message : error}`);
+          stats.images += 1;
         }
+      } catch (error) {
+        console.warn(`  skip ${src}: ${error instanceof Error ? error.message : error}`);
       }
     }
   }
+  for (const child of childLayers(layer)) {
+    await drawLayers(child, box.childOrigin, overrides, transition, canvas, entries, caPrefix, overlays, stats);
+  }
+}
+
+async function renderBundle(entries, caPrefix, keySize, transparent, state) {
+  const caml = entries.find((entry) => entry.name === `${caPrefix}/main.caml`);
+  const root = caml ? asArray(xmlParser.parse(caml.getData().toString("utf8"))?.caml?.CALayer)[0] : null;
+  const canvas = canvasFor(root, keySize);
+  const canvasW = Math.max(1, Math.round(canvas.width * canvas.scale));
+  const canvasH = Math.max(1, Math.round(canvas.height * canvas.scale));
+  let background = { r: 0, g: 0, b: 0, alpha: transparent ? 0 : 1 };
+  const overlays = [];
+  const stats = { images: 0, shapes: 0 };
+
+  if (root) {
+    if (!transparent) background = layerColor(root) ?? background;
+    const overrides = new Map();
+    let transition = null;
+    if (typeof state === "string") {
+      collectStateOverrides(root, state, overrides);
+    } else {
+      const from = new Map();
+      const to = new Map();
+      collectStateOverrides(root, state.from, from);
+      collectStateOverrides(root, state.to, to);
+      transition = { from, to, progress: state.progress };
+    }
+    await drawLayers(
+      root,
+      { x: 0, y: 0, h: canvas.height, flipped: false },
+      overrides,
+      transition,
+      canvas,
+      entries,
+      caPrefix,
+      overlays,
+      stats,
+    );
+  }
+
+  let drawn = stats.images + stats.shapes;
 
   if (!caml && drawn === 0) {
     const images = entries
       .filter((entry) => entry.name.startsWith(`${caPrefix}/`) && IMAGE_EXT.has(path.posix.extname(entry.name).toLowerCase()))
       .sort((a, b) => b.header.size - a.header.size);
     if (images[0]) {
-      const png = await sharp(images[0].getData(), { failOn: "none" })
+      const png = await sharp(images[0].getData(), { failOn: "none", limitInputPixels: false })
         .rotate()
         .resize(canvasW, canvasH, { fit: "cover" })
         .ensureAlpha()
         .png()
         .toBuffer();
       overlays.push({ input: png, left: 0, top: 0 });
-      drawn = 1;
+      stats.images += 1;
+      drawn += 1;
     }
   }
 
@@ -379,7 +527,20 @@ async function renderBundle(entries, caPrefix, canvas, transparent, state) {
     create: { width: canvasW, height: canvasH, channels: 4, background },
   });
   if (overlays.length) pipeline = pipeline.composite(overlays);
-  return { webp: await pipeline.webp({ quality: 82, alphaQuality: 90 }).toBuffer(), drawn };
+  return {
+    webp: await pipeline.webp({ quality: 82, alphaQuality: 90 }).toBuffer(),
+    drawn,
+    images: stats.images,
+    width: canvasW,
+    height: canvasH,
+    points: canvas,
+  };
+}
+
+async function fitLayer(layer, width, height) {
+  if (!layer?.webp) return null;
+  if (layer.width === width && layer.height === height) return layer.webp;
+  return sharp(layer.webp).resize(width, height, { fit: "fill" }).webp({ quality: 82, alphaQuality: 90 }).toBuffer();
 }
 
 async function writeVideo(videoEntry, destDir, ffmpeg) {
@@ -401,20 +562,34 @@ async function writeVideo(videoEntry, destDir, ffmpeg) {
   };
 }
 
-async function renderStack(entries, byRole, canvas, state) {
-  const background = byRole.background ? await renderBundle(entries, byRole.background, canvas, false, state) : null;
-  const floating = byRole.floating ? await renderBundle(entries, byRole.floating, canvas, true, state) : null;
-  const foreground = byRole.foreground ? await renderBundle(entries, byRole.foreground, canvas, true, state) : null;
+async function renderStack(entries, byRole, keySize, state) {
+  let background = byRole.background ? await renderBundle(entries, byRole.background, keySize, false, state) : null;
+  const floating = byRole.floating ? await renderBundle(entries, byRole.floating, keySize, true, state) : null;
+  const foreground = byRole.foreground ? await renderBundle(entries, byRole.foreground, keySize, true, state) : null;
+  const imageLayer = [background, floating, foreground].find((layer) => layer?.images > 0);
+  if (background && !background.images && imageLayer) background = null;
+  const base = imageLayer ?? background ?? floating ?? foreground;
+  const width = base?.width ?? Math.round(keySize.width * RENDER_SCALE);
+  const height = base?.height ?? Math.round(keySize.height * RENDER_SCALE);
+  const floatingWebp = await fitLayer(floating, width, height);
+  const foregroundWebp = await fitLayer(foreground, width, height);
   let fgBuffer = null;
-  if (floating?.webp && foreground?.webp) {
-    fgBuffer = await sharp(floating.webp)
-      .composite([{ input: foreground.webp, left: 0, top: 0 }])
+  if (floatingWebp && foregroundWebp) {
+    fgBuffer = await sharp(floatingWebp)
+      .composite([{ input: foregroundWebp, left: 0, top: 0 }])
       .webp({ quality: 82, alphaQuality: 90 })
       .toBuffer();
   } else {
-    fgBuffer = floating?.webp ?? foreground?.webp ?? null;
+    fgBuffer = floatingWebp ?? foregroundWebp ?? null;
   }
-  return { background, floating, foreground, fgBuffer };
+  const bgWebp = background ? await fitLayer(background, width, height) : null;
+  return {
+    background: bgWebp ? { ...background, webp: bgWebp, width, height } : null,
+    floating,
+    foreground,
+    fgBuffer,
+    points: base?.points ?? { width: keySize.width, height: keySize.height, scale: RENDER_SCALE },
+  };
 }
 
 async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
@@ -464,15 +639,12 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
           .filter(Boolean),
       ),
     ];
-    const byRole = { background: null, floating: null, foreground: null };
-    for (const prefix of caPrefixes) {
-      const role = roleFromCaPath(prefix);
-      if (role && !byRole[role]) byRole[role] = prefix;
-    }
+    const byRole = assignRoles(caPrefixes);
+    const keySize = { width, height };
 
-    const locked = await renderStack(entries, byRole, { width, height }, "Locked");
-    const unlocked = await renderStack(entries, byRole, { width, height }, "Unlock");
-    const { background, fgBuffer } = locked;
+    const locked = await renderStack(entries, byRole, keySize, "Locked");
+    const unlocked = await renderStack(entries, byRole, keySize, "Unlock");
+    const { background, fgBuffer, points } = locked;
 
     const videos = entries
       .filter((entry) => entry.name.startsWith(`${key}/`) && VIDEO_EXT.has(path.posix.extname(entry.name).toLowerCase()))
@@ -491,13 +663,13 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
     const unlockFgPath = path.join(destDir, "fg-unlock.webp");
     const posterPath = path.join(destDir, "poster.jpg");
     if (background?.webp) fs.writeFileSync(bgPath, background.webp);
-    else if (!videoPoster) {
+    else if (!fgBuffer && !videoPoster) {
       fs.writeFileSync(
         bgPath,
         await sharp({
           create: {
-            width: width * RENDER_SCALE,
-            height: height * RENDER_SCALE,
+            width: Math.max(1, Math.round(points.width * points.scale)),
+            height: Math.max(1, Math.round(points.height * points.scale)),
             channels: 3,
             background: { r: 28, g: 28, b: 30 },
           },
@@ -533,6 +705,8 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       let poster = sharp(bgPath);
       if (fs.existsSync(fgPath)) poster = poster.composite([{ input: fgPath, left: 0, top: 0 }]);
       await poster.jpeg({ quality: 82 }).toFile(posterPath);
+    } else if (fs.existsSync(fgPath)) {
+      await sharp(fgPath).flatten({ background: "#000" }).jpeg({ quality: 82 }).toFile(posterPath);
     } else if (videoPoster) {
       fs.copyFileSync(videoPoster, posterPath);
     }
@@ -543,8 +717,8 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       name: stem,
       type,
       kind: videoName ? "video" : fgBuffer ? "layered" : "image",
-      width,
-      height,
+      width: Math.round(points.width),
+      height: Math.round(points.height),
       poster: `/previews/${id}/poster.jpg`,
       ...(fs.existsSync(bgPath) ? { bg: `/previews/${id}/bg.webp` } : {}),
       ...(fs.existsSync(fgPath) ? { fg: `/previews/${id}/fg.webp` } : {}),
@@ -714,7 +888,14 @@ async function mapPool(items, limit, fn) {
 
 async function main() {
   loadEnv();
-  const config = requireConfig();
+  const dry = process.env.PUBLISH_DRY === "1";
+  const only = new Set(
+    (process.env.PUBLISH_ONLY ?? "")
+      .split(",")
+      .map((name) => name.trim())
+      .filter(Boolean),
+  );
+  const config = dry ? null : requireConfig();
   ensureDir(srcDir);
   const files = fs
     .readdirSync(srcDir)
@@ -726,11 +907,13 @@ async function main() {
   }
 
   const previous = readCatalog();
-  const client = new S3Client({
-    region: "auto",
-    endpoint: `https://${config.accountId}.r2.cloudflarestorage.com`,
-    credentials: { accessKeyId: config.accessKeyId, secretAccessKey: config.secretAccessKey },
-  });
+  const client = config
+    ? new S3Client({
+        region: "auto",
+        endpoint: `https://${config.accountId}.r2.cloudflarestorage.com`,
+        credentials: { accessKeyId: config.accessKeyId, secretAccessKey: config.secretAccessKey },
+      })
+    : null;
   const ffmpeg = hasFfmpeg();
   const workers = workerCount();
   const cpus = os.availableParallelism?.() ?? os.cpus().length;
@@ -744,9 +927,11 @@ async function main() {
     const filePath = path.join(srcDir, name);
     const sha256 = sha256File(filePath);
     const same = previous.items.filter((item) => item.fileName === name && item.sourceSha256 === sha256);
-    if (same.length) {
-      for (const item of same) usedIds.add(item.id);
-      jobs.push({ name, unchanged: same });
+    const selected = only.size === 0 || only.has(name);
+    if (!selected || (same.length && !only.has(name))) {
+      const keep = selected ? same : previous.items.filter((item) => item.fileName === name);
+      for (const item of keep) usedIds.add(item.id);
+      jobs.push({ name, unchanged: keep });
       console.log(`${name} unchanged`);
       continue;
     }
@@ -767,7 +952,16 @@ async function main() {
       try {
         const built = await buildOne(job.filePath, usedIds, ffmpeg, outputRoot, job.preferredIds.slice());
         const relocated = built.map((item) => relocateItem(item, job.sha256));
-        for (const item of relocated) await uploadRendered(client, config.bucket, item, job.filePath, outputRoot);
+        if (dry) {
+          const checkDir = path.join(os.tmpdir(), "preview-check");
+          ensureDir(checkDir);
+          for (const item of relocated) {
+            const poster = path.join(outputRoot, item.id, "poster.jpg");
+            if (fs.existsSync(poster)) fs.copyFileSync(poster, path.join(checkDir, `${item.id}.jpg`));
+          }
+        } else {
+          for (const item of relocated) await uploadRendered(client, config.bucket, item, job.filePath, outputRoot);
+        }
         return {
           items: relocated,
           uploaded: true,
@@ -792,6 +986,11 @@ async function main() {
     staleItems.push(...result.stale);
     if (result.uploaded) uploaded += 1;
     if (result.failed) failed += 1;
+  }
+
+  if (dry) {
+    console.log(`dry run: rendered ${uploaded}, failed ${failed}, posters in ${path.join(os.tmpdir(), "preview-check")}`);
+    return;
   }
 
   if (uploaded === 0 && failed > 0) {
