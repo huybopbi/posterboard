@@ -6,6 +6,7 @@ import type { WallpaperItem } from "@/lib/types";
 type Props = {
   item: WallpaperItem;
   eager?: boolean;
+  copies?: number;
   onOpen: (item: WallpaperItem) => void;
 };
 
@@ -14,7 +15,7 @@ function formatBytes(bytes: number) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-export function WallpaperCard({ item, eager = false, onOpen }: Props) {
+export function WallpaperCard({ item, eager = false, copies = 1, onOpen }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -59,6 +60,7 @@ export function WallpaperCard({ item, eager = false, onOpen }: Props) {
       {/* Bottom overlay */}
       <div className="card-overlay">
         <div className="card-badges">
+          {copies > 1 && <span className="badge">{copies} bản</span>}
           {item.kind === "layered" && <span className="badge badge-depth">Depth</span>}
           {item.kind === "video" && <span className="badge badge-video">Video</span>}
           <span className="badge">
