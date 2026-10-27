@@ -34,6 +34,11 @@ const xmlParser = new XMLParser({
     tagName === "CALayer" || tagName === "LKState" || tagName === "LKStateSetValue",
 });
 
+function parseCaml(text) {
+  const cleaned = text.replace(/<!--[\s\S]*?(?:-->|$)/g, "");
+  return xmlParser.parse(cleaned);
+}
+
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
@@ -373,7 +378,7 @@ function bundleRoot(entries, caPrefix) {
   const caml = entries.find((entry) => entry.name === `${caPrefix}/main.caml`);
   if (!caml) return null;
   try {
-    const parsed = xmlParser.parse(caml.getData().toString("utf8"));
+    const parsed = parseCaml(caml.getData().toString("utf8"));
     return asArray(parsed?.caml?.CALayer)[0] ?? null;
   } catch {
     return null;
@@ -468,7 +473,7 @@ async function drawLayers(layer, parentOrigin, overrides, transition, canvas, en
 
 async function renderBundle(entries, caPrefix, keySize, transparent, state) {
   const caml = entries.find((entry) => entry.name === `${caPrefix}/main.caml`);
-  const root = caml ? asArray(xmlParser.parse(caml.getData().toString("utf8"))?.caml?.CALayer)[0] : null;
+  const root = caml ? asArray(parseCaml(caml.getData().toString("utf8"))?.caml?.CALayer)[0] : null;
   const canvas = canvasFor(root, keySize);
   const canvasW = Math.max(1, Math.round(canvas.width * canvas.scale));
   const canvasH = Math.max(1, Math.round(canvas.height * canvas.scale));
