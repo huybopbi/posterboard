@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { categories, getCategories, isCategoryId } from "@/lib/categories";
 import { resolveWallpaper } from "@/lib/assets";
 import { isHiddenDuplicate } from "@/lib/duplicates";
 import type { PosterType, WallpaperItem } from "@/lib/types";
+import { Hero } from "./Hero";
 import { WallpaperCard } from "./WallpaperCard";
 import { WallpaperPreview } from "./WallpaperPreview";
 
@@ -14,6 +15,9 @@ const filters: Array<{ id: "all" | PosterType; label: string }> = [
   { id: "photos",      label: "Photos"      },
   { id: "mercury",     label: "Mercury"     },
 ];
+
+const SHOWCASE_SIZE = 10;
+const PHONE_RATIO = 390 / 844;
 
 type Props = {
   items: WallpaperItem[];
@@ -78,19 +82,48 @@ export function Gallery({ items, assetBase = "" }: Props) {
     [matching, category],
   );
 
+  // Catalog size after the duplicate rules, independent of search and filters.
+  const totalCount = useMemo(
+    () => ready.filter((item) => !isHiddenDuplicate(item.id)).length,
+    [ready],
+  );
+
+  // A few phone-shaped posters, evenly spread over the catalog, for the hero strip.
+  const showcase = useMemo(() => {
+    const phones = ready.filter(
+      (item) =>
+        !isHiddenDuplicate(item.id) &&
+        item.kind !== "video" &&
+        Math.abs(item.width / item.height - PHONE_RATIO) < 0.02,
+    );
+    const step = phones.length / SHOWCASE_SIZE;
+    return phones.length <= SHOWCASE_SIZE
+      ? phones
+      : Array.from({ length: SHOWCASE_SIZE }, (_, i) => phones[Math.floor(i * step)]);
+  }, [ready]);
+
+  const toolbarRef = useRef<HTMLDivElement>(null);
+  const browse = useCallback(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    toolbarRef.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  }, []);
+
   return (
     <main className="page">
-      {/* Header */}
-      <header className="site-header">
-        <h1>Tendies</h1>
-        <p>Thư viện wallpaper PosterBoard cho iPhone. Xem lớp nền và lớp nổi, rồi tải file .tendies gốc.</p>
-        {ready.length > 0 && (
-          <span className="site-header-count">{visible.length} wallpaper</span>
-        )}
-      </header>
+      <Hero
+        query={query}
+        onQueryChange={setQuery}
+        category={category}
+        onCategoryChange={setCategory}
+        categoryCounts={categoryCounts}
+        totalCount={totalCount}
+        visibleCount={visible.length}
+        showcase={showcase}
+        onBrowse={browse}
+      />
 
       {/* Sticky toolbar */}
-      <div className="toolbar">
+      <div className="toolbar" ref={toolbarRef}>
         <input
           className="search"
           value={query}
