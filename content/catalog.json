@@ -2,6 +2,53 @@
   "assetBase": "https://cdn.digitalshops.cc",
   "items": [
     {
+      "id": "wuthering-waves-ninnai-moning",
+      "name": "__Wuthering_Waves_ninnai_moning",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/poster.jpg",
+      "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/fg.webp",
+      "unlockFg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/wuthering-waves-ninnai-moning/5da5a70e47b1-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/wuthering-waves-ninnai-moning/5da5a70e47b1/__Wuthering_Waves_ninnai_moning.tendies",
+      "fileName": "__Wuthering_Waves_ninnai_moning.tendies",
+      "bytes": 9174785,
+      "sourceSha256": "5da5a70e47b1309119bd9eeff20360fc8fcfa846d2f4c66d340f5249f734071a"
+    },
+    {
       "id": "11037-case-1",
       "name": "11037_Case_1",
       "type": "collections",
@@ -47,6 +94,194 @@
       "fileName": "11037_Case_1.tendies",
       "bytes": 1560371,
       "sourceSha256": "e1f2227d3382f9629056e1b46de5dd29269d8e3242e6c221c6fa63dcd82cbe3c"
+    },
+    {
+      "id": "17e-black-with-aod",
+      "name": "17e_Black_with_AOD",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/poster.jpg",
+      "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/fg.webp",
+      "unlockFg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/17e-black-with-aod/4de6b7ebcc7d-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/17e-black-with-aod/4de6b7ebcc7d/17e_Black_with_AOD.tendies",
+      "fileName": "17e_Black_with_AOD.tendies",
+      "bytes": 14136257,
+      "sourceSha256": "4de6b7ebcc7dc789b9e1c788cfa25161a738bce7f87b4f3b0c0d2986f355ca8a"
+    },
+    {
+      "id": "17e-pink-with-aod",
+      "name": "17e_Pink_with_AOD",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/17e-pink-with-aod/1b2f24152128-r3/poster.jpg",
+      "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/fg.webp",
+      "unlockFg": "previews/17e-pink-with-aod/1b2f24152128-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/17e-pink-with-aod/1b2f24152128-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/17e-pink-with-aod/1b2f24152128/17e_Pink_with_AOD.tendies",
+      "fileName": "17e_Pink_with_AOD.tendies",
+      "bytes": 14294772,
+      "sourceSha256": "1b2f2415212892cae26fcc4d99da7c63ac7d196019a57e00cdb26fc54347302c"
+    },
+    {
+      "id": "17e-silver-with-aod",
+      "name": "17e_Silver_with_AOD",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/17e-silver-with-aod/ae6b3dff4039-r3/poster.jpg",
+      "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/fg.webp",
+      "unlockFg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/17e-silver-with-aod/ae6b3dff4039-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/17e-silver-with-aod/ae6b3dff4039/17e_Silver_with_AOD.tendies",
+      "fileName": "17e_Silver_with_AOD.tendies",
+      "bytes": 20475731,
+      "sourceSha256": "ae6b3dff403987333df884dd31931d15a575e91d5500a8841a22f7f8031faf27"
+    },
+    {
+      "id": "a-ap-rocky",
+      "name": "A$AP_ROCKY",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/a-ap-rocky/006f7ae74755-r3/poster.jpg",
+      "bg": "previews/a-ap-rocky/006f7ae74755-r3/bg.webp",
+      "unlockBg": "previews/a-ap-rocky/006f7ae74755-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/a-ap-rocky/006f7ae74755-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/a-ap-rocky/006f7ae74755/A$AP_ROCKY.tendies",
+      "fileName": "A$AP_ROCKY.tendies",
+      "bytes": 16468054,
+      "sourceSha256": "006f7ae74755b2687edb4fa0782df28c6d6650aab1b0333dbc70a79e926dc317"
     },
     {
       "id": "a7x-dark-and-light-wallpaper",
@@ -509,6 +744,53 @@
       "sourceSha256": "c21f99cadfe68ddde11be2e4b98a75ad139d4353e9861fff63de0be037afcb07"
     },
     {
+      "id": "animate-girl",
+      "name": "ANIMATE_GIRL",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/animate-girl/7afc0e041c39-r3/poster.jpg",
+      "fg": "previews/animate-girl/7afc0e041c39-r3/fg.webp",
+      "unlockFg": "previews/animate-girl/7afc0e041c39-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/animate-girl/7afc0e041c39-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/animate-girl/7afc0e041c39/ANIMATE_GIRL.tendies",
+      "fileName": "ANIMATE_GIRL.tendies",
+      "bytes": 5955435,
+      "sourceSha256": "7afc0e041c39ed74539eb0263542e434b3b1a28cad6abdcd7da2ce3478bb5bbe"
+    },
+    {
       "id": "apollo15",
       "name": "Apollo15",
       "type": "collections",
@@ -601,6 +883,53 @@
       "fileName": "Apple_Intelligence.tendies",
       "bytes": 823928,
       "sourceSha256": "ce9bb40f3103f4f6acb0731f85d9e253e2e0ec00be668aaf31a21be184bdb1f3"
+    },
+    {
+      "id": "apple-park-maps",
+      "name": "Apple_Park__Maps_",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/apple-park-maps/a0d545d4b273-r3/poster.jpg",
+      "fg": "previews/apple-park-maps/a0d545d4b273-r3/fg.webp",
+      "unlockFg": "previews/apple-park-maps/a0d545d4b273-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/apple-park-maps/a0d545d4b273-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/apple-park-maps/a0d545d4b273/Apple_Park__Maps_.tendies",
+      "fileName": "Apple_Park__Maps_.tendies",
+      "bytes": 5891856,
+      "sourceSha256": "a0d545d4b2739f80a03603c58d5f2770c06bfc408ff3ce920c14f1e078b7c521"
     },
     {
       "id": "applelogo",
@@ -913,6 +1242,65 @@
       "sourceSha256": "bc5f62937131e07b5ba7feda8a1f86accb1cf7033d3de773a862275fe98d806d"
     },
     {
+      "id": "arisu-the-day-dream-angel",
+      "name": "Arisu___the_Day_Dream_Angel",
+      "type": "collections",
+      "kind": "layered",
+      "width": 1216,
+      "height": 2160,
+      "poster": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/poster.jpg",
+      "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/bg.webp",
+      "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/fg.webp",
+      "unlockBg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/bg-unlock.webp",
+      "unlockFg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-01.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-02.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-03.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-04.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-05.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-06.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-07.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-08.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-09.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-bg-10.webp",
+          "fg": "previews/arisu-the-day-dream-angel/8c9bc43059c1-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/arisu-the-day-dream-angel/8c9bc43059c1/Arisu___the_Day_Dream_Angel.tendies",
+      "fileName": "Arisu___the_Day_Dream_Angel.tendies",
+      "bytes": 16606933,
+      "sourceSha256": "8c9bc43059c14197f3c6567aab08e5fce6f5ea2b0ab59060d8c9a7d2e682b96d"
+    },
+    {
       "id": "ashes-of-the-wake",
       "name": "ashes_of_the_wake",
       "type": "collections",
@@ -1135,6 +1523,53 @@
       "fileName": "AutumnCity.tendies",
       "bytes": 722614,
       "sourceSha256": "62a07d768c9a2310ea0baeda1b78a46a769d73da299a8fff0b4aaa87fe652de9"
+    },
+    {
+      "id": "b0y-and-r4ven",
+      "name": "B0Y_and_R4VEN",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/b0y-and-r4ven/8d8ca5284947-r3/poster.jpg",
+      "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/fg.webp",
+      "unlockFg": "previews/b0y-and-r4ven/8d8ca5284947-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/b0y-and-r4ven/8d8ca5284947-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/b0y-and-r4ven/8d8ca5284947/B0Y_and_R4VEN.tendies",
+      "fileName": "B0Y_and_R4VEN.tendies",
+      "bytes": 8605360,
+      "sourceSha256": "8d8ca528494729ee8210bd41e8731b5fa127f8f3698d64ea575ab4fd35d0473a"
     },
     {
       "id": "balatromenu",
@@ -1488,6 +1923,53 @@
       "fileName": "BlackGoku.tendies",
       "bytes": 35251272,
       "sourceSha256": "7b2e6b59443dab6d8222d0adc519265d78cb5a8133a1584e51defb3d91e5c962"
+    },
+    {
+      "id": "blackwall",
+      "name": "Blackwall",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/blackwall/3117df45e2e1-r3/poster.jpg",
+      "bg": "previews/blackwall/3117df45e2e1-r3/bg.webp",
+      "unlockBg": "previews/blackwall/3117df45e2e1-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/blackwall/3117df45e2e1-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/blackwall/3117df45e2e1/Blackwall.tendies",
+      "fileName": "Blackwall.tendies",
+      "bytes": 21300270,
+      "sourceSha256": "3117df45e2e18b85141cd7fe437c0e03f8df5d982ce6a9fec944d7eae38355ac"
     },
     {
       "id": "blasphemous",
@@ -2605,6 +3087,112 @@
       "sourceSha256": "ee8dd4b7012ec1bf840228d2f018529de928e002e72906eafc47a749cfa2c616"
     },
     {
+      "id": "death-note",
+      "name": "Death_Note_",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/death-note/94ce57b7ed00-r3/poster.jpg",
+      "bg": "previews/death-note/94ce57b7ed00-r3/bg.webp",
+      "fg": "previews/death-note/94ce57b7ed00-r3/fg.webp",
+      "unlockBg": "previews/death-note/94ce57b7ed00-r3/bg-unlock.webp",
+      "unlockFg": "previews/death-note/94ce57b7ed00-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-01.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-02.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-03.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-04.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-05.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-06.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-07.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-08.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-09.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/death-note/94ce57b7ed00-r3/transition-bg-10.webp",
+          "fg": "previews/death-note/94ce57b7ed00-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/death-note/94ce57b7ed00/Death_Note_.tendies",
+      "fileName": "Death_Note_.tendies",
+      "bytes": 13857229,
+      "sourceSha256": "94ce57b7ed0098bdd00a60a6e9808cca62e967513003d601f034eb83fb1692e9"
+    },
+    {
+      "id": "death-star",
+      "name": "Death_Star",
+      "type": "collections",
+      "kind": "layered",
+      "width": 1170,
+      "height": 2532,
+      "poster": "previews/death-star/421e1ae46aa9-r3/poster.jpg",
+      "fg": "previews/death-star/421e1ae46aa9-r3/fg.webp",
+      "unlockFg": "previews/death-star/421e1ae46aa9-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/death-star/421e1ae46aa9-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/death-star/421e1ae46aa9/Death_Star.tendies",
+      "fileName": "Death_Star.tendies",
+      "bytes": 6962789,
+      "sourceSha256": "421e1ae46aa95ef105141636ced29854b9498f57e7e318e37df8187b30353074"
+    },
+    {
       "id": "defaults",
       "name": "Defaults",
       "type": "collections",
@@ -2832,6 +3420,22 @@
       "fileName": "Desert.tendies",
       "bytes": 37406920,
       "sourceSha256": "45498df618dd49e6a16537cb366945cdec91d958ec439d49c6ff31108fae7076"
+    },
+    {
+      "id": "devilish",
+      "name": "Devilish",
+      "type": "collections",
+      "kind": "image",
+      "width": 576,
+      "height": 1280,
+      "poster": "previews/devilish/a37713e8e078-r3/poster.jpg",
+      "bg": "previews/devilish/a37713e8e078-r3/bg.webp",
+      "unlockBg": "previews/devilish/a37713e8e078-r3/bg-unlock.webp",
+      "transitionFrames": [],
+      "download": "originals/devilish/a37713e8e078/Devilish.tendies",
+      "fileName": "Devilish.tendies",
+      "bytes": 5543709,
+      "sourceSha256": "a37713e8e078dbb6317561fa60f02fbd68c6b41f71c96ff381b320738d738613"
     },
     {
       "id": "discord",
@@ -4650,6 +5254,53 @@
       "sourceSha256": "fd5cbf4c27a9e6a706998756e01927edcaec5a8220ce997e08da4a19abccf79d"
     },
     {
+      "id": "graduation-album",
+      "name": "Graduation_Album",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/graduation-album/fed642afff07-r3/poster.jpg",
+      "bg": "previews/graduation-album/fed642afff07-r3/bg.webp",
+      "unlockBg": "previews/graduation-album/fed642afff07-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/graduation-album/fed642afff07-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/graduation-album/fed642afff07/Graduation_Album.tendies",
+      "fileName": "Graduation_Album.tendies",
+      "bytes": 9902123,
+      "sourceSha256": "fed642afff073e4453a1e279167cd077e68a6d5d7e9db78178bcd425091e7d70"
+    },
+    {
       "id": "graduation",
       "name": "Graduation",
       "type": "collections",
@@ -5027,6 +5678,53 @@
       "sourceSha256": "2d3ddffcd735fc6fe53b389f910b84f4c28347144e5b4a0f1cf627ec7843cea5"
     },
     {
+      "id": "happy-new-year-2026",
+      "name": "happy_new_year_2026",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/happy-new-year-2026/118d7b0e6d4c-r3/poster.jpg",
+      "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/fg.webp",
+      "unlockFg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/happy-new-year-2026/118d7b0e6d4c-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/happy-new-year-2026/118d7b0e6d4c/happy_new_year_2026.tendies",
+      "fileName": "happy_new_year_2026.tendies",
+      "bytes": 8140114,
+      "sourceSha256": "118d7b0e6d4c2329909bb0cf5df7be7022f0df125760d7379dfe6d1861a13584"
+    },
+    {
       "id": "harmonyosemoji",
       "name": "HarmonyOSEmoji",
       "type": "collections",
@@ -5153,6 +5851,124 @@
       "sourceSha256": "f26a3dc6e95caa9fe41fbb1410b561a4073c5cb8ef5a5dbf7dca53eb535964fd"
     },
     {
+      "id": "hoshimachi-suisei-1-0",
+      "name": "Hoshimachi_Suisei_1_0",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/poster.jpg",
+      "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/bg.webp",
+      "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/fg.webp",
+      "unlockBg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/bg-unlock.webp",
+      "unlockFg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-01.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-02.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-03.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-04.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-05.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-06.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-07.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-08.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-09.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-bg-10.webp",
+          "fg": "previews/hoshimachi-suisei-1-0/5d256e27a0df-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/hoshimachi-suisei-1-0/5d256e27a0df/Hoshimachi_Suisei_1_0.tendies",
+      "fileName": "Hoshimachi_Suisei_1_0.tendies",
+      "bytes": 15162276,
+      "sourceSha256": "5d256e27a0df7a627b20275a60a63d11ce82f278e487e724ed76868f3977eb2a"
+    },
+    {
+      "id": "hoshimachi-suisei-2",
+      "name": "Hoshimachi_Suisei_2",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/hoshimachi-suisei-2/dce175a635c7-r3/poster.jpg",
+      "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/bg.webp",
+      "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/fg.webp",
+      "unlockBg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/bg-unlock.webp",
+      "unlockFg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-01.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-02.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-03.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-04.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-05.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-06.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-07.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-08.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-09.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-bg-10.webp",
+          "fg": "previews/hoshimachi-suisei-2/dce175a635c7-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/hoshimachi-suisei-2/dce175a635c7/Hoshimachi_Suisei_2.tendies",
+      "fileName": "Hoshimachi_Suisei_2.tendies",
+      "bytes": 6986890,
+      "sourceSha256": "dce175a635c761e592c84220387fb876b174bb6644476ae92e075612f492ed81"
+    },
+    {
       "id": "hqyh",
       "name": "hqyh",
       "type": "collections",
@@ -5257,6 +6073,65 @@
       "fileName": "Huawei_Palms.tendies",
       "bytes": 1643004,
       "sourceSha256": "37bc1ab0bcceed01459880598d1820da6c94a909b906bd3e82c5007450bce07b"
+    },
+    {
+      "id": "huawei",
+      "name": "HUAWEI",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/huawei/75b5c2fd27d6-r3/poster.jpg",
+      "bg": "previews/huawei/75b5c2fd27d6-r3/bg.webp",
+      "fg": "previews/huawei/75b5c2fd27d6-r3/fg.webp",
+      "unlockBg": "previews/huawei/75b5c2fd27d6-r3/bg-unlock.webp",
+      "unlockFg": "previews/huawei/75b5c2fd27d6-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-01.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-02.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-03.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-04.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-05.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-06.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-07.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-08.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-09.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/huawei/75b5c2fd27d6-r3/transition-bg-10.webp",
+          "fg": "previews/huawei/75b5c2fd27d6-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/huawei/75b5c2fd27d6/HUAWEI.tendies",
+      "fileName": "HUAWEI.tendies",
+      "bytes": 9821797,
+      "sourceSha256": "75b5c2fd27d6962a97123a00e4d89a595144837ca8ea9a239713e0b6e4dc6e54"
     },
     {
       "id": "hyperos-glass",
@@ -6056,6 +6931,53 @@
       "sourceSha256": "d87c5be74804462e3dcc885aa1d848082d33556a7ffb62b684d684f31cab78be"
     },
     {
+      "id": "ipados",
+      "name": "iPadOS_",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/ipados/d0e687373e32-r3/poster.jpg",
+      "fg": "previews/ipados/d0e687373e32-r3/fg.webp",
+      "unlockFg": "previews/ipados/d0e687373e32-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/ipados/d0e687373e32-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/ipados/d0e687373e32/iPadOS_.tendies",
+      "fileName": "iPadOS_.tendies",
+      "bytes": 6541089,
+      "sourceSha256": "d0e687373e32e0a2b6eaa2d34b4a00aaf478c26477c4168bddd5c2bc37d0f230"
+    },
+    {
       "id": "iphone-16e",
       "name": "iPhone 16e",
       "type": "collections",
@@ -6493,6 +7415,53 @@
       "fileName": "iPhone_Air_-_SkyBlue_for_All.tendies",
       "bytes": 1351226,
       "sourceSha256": "9a4a5b83200a7cb84cb82e03176c4ce0f8876d2fd2850b006f170662088c5dc7"
+    },
+    {
+      "id": "iphone-air",
+      "name": "iPhone_Air_",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/iphone-air/b856a150407f-r3/poster.jpg",
+      "bg": "previews/iphone-air/b856a150407f-r3/bg.webp",
+      "unlockBg": "previews/iphone-air/b856a150407f-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/iphone-air/b856a150407f-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/iphone-air/b856a150407f/iPhone_Air_.tendies",
+      "fileName": "iPhone_Air_.tendies",
+      "bytes": 7255303,
+      "sourceSha256": "b856a150407fea4877d66e804d62d10ca3776ea37a2eef0939c0bf8e1310a20e"
     },
     {
       "id": "iphone-air-violet-aod",
@@ -7996,6 +8965,53 @@
       "sourceSha256": "e15a90b275f773bc03d0c7300ac004587688e57fdba257964863de1592f94f87"
     },
     {
+      "id": "iphone16prodesert4all",
+      "name": "iphone16proDesert4all",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/iphone16prodesert4all/6dd783c83f2e-r3/poster.jpg",
+      "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/fg.webp",
+      "unlockFg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/iphone16prodesert4all/6dd783c83f2e-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/iphone16prodesert4all/6dd783c83f2e/iphone16proDesert4all.tendies",
+      "fileName": "iphone16proDesert4all.tendies",
+      "bytes": 5331867,
+      "sourceSha256": "6dd783c83f2eb17de4ced1fdf50a572797ff9f3fadfe1f4338c3f18de93637ae"
+    },
+    {
       "id": "iphonesegen2",
       "name": "iPhoneSEGen2",
       "type": "collections",
@@ -8307,6 +9323,65 @@
       "fileName": "Itachi.tendies",
       "bytes": 1823190,
       "sourceSha256": "b65a3fa7996d1bc1186faf19a7075304050b94f67c5ef40aaef6b52c9797d605"
+    },
+    {
+      "id": "itsuki-nakano-tqq",
+      "name": "Itsuki_Nakano__TQQ_",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/itsuki-nakano-tqq/d4168030705c-r3/poster.jpg",
+      "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/bg.webp",
+      "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/fg.webp",
+      "unlockBg": "previews/itsuki-nakano-tqq/d4168030705c-r3/bg-unlock.webp",
+      "unlockFg": "previews/itsuki-nakano-tqq/d4168030705c-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-01.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-02.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-03.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-04.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-05.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-06.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-07.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-08.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-09.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-bg-10.webp",
+          "fg": "previews/itsuki-nakano-tqq/d4168030705c-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/itsuki-nakano-tqq/d4168030705c/Itsuki_Nakano__TQQ_.tendies",
+      "fileName": "Itsuki_Nakano__TQQ_.tendies",
+      "bytes": 11328359,
+      "sourceSha256": "d4168030705c7e555bccbc61e9f4a8a862f77517974aa84b43bc0bcb64c0c7d1"
     },
     {
       "id": "jay-chou-children-of-the-sun-bat",
@@ -8727,6 +9802,53 @@
       "sourceSha256": "b3c2143c2edd29d9e6d19a64d6721f116b54a955df036f7823562a9b4280c69f"
     },
     {
+      "id": "kira-killer-queen",
+      "name": "Kira_Killer_queen_",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/kira-killer-queen/cee5f82a1238-r3/poster.jpg",
+      "bg": "previews/kira-killer-queen/cee5f82a1238-r3/bg.webp",
+      "unlockBg": "previews/kira-killer-queen/cee5f82a1238-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/kira-killer-queen/cee5f82a1238-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/kira-killer-queen/cee5f82a1238/Kira_Killer_queen_.tendies",
+      "fileName": "Kira_Killer_queen_.tendies",
+      "bytes": 18048034,
+      "sourceSha256": "cee5f82a123878c2bfca3644178693b09fb6db9f2673e4b277b37d35bcf873b1"
+    },
+    {
       "id": "kratcy",
       "name": "kratcy",
       "type": "collections",
@@ -9054,6 +10176,65 @@
       "sourceSha256": "4c9b46ebdb5615c02c6276dfe1918e73b5994666c28fa643f1adbd36232a5db3"
     },
     {
+      "id": "luffy-gear-5",
+      "name": "Luffy_Gear_5",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/luffy-gear-5/54410fb5f1b3-r3/poster.jpg",
+      "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/bg.webp",
+      "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/fg.webp",
+      "unlockBg": "previews/luffy-gear-5/54410fb5f1b3-r3/bg-unlock.webp",
+      "unlockFg": "previews/luffy-gear-5/54410fb5f1b3-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-01.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-02.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-03.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-04.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-05.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-06.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-07.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-08.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-09.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-bg-10.webp",
+          "fg": "previews/luffy-gear-5/54410fb5f1b3-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/luffy-gear-5/54410fb5f1b3/Luffy_Gear_5.tendies",
+      "fileName": "Luffy_Gear_5.tendies",
+      "bytes": 8332734,
+      "sourceSha256": "54410fb5f1b39a710eca776f6cb28087c5512e2b5cc2365032e914459aa2a596"
+    },
+    {
       "id": "lumonrunv2trinityhades",
       "name": "LumonRunv2TrinityHades",
       "type": "collections",
@@ -9101,6 +10282,123 @@
       "sourceSha256": "3e61f293ee469d3177bcb2f6342945c9011cabf64058adb264100cc408d97200"
     },
     {
+      "id": "luo-tianyi",
+      "name": "Luo_Tianyi",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/luo-tianyi/bfb858ee2629-r3/poster.jpg",
+      "bg": "previews/luo-tianyi/bfb858ee2629-r3/bg.webp",
+      "fg": "previews/luo-tianyi/bfb858ee2629-r3/fg.webp",
+      "unlockBg": "previews/luo-tianyi/bfb858ee2629-r3/bg-unlock.webp",
+      "unlockFg": "previews/luo-tianyi/bfb858ee2629-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-01.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-02.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-03.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-04.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-05.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-06.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-07.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-08.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-09.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/luo-tianyi/bfb858ee2629-r3/transition-bg-10.webp",
+          "fg": "previews/luo-tianyi/bfb858ee2629-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/luo-tianyi/bfb858ee2629/Luo_Tianyi.tendies",
+      "fileName": "Luo_Tianyi.tendies",
+      "bytes": 21135761,
+      "sourceSha256": "bfb858ee2629a8a02e2e0cc2b65997837f72f817900fae27022112ca854ace90"
+    },
+    {
+      "id": "lvpassportfr",
+      "name": "LVpassportFR",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/lvpassportfr/76b4f9549e68-r3/poster.jpg",
+      "bg": "previews/lvpassportfr/76b4f9549e68-r3/bg.webp",
+      "fg": "previews/lvpassportfr/76b4f9549e68-r3/fg.webp",
+      "unlockBg": "previews/lvpassportfr/76b4f9549e68-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-01.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-02.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-03.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-04.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-05.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-06.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-07.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-08.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-09.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/lvpassportfr/76b4f9549e68-r3/transition-bg-10.webp",
+          "fg": "previews/lvpassportfr/76b4f9549e68-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/lvpassportfr/76b4f9549e68/LVpassportFR.tendies",
+      "fileName": "LVpassportFR.tendies",
+      "bytes": 5084013,
+      "sourceSha256": "76b4f9549e6876b71b43d58f8ab2be4acf5bcf8470252c67d0d2ff6644b74529"
+    },
+    {
       "id": "macrodatarefinement",
       "name": "MacrodataRefinement",
       "type": "collections",
@@ -9146,6 +10444,65 @@
       "fileName": "MacrodataRefinement.tendies",
       "bytes": 275187,
       "sourceSha256": "f5495e9262189bf11b5c9fa8c8b332ddd99bd9a8b5380695975de68a476c2337"
+    },
+    {
+      "id": "majdataplay-xxlb",
+      "name": "MajdataPlay_XXLB_____",
+      "type": "collections",
+      "kind": "layered",
+      "width": 1216,
+      "height": 2160,
+      "poster": "previews/majdataplay-xxlb/c3ad557d5475-r3/poster.jpg",
+      "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/bg.webp",
+      "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/fg.webp",
+      "unlockBg": "previews/majdataplay-xxlb/c3ad557d5475-r3/bg-unlock.webp",
+      "unlockFg": "previews/majdataplay-xxlb/c3ad557d5475-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-01.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-02.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-03.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-04.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-05.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-06.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-07.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-08.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-09.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-bg-10.webp",
+          "fg": "previews/majdataplay-xxlb/c3ad557d5475-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/majdataplay-xxlb/c3ad557d5475/MajdataPlay_XXLB_____.tendies",
+      "fileName": "MajdataPlay_XXLB_____.tendies",
+      "bytes": 6744970,
+      "sourceSha256": "c3ad557d54755978891e16cce8493f6368798c751166eabd21d2657885afd0a5"
     },
     {
       "id": "manhattan-cafe",
@@ -9205,6 +10562,112 @@
       "fileName": "Manhattan_Cafe.tendies",
       "bytes": 1328738,
       "sourceSha256": "640272427df29bcec79f5da302b3ee8b07c949de71ea87040d2a13d921d91f7f"
+    },
+    {
+      "id": "manosaba-gyro",
+      "name": "Manosaba_Gyro",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/manosaba-gyro/0f0d80e2604f-r3/poster.jpg",
+      "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/bg.webp",
+      "unlockBg": "previews/manosaba-gyro/0f0d80e2604f-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/manosaba-gyro/0f0d80e2604f-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/manosaba-gyro/0f0d80e2604f/Manosaba_Gyro.tendies",
+      "fileName": "Manosaba_Gyro.tendies",
+      "bytes": 15923554,
+      "sourceSha256": "0f0d80e2604f86714516edb660ed586210c6c977dab511c727e0659836b889ea"
+    },
+    {
+      "id": "marin-kitagawa",
+      "name": "Marin_Kitagawa",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/marin-kitagawa/6a2479ce6b3a-r3/poster.jpg",
+      "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/bg.webp",
+      "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/fg.webp",
+      "unlockBg": "previews/marin-kitagawa/6a2479ce6b3a-r3/bg-unlock.webp",
+      "unlockFg": "previews/marin-kitagawa/6a2479ce6b3a-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-01.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-02.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-03.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-04.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-05.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-06.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-07.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-08.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-09.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-bg-10.webp",
+          "fg": "previews/marin-kitagawa/6a2479ce6b3a-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/marin-kitagawa/6a2479ce6b3a/Marin_Kitagawa.tendies",
+      "fileName": "Marin_Kitagawa.tendies",
+      "bytes": 13488677,
+      "sourceSha256": "6a2479ce6b3a680704cd64435ad14fe4f8a949b56f7cf83b70084b1694c1c39e"
     },
     {
       "id": "mariogalaxy",
@@ -9643,6 +11106,112 @@
       "sourceSha256": "afd07b579c9285ec0b99ed462ab05706b0de5f3893ed9c65bd3894c5b818970a"
     },
     {
+      "id": "minecraft-furina",
+      "name": "Minecraft_Furina",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/minecraft-furina/243f2c000eb7-r3/poster.jpg",
+      "bg": "previews/minecraft-furina/243f2c000eb7-r3/bg.webp",
+      "fg": "previews/minecraft-furina/243f2c000eb7-r3/fg.webp",
+      "unlockBg": "previews/minecraft-furina/243f2c000eb7-r3/bg-unlock.webp",
+      "unlockFg": "previews/minecraft-furina/243f2c000eb7-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-01.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-02.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-03.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-04.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-05.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-06.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-07.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-08.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-09.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/minecraft-furina/243f2c000eb7-r3/transition-bg-10.webp",
+          "fg": "previews/minecraft-furina/243f2c000eb7-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/minecraft-furina/243f2c000eb7/Minecraft_Furina.tendies",
+      "fileName": "Minecraft_Furina.tendies",
+      "bytes": 5581191,
+      "sourceSha256": "243f2c000eb7e60b87e9016e6007e3d6cd6326269067802fc0cb2cd6d4d65d78"
+    },
+    {
+      "id": "minecraft-black-hole-combat-wallpaper-lite",
+      "name": "Minecraft.Black.Hole.Combat.Wallpaper.Lite",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/poster.jpg",
+      "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/fg.webp",
+      "unlockFg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/minecraft-black-hole-combat-wallpaper-lite/d6ab50fa846c/Minecraft.Black.Hole.Combat.Wallpaper.Lite.tendies",
+      "fileName": "Minecraft.Black.Hole.Combat.Wallpaper.Lite.tendies",
+      "bytes": 14596885,
+      "sourceSha256": "d6ab50fa846c6c74029fde87a980f4337edd85c3e62923f09de1ca5b7f51ca1d"
+    },
+    {
       "id": "moe-style-zenitsu-2",
       "name": "Moe-Style-Zenitsu 2",
       "type": "collections",
@@ -9843,6 +11412,53 @@
       "sourceSha256": "1134275462cea92d5b93e04e4b46bea89e7f7c484f07d0a0d8055777b17cd7db"
     },
     {
+      "id": "murasamever-1",
+      "name": "murasameVer_1",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/murasamever-1/ffb7f31bb65a-r3/poster.jpg",
+      "fg": "previews/murasamever-1/ffb7f31bb65a-r3/fg.webp",
+      "unlockFg": "previews/murasamever-1/ffb7f31bb65a-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/murasamever-1/ffb7f31bb65a-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/murasamever-1/ffb7f31bb65a/murasameVer_1.tendies",
+      "fileName": "murasameVer_1.tendies",
+      "bytes": 14163504,
+      "sourceSha256": "ffb7f31bb65a28cd3264b1c9271ef6c171d7366d2705f389aeb90b8ae353ffd0"
+    },
+    {
       "id": "nakano-nino-the-quintessential-quintuplet",
       "name": "Nakano_Nino_The_Quintessential_Quintuplet_",
       "type": "collections",
@@ -10006,6 +11622,53 @@
       "fileName": "neon_lines.tendies",
       "bytes": 191543,
       "sourceSha256": "52e582eed5a6253925ca9b0c78dc33e0d9886b2854d7fec6e439d527d4f65859"
+    },
+    {
+      "id": "neon-slashes",
+      "name": "Neon-Slashes",
+      "type": "collections",
+      "kind": "image",
+      "width": 576,
+      "height": 1280,
+      "poster": "previews/neon-slashes/037a9ab836ae-r3/poster.jpg",
+      "bg": "previews/neon-slashes/037a9ab836ae-r3/bg.webp",
+      "unlockBg": "previews/neon-slashes/037a9ab836ae-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/neon-slashes/037a9ab836ae-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/neon-slashes/037a9ab836ae/Neon-Slashes.tendies",
+      "fileName": "Neon-Slashes.tendies",
+      "bytes": 6111582,
+      "sourceSha256": "037a9ab836ae4fcb5e77e8944159632a7b47003c30bbb29d662e2ab0c627afc8"
     },
     {
       "id": "nexus",
@@ -10218,6 +11881,53 @@
       "fileName": "niko.tendies",
       "bytes": 1498872,
       "sourceSha256": "911afd985a82b7e2ca4ce12b8ebfad57a341edaa497de3572da501eb60c0f241"
+    },
+    {
+      "id": "nintendo-gameboy",
+      "name": "Nintendo_Gameboy",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/nintendo-gameboy/b3ada1f58710-r3/poster.jpg",
+      "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/fg.webp",
+      "unlockFg": "previews/nintendo-gameboy/b3ada1f58710-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/nintendo-gameboy/b3ada1f58710-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/nintendo-gameboy/b3ada1f58710/Nintendo_Gameboy.tendies",
+      "fileName": "Nintendo_Gameboy.tendies",
+      "bytes": 20566535,
+      "sourceSha256": "b3ada1f5871047f97f7f00ed2e0068af3c856fbfed2af2ba8940a03f13d67ec8"
     },
     {
       "id": "nintendo-switch-2-x-mario-kart-9-aod",
@@ -11501,6 +13211,53 @@
       "sourceSha256": "94127678641a7541adf490ae49ec4919086eb04a4348c9cdd7274c00d9ba2b42"
     },
     {
+      "id": "roxy-migurdia",
+      "name": "Roxy_Migurdia_",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/roxy-migurdia/0f91bb979a9a-r3/poster.jpg",
+      "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/fg.webp",
+      "unlockFg": "previews/roxy-migurdia/0f91bb979a9a-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-01.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-02.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-03.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-04.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-05.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-06.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-07.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-08.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-09.webp"
+        },
+        {
+          "fg": "previews/roxy-migurdia/0f91bb979a9a-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/roxy-migurdia/0f91bb979a9a/Roxy_Migurdia_.tendies",
+      "fileName": "Roxy_Migurdia_.tendies",
+      "bytes": 9515455,
+      "sourceSha256": "0f91bb979a9ac39338ebec981b2d1420682d5f0f1e3653d6ddd3def333368164"
+    },
+    {
       "id": "rubik-s-cube",
       "name": "Rubik_s_Cube",
       "type": "collections",
@@ -11546,6 +13303,69 @@
       "fileName": "Rubik_s_Cube.tendies",
       "bytes": 2551555,
       "sourceSha256": "c3492221ce0acdbaba74bc6b5d56c67912b3cf5247effc28f113a78f1f8e33f1"
+    },
+    {
+      "id": "sadboy",
+      "name": "Sadboy",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/sadboy/03ac9346e3e0-r3/poster.jpg",
+      "bg": "previews/sadboy/03ac9346e3e0-r3/bg.webp",
+      "unlockBg": "previews/sadboy/03ac9346e3e0-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/sadboy/03ac9346e3e0-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/sadboy/03ac9346e3e0/Sadboy.tendies",
+      "fileName": "Sadboy.tendies",
+      "bytes": 11836226,
+      "sourceSha256": "03ac9346e3e00231d424cc1e055008e041e6e76e181d2df8930d86184fc3f8de"
+    },
+    {
+      "id": "saki-yoshida",
+      "name": "Saki_Yoshida",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/saki-yoshida/34dd86659566-r3/poster.jpg",
+      "bg": "previews/saki-yoshida/34dd86659566-r3/bg.webp",
+      "unlockBg": "previews/saki-yoshida/34dd86659566-r3/bg-unlock.webp",
+      "transitionFrames": [],
+      "download": "originals/saki-yoshida/34dd86659566/Saki_Yoshida.tendies",
+      "fileName": "Saki_Yoshida.tendies",
+      "bytes": 8233615,
+      "sourceSha256": "34dd86659566a792b2fba940362051e1b8f49b5f73390f01bc2feaff0654f030"
     },
     {
       "id": "sakura",
@@ -11928,6 +13748,53 @@
       "sourceSha256": "3d50f74e8f38ef9eefde06fcc3df54681fd044755aeffc6b6a508d6a0f053e6a"
     },
     {
+      "id": "snoopy-in-the-snow",
+      "name": "Snoopy_in_the_snow",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/snoopy-in-the-snow/2db070754405-r3/poster.jpg",
+      "bg": "previews/snoopy-in-the-snow/2db070754405-r3/bg.webp",
+      "unlockBg": "previews/snoopy-in-the-snow/2db070754405-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/snoopy-in-the-snow/2db070754405-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/snoopy-in-the-snow/2db070754405/Snoopy_in_the_snow.tendies",
+      "fileName": "Snoopy_in_the_snow.tendies",
+      "bytes": 9004979,
+      "sourceSha256": "2db0707544055362705a0479c8a23f4ec66afac2114d13e7410279c406dc7498"
+    },
+    {
       "id": "snoopy-on-the-moon",
       "name": "Snoopy_on_the_moon",
       "type": "collections",
@@ -11985,6 +13852,53 @@
       "fileName": "Snoopy_on_the_moon.tendies",
       "bytes": 4411227,
       "sourceSha256": "489dadb00a24990d0d0d9c5bbba2616d619b00210bc729c0404b702c19ed50aa"
+    },
+    {
+      "id": "snoopy-v2",
+      "name": "Snoopy_V2",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/snoopy-v2/7d5d15c2df5c-r3/poster.jpg",
+      "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/bg.webp",
+      "unlockBg": "previews/snoopy-v2/7d5d15c2df5c-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/snoopy-v2/7d5d15c2df5c-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/snoopy-v2/7d5d15c2df5c/Snoopy_V2.tendies",
+      "fileName": "Snoopy_V2.tendies",
+      "bytes": 13729291,
+      "sourceSha256": "7d5d15c2df5c95fd729740b21d455771391091a535c63efd339facd87c7771bb"
     },
     {
       "id": "snoopy",
@@ -12501,6 +14415,53 @@
       "sourceSha256": "6aa72844f813ee9e5c4d63dbd1eaf265bde91ccded76765176aa780126818dee"
     },
     {
+      "id": "spongbob",
+      "name": "Spongbob",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/spongbob/f32b1f2ca09e-r3/poster.jpg",
+      "bg": "previews/spongbob/f32b1f2ca09e-r3/bg.webp",
+      "unlockBg": "previews/spongbob/f32b1f2ca09e-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/spongbob/f32b1f2ca09e-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/spongbob/f32b1f2ca09e/Spongbob.tendies",
+      "fileName": "Spongbob.tendies",
+      "bytes": 14217964,
+      "sourceSha256": "f32b1f2ca09e9ad28d00c60d8a9bf432ae15e965bdc87d5c37f88584cbf8e4a1"
+    },
+    {
       "id": "starlight-glimmer",
       "name": "Starlight_Glimmer",
       "type": "collections",
@@ -12976,6 +14937,304 @@
       "sourceSha256": "f7fc74e2a568ddff31be23655e0a4d87a157f0e3410225876e3dc48e0f7cd46f"
     },
     {
+      "id": "tendies-pack2-01",
+      "name": "tendies-pack2-01",
+      "type": "collections",
+      "kind": "image",
+      "width": 720,
+      "height": 1280,
+      "poster": "previews/tendies-pack2-01/4c3323ee8006-r3/poster.jpg",
+      "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/bg.webp",
+      "unlockBg": "previews/tendies-pack2-01/4c3323ee8006-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-01/4c3323ee8006-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/tendies-pack2-01/4c3323ee8006/tendies-pack2-01.tendies",
+      "fileName": "tendies-pack2-01.tendies",
+      "bytes": 11492429,
+      "sourceSha256": "4c3323ee8006a5513638af47b66008f79c35d22b9d6c4505b7f99e0f4df14f8c"
+    },
+    {
+      "id": "tendies-pack2-03",
+      "name": "tendies-pack2-03",
+      "type": "collections",
+      "kind": "image",
+      "width": 464,
+      "height": 832,
+      "poster": "previews/tendies-pack2-03/71f9f35cd507-r3/poster.jpg",
+      "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/bg.webp",
+      "unlockBg": "previews/tendies-pack2-03/71f9f35cd507-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-03/71f9f35cd507-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/tendies-pack2-03/71f9f35cd507/tendies-pack2-03.tendies",
+      "fileName": "tendies-pack2-03.tendies",
+      "bytes": 6814198,
+      "sourceSha256": "71f9f35cd5077b7930b5e75c3c83825886e519023e483cbf1bf2c66b6532360a"
+    },
+    {
+      "id": "tendies-pack2-04",
+      "name": "tendies-pack2-04",
+      "type": "collections",
+      "kind": "image",
+      "width": 576,
+      "height": 1024,
+      "poster": "previews/tendies-pack2-04/816bb3730347-r3/poster.jpg",
+      "bg": "previews/tendies-pack2-04/816bb3730347-r3/bg.webp",
+      "unlockBg": "previews/tendies-pack2-04/816bb3730347-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-04/816bb3730347-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/tendies-pack2-04/816bb3730347/tendies-pack2-04.tendies",
+      "fileName": "tendies-pack2-04.tendies",
+      "bytes": 9828714,
+      "sourceSha256": "816bb3730347c8065658e2c2d47a904bdc391e9c70d7e4e2dceb604fa4dcca1f"
+    },
+    {
+      "id": "tendies-pack2-05",
+      "name": "tendies-pack2-05",
+      "type": "collections",
+      "kind": "image",
+      "width": 576,
+      "height": 1024,
+      "poster": "previews/tendies-pack2-05/85980fae6c77-r3/poster.jpg",
+      "bg": "previews/tendies-pack2-05/85980fae6c77-r3/bg.webp",
+      "unlockBg": "previews/tendies-pack2-05/85980fae6c77-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-05/85980fae6c77-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/tendies-pack2-05/85980fae6c77/tendies-pack2-05.tendies",
+      "fileName": "tendies-pack2-05.tendies",
+      "bytes": 10474253,
+      "sourceSha256": "85980fae6c7778254255fe0ffd24a01599c24638194a3101e12a28544c993d86"
+    },
+    {
+      "id": "tendies-pack2-06",
+      "name": "tendies-pack2-06",
+      "type": "collections",
+      "kind": "image",
+      "width": 720,
+      "height": 1280,
+      "poster": "previews/tendies-pack2-06/afaa9f6b121b-r3/poster.jpg",
+      "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/bg.webp",
+      "unlockBg": "previews/tendies-pack2-06/afaa9f6b121b-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-06/afaa9f6b121b-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/tendies-pack2-06/afaa9f6b121b/tendies-pack2-06.tendies",
+      "fileName": "tendies-pack2-06.tendies",
+      "bytes": 9940800,
+      "sourceSha256": "afaa9f6b121b55995a35c0fda5818249415a5ad93a74a1186d8b7152f03f9fc5"
+    },
+    {
+      "id": "tendies-pack2-07",
+      "name": "tendies-pack2-07",
+      "type": "collections",
+      "kind": "image",
+      "width": 576,
+      "height": 1246,
+      "poster": "previews/tendies-pack2-07/9b961931ed30-r3/poster.jpg",
+      "bg": "previews/tendies-pack2-07/9b961931ed30-r3/bg.webp",
+      "unlockBg": "previews/tendies-pack2-07/9b961931ed30-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/tendies-pack2-07/9b961931ed30-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/tendies-pack2-07/9b961931ed30/tendies-pack2-07.tendies",
+      "fileName": "tendies-pack2-07.tendies",
+      "bytes": 4920839,
+      "sourceSha256": "9b961931ed30c765433746cf75b6509454af16e6bc437e9351f0b5364dc96a13"
+    },
+    {
+      "id": "tendies-pack2-09",
+      "name": "tendies-pack2-09",
+      "type": "collections",
+      "kind": "image",
+      "width": 720,
+      "height": 1280,
+      "poster": "previews/tendies-pack2-09/61591f1120ef-r3/poster.jpg",
+      "bg": "previews/tendies-pack2-09/61591f1120ef-r3/bg.webp",
+      "unlockBg": "previews/tendies-pack2-09/61591f1120ef-r3/bg-unlock.webp",
+      "transitionFrames": [],
+      "download": "originals/tendies-pack2-09/61591f1120ef/tendies-pack2-09.tendies",
+      "fileName": "tendies-pack2-09.tendies",
+      "bytes": 2120047,
+      "sourceSha256": "61591f1120ef1742ef8fa0439df12e011a5c5d6bbbcd590010ac21456dbe3a2b"
+    },
+    {
       "id": "tennis-v2",
       "name": "Tennis_V2",
       "type": "collections",
@@ -13247,6 +15506,65 @@
       "sourceSha256": "79a6e726c2d27a6528595e46303cb3cf094ff103e6cf2e96aa97ebb7d7780abe"
     },
     {
+      "id": "togi-maxxing",
+      "name": "Togi_maxxing",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/togi-maxxing/2f79bc0931eb-r3/poster.jpg",
+      "bg": "previews/togi-maxxing/2f79bc0931eb-r3/bg.webp",
+      "fg": "previews/togi-maxxing/2f79bc0931eb-r3/fg.webp",
+      "unlockBg": "previews/togi-maxxing/2f79bc0931eb-r3/bg-unlock.webp",
+      "unlockFg": "previews/togi-maxxing/2f79bc0931eb-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-01.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-02.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-03.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-04.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-05.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-06.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-07.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-08.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-09.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-bg-10.webp",
+          "fg": "previews/togi-maxxing/2f79bc0931eb-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/togi-maxxing/2f79bc0931eb/Togi_maxxing.tendies",
+      "fileName": "Togi_maxxing.tendies",
+      "bytes": 5981092,
+      "sourceSha256": "2f79bc0931eba933dcd0e1831211b0f1b187504ddb8c1a7f51da25192370e1d8"
+    },
+    {
       "id": "tokai-teio-umamusume",
       "name": "Tokai_Teio__umamusume_",
       "type": "collections",
@@ -13341,6 +15659,65 @@
       "sourceSha256": "429fcad084cea1a1d6285d5bf6c0bb1717ed27f9118c7e6ffc1706c7217aec75"
     },
     {
+      "id": "transformers-star-convoy",
+      "name": "Transformers_Star_Convoy",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/transformers-star-convoy/28e8984cf15b-r3/poster.jpg",
+      "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/bg.webp",
+      "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/fg.webp",
+      "unlockBg": "previews/transformers-star-convoy/28e8984cf15b-r3/bg-unlock.webp",
+      "unlockFg": "previews/transformers-star-convoy/28e8984cf15b-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-01.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-02.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-03.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-04.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-05.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-06.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-07.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-08.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-09.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-bg-10.webp",
+          "fg": "previews/transformers-star-convoy/28e8984cf15b-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/transformers-star-convoy/28e8984cf15b/Transformers_Star_Convoy.tendies",
+      "fileName": "Transformers_Star_Convoy.tendies",
+      "bytes": 7451917,
+      "sourceSha256": "28e8984cf15b4f0a384b27185f55574410974a435433a2887c17b0226aba7ef8"
+    },
+    {
       "id": "trinityhadesskeletonboy",
       "name": "TrinityHadesSkeletonBoy",
       "type": "collections",
@@ -13386,6 +15763,53 @@
       "fileName": "TrinityHadesSkeletonBoy.tendies",
       "bytes": 5886300,
       "sourceSha256": "1563f54ea865b81c09cacdb74c8bddbdefc459ff807195816dadf3ae9885abf5"
+    },
+    {
+      "id": "tva-poster",
+      "name": "Tva_poster",
+      "type": "collections",
+      "kind": "image",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/tva-poster/9d7b684edb86-r3/poster.jpg",
+      "bg": "previews/tva-poster/9d7b684edb86-r3/bg.webp",
+      "unlockBg": "previews/tva-poster/9d7b684edb86-r3/bg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-01.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-02.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-03.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-04.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-05.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-06.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-07.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-08.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-09.webp"
+        },
+        {
+          "bg": "previews/tva-poster/9d7b684edb86-r3/transition-bg-10.webp"
+        }
+      ],
+      "download": "originals/tva-poster/9d7b684edb86/Tva_poster.tendies",
+      "fileName": "Tva_poster.tendies",
+      "bytes": 16397909,
+      "sourceSha256": "9d7b684edb865c22e0dcd0b46278366d2a5968d2b4283a2a96e3a2c29898614a"
     },
     {
       "id": "ubuntu",
@@ -14790,6 +17214,65 @@
       "fileName": "Zero_Two.tendies",
       "bytes": 1372075,
       "sourceSha256": "3fa0d5db011bbcd1f278424dc86e8c7d2f59e45ae5491c375406511eb82e276f"
+    },
+    {
+      "id": "zootopia-2-better",
+      "name": "Zootopia_2__better_",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/zootopia-2-better/9af8a005ae5e-r3/poster.jpg",
+      "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/bg.webp",
+      "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/fg.webp",
+      "unlockBg": "previews/zootopia-2-better/9af8a005ae5e-r3/bg-unlock.webp",
+      "unlockFg": "previews/zootopia-2-better/9af8a005ae5e-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-01.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-02.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-03.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-04.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-05.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-06.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-07.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-08.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-09.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-bg-10.webp",
+          "fg": "previews/zootopia-2-better/9af8a005ae5e-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/zootopia-2-better/9af8a005ae5e/Zootopia_2__better_.tendies",
+      "fileName": "Zootopia_2__better_.tendies",
+      "bytes": 6966990,
+      "sourceSha256": "9af8a005ae5ef92b4ae578c1fee0e8398f5266ccefe23df8ea10f8f8adff25ff"
     },
     {
       "id": "zoro",
