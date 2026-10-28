@@ -26,3 +26,13 @@ export type Catalog = {
   assetBase?: string;
   items: WallpaperItem[];
 };
+
+export type Category = {
+  id: string;
+  label: string;
+};
+
+export type CategoryFile = {
+  categories: Category[];
+  items: Record<string, string[]>;
+};

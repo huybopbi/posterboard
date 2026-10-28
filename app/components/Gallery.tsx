@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { categories, getCategories, isCategoryId } from "@/lib/categories";
 import { resolveWallpaper } from "@/lib/assets";
 import { isHiddenDuplicate } from "@/lib/duplicates";
 import type { PosterType, WallpaperItem } from "@/lib/types";
@@ -28,8 +29,30 @@ export function Gallery({ items, assetBase = "" }: Props) {
   const [query,  setQuery]  = useState("");
   const [filter, setFilter] = useState<(typeof filters)[number]["id"]>("all");
   const [active, setActive] = useState<WallpaperItem | null>(null);
+  const [category, setCategoryState] = useState<string>("all");
 
-  const visible = useMemo(() => {
+  // Sync the category with ?category=<id>. The page is statically exported, so the
+  // query is read on the client after mount and written with history.replaceState.
+  useEffect(() => {
+    const read = () => {
+      const value = new URLSearchParams(window.location.search).get("category");
+      setCategoryState(isCategoryId(value) ? value : "all");
+    };
+    read();
+    window.addEventListener("popstate", read);
+    return () => window.removeEventListener("popstate", read);
+  }, []);
+
+  const setCategory = useCallback((next: string) => {
+    setCategoryState(next);
+    const url = new URL(window.location.href);
+    if (next === "all") url.searchParams.delete("category");
+    else url.searchParams.set("category", next);
+    window.history.replaceState(null, "", url);
+  }, []);
+
+  // Items matching search, type and duplicate rules, before the category filter.
+  const matching = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return ready.filter((item) => {
       if (isHiddenDuplicate(item.id)) return false;
@@ -38,6 +61,22 @@ export function Gallery({ items, assetBase = "" }: Props) {
       return item.name.toLowerCase().includes(needle);
     });
   }, [ready, query, filter]);
+
+  const categoryCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const item of matching) {
+      for (const id of getCategories(item.id)) counts.set(id, (counts.get(id) ?? 0) + 1);
+    }
+    return counts;
+  }, [matching]);
+
+  const visible = useMemo(
+    () =>
+      category === "all"
+        ? matching
+        : matching.filter((item) => getCategories(item.id).includes(category)),
+    [matching, category],
+  );
 
   return (
     <main className="page">
@@ -71,6 +110,31 @@ export function Gallery({ items, assetBase = "" }: Props) {
               {f.label}
             </button>
           ))}
+        </div>
+        <div className="categories" role="group" aria-label="Lọc theo thể loại">
+          <button
+            className="category"
+            type="button"
+            aria-pressed={category === "all"}
+            onClick={() => setCategory("all")}
+          >
+            Tất cả <span className="category-count">{matching.length}</span>
+          </button>
+          {categories.map((c) => {
+            const count = categoryCounts.get(c.id) ?? 0;
+            return (
+              <button
+                key={c.id}
+                className="category"
+                type="button"
+                aria-pressed={category === c.id}
+                disabled={count === 0 && category !== c.id}
+                onClick={() => setCategory(c.id)}
+              >
+                {c.label} <span className="category-count">{count}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

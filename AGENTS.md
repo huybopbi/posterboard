@@ -157,11 +157,22 @@ Chỉ thêm một dòng khi poster mới giống hệt một poster đang hiện
 
 Không thêm vào file này khi hai ảnh khác màu, khác cảnh, hoặc chỉ gần giống nhau. Desert, Lake, các màu iPhone 15, và các mùa khác nhau là những bộ phải giữ nhiều thẻ.
 
-## 8. Commit và đưa lên web
+## 8. Thể loại
+
+Gallery có thanh lọc theo thể loại. Dữ liệu nằm ở `content/categories.json`, không nằm trong `content/catalog.json`, vì `npm run publish` ghi đè cả catalog.
+
+- `categories` là danh sách `id` và nhãn tiếng Việt: anime, game, movie, device, music, vehicle, abstract, nature, meme, other.
+- `items` ánh xạ `id` của mục catalog sang mảng `id` thể loại. Một mục có thể thuộc nhiều thể loại, ví dụ skin Minecraft kiểu anime là `["game", "anime"]`.
+- Mục chưa có trong `items` tự rơi vào `other` khi tải trang, nên publish mà quên thêm dòng thì trang vẫn chạy.
+
+Sau mỗi lần publish, thêm dòng cho các `id` mới vào `content/categories.json`. Không chắc thể loại nào thì ghi `["other"]`. Bundle phụ `slug-2`, `slug-3` cần dòng riêng.
+
+## 9. Commit và đưa lên web
 
 ```bash
 git add content/catalog.json
 git add content/duplicates.json   # chỉ khi file này đổi
+git add content/categories.json   # khi có mục mới cần thể loại
 git commit -m "Add <tên wallpaper> to the catalog."
 git push origin main
 ```
