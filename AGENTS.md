@@ -53,7 +53,7 @@ Script tự đọc `.env.local`. Biến đã có trong môi trường thì khôn
 
 ## 3. Lấy đủ file đang có trong catalog
 
-Clone mới không có `content/tendies`. Tải từng tên file đúng một lần từ khóa `download` trong catalog. `r2.dev` trả 1010 nếu request không có User-Agent của trình duyệt.
+Clone mới không có `content/tendies`. Tải từng tên file đúng một lần từ khóa `download` trong catalog. Asset hiện nằm ở custom domain `cdn.digitalshops.cc` (R2 nick mới); nên gửi User-Agent `Mozilla/5.0` khi tải.
 
 ```bash
 node --input-type=module << 'JS'
@@ -141,7 +141,7 @@ Sau khi chạy, kiểm tra:
 - Số mục mới bằng số mục cũ cộng số bundle mới. Số mục giảm nghĩa là có file cũ không nằm trên đĩa.
 - Mỗi `fileName` cũ vẫn còn ít nhất một mục.
 - `assetBase` không đổi.
-- Poster mới trong catalog mở được. Request tới `r2.dev` cần User-Agent `Mozilla/5.0`.
+- Poster mới trong catalog mở được. Request tới `cdn.digitalshops.cc` nên dùng User-Agent `Mozilla/5.0`.
 
 File lỗi in `failed <tên file>`. Dòng catalog cũ của riêng file đó được giữ. `failed > 0` thì script không xóa prefix cũ trên R2, nhưng catalog vẫn bị ghi lại nếu có file khác upload thành công. Vì vậy thư mục local vẫn phải đủ file trước khi chạy.
 
