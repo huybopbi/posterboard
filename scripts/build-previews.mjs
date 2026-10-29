@@ -1122,8 +1122,16 @@ async function main() {
 
   const nextItems = [];
   const staleItems = [];
+  // addedAt: first time an id appeared in the catalog. Kept across re-renders so
+  // "Mới cập nhật" stays stable; a re-rendered file falls back to its old fileName entry.
+  const publishedAt = new Date().toISOString();
+  const previousById = new Map(previous.items.map((item) => [item.id, item]));
+  const stampAdded = (item) => {
+    const before = previousById.get(item.id) ?? previous.items.find((old) => old.fileName === item.fileName);
+    return { ...item, addedAt: item.addedAt ?? before?.addedAt ?? publishedAt };
+  };
   for (const result of settled) {
-    nextItems.push(...result.items);
+    nextItems.push(...result.items.map(stampAdded));
     staleItems.push(...result.stale);
     if (result.uploaded) uploaded += 1;
     if (result.failed) failed += 1;

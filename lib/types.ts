@@ -19,6 +19,10 @@ export type WallpaperItem = {
   download: string;
   fileName: string;
   bytes: number;
+  /** ISO time the id first entered the catalog (see AGENTS.md). */
+  addedAt?: string;
+  /** Optional curated rank; lower shows first under "Phổ biến nhất". */
+  featured?: number;
   sourceSha256?: string;
 };
 

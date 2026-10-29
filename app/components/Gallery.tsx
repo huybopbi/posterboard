@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { categories, getCategories, isCategoryId } from "@/lib/categories";
 import { resolveWallpaper } from "@/lib/assets";
 import { isHiddenDuplicate } from "@/lib/duplicates";
@@ -16,6 +16,17 @@ const filters: Array<{ id: "all" | PosterType; label: string }> = [
   { id: "photos",      label: "Photos"      },
   { id: "mercury",     label: "Mercury"     },
 ];
+
+const sorts = [
+  { id: "popular",   label: "Phổ biến nhất" },
+  { id: "newest",    label: "Mới cập nhật" },
+  { id: "size-desc", label: "Dung lượng: lớn → nhỏ" },
+  { id: "size-asc",  label: "Dung lượng: nhỏ → lớn" },
+] as const;
+type SortId = (typeof sorts)[number]["id"];
+const SORT_KEY = "pb-sort";
+const isSortId = (value: unknown): value is SortId =>
+  sorts.some((s) => s.id === value);
 
 const SHOWCASE_SIZE = 10;
 const PHONE_RATIO = 390 / 844;
@@ -35,6 +46,56 @@ export function Gallery({ items, assetBase = "" }: Props) {
   const [filter, setFilter] = useState<(typeof filters)[number]["id"]>("all");
   const [active, setActive] = useState<WallpaperItem | null>(null);
   const [category, setCategoryState] = useState<string>("all");
+  const [sort, setSortState] = useState<SortId>("popular");
+  const [shortcut, setShortcut] = useState<string | null>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  // Sort: ?sort=<id> wins, then localStorage, then "popular".
+  useEffect(() => {
+    const read = () => {
+      const fromUrl = new URLSearchParams(window.location.search).get("sort");
+      let stored: string | null = null;
+      try { stored = window.localStorage.getItem(SORT_KEY); } catch {}
+      setSortState(isSortId(fromUrl) ? fromUrl : isSortId(stored) ? stored : "popular");
+    };
+    read();
+    window.addEventListener("popstate", read);
+    return () => window.removeEventListener("popstate", read);
+  }, []);
+
+  const setSort = useCallback((next: SortId) => {
+    setSortState(next);
+    try { window.localStorage.setItem(SORT_KEY, next); } catch {}
+    const url = new URL(window.location.href);
+    if (next === "popular") url.searchParams.delete("sort");
+    else url.searchParams.set("sort", next);
+    window.history.replaceState(null, "", url);
+  }, []);
+
+  // Quick search: Ctrl/Cmd+K anywhere, "/" when not already typing.
+  useEffect(() => {
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const mac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+    setShortcut(fine ? (mac ? "⌘K" : "Ctrl K") : null);
+    const onKey = (e: KeyboardEvent) => {
+      const input = searchRef.current;
+      if (!input) return;
+      if ((e.ctrlKey || e.metaKey) && !e.altKey && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        input.focus();
+        input.select();
+        return;
+      }
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault();
+      input.focus();
+      input.select();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   // Sync the category with ?category=<id>. The page is statically exported, so the
   // query is read on the client after mount and written with history.replaceState.
@@ -78,13 +139,29 @@ export function Gallery({ items, assetBase = "" }: Props) {
     return counts;
   }, [matching]);
 
-  const visible = useMemo(
-    () =>
+  // Catalog position, used as the tie-breaker for every sort.
+  const order = useMemo(() => new Map(items.map((item, i) => [item.id, i])), [items]);
+
+  const visible = useMemo(() => {
+    const filtered =
       category === "all"
         ? matching
-        : matching.filter((item) => getCategories(item.id).includes(category)),
-    [matching, category],
-  );
+        : matching.filter((item) => getCategories(item.id).includes(category));
+    const pos = (item: WallpaperItem) => order.get(item.id) ?? 0;
+    const time = (item: WallpaperItem) => (item.addedAt ? Date.parse(item.addedAt) || 0 : 0);
+    const rank = (item: WallpaperItem) => item.featured ?? Number.POSITIVE_INFINITY;
+    const compare: Record<SortId, (a: WallpaperItem, b: WallpaperItem) => number> = {
+      // No analytics: optional curated `featured` rank first, then catalog order.
+      popular: (a, b) => rank(a) - rank(b) || pos(a) - pos(b),
+      newest: (a, b) => time(b) - time(a) || pos(a) - pos(b),
+      "size-desc": (a, b) => b.bytes - a.bytes || pos(a) - pos(b),
+      "size-asc": (a, b) => a.bytes - b.bytes || pos(a) - pos(b),
+    };
+    return [...filtered].sort((a, b) => {
+      const d = compare[sort](a, b);
+      return Number.isNaN(d) ? pos(a) - pos(b) : d;
+    });
+  }, [matching, category, sort, order]);
 
   // Catalog size after the duplicate rules, independent of search and filters.
   const totalCount = useMemo(
@@ -112,13 +189,40 @@ export function Gallery({ items, assetBase = "" }: Props) {
 
       {/* Sticky toolbar */}
       <div className="toolbar">
-        <input
-          className="search"
-          value={query}
-          placeholder="Tìm theo tên…"
-          aria-label="Tìm theo tên"
-          onChange={(e) => setQuery(e.target.value)}
-        />
+        <div className={shortcut && !query ? "search-wrap has-kbd" : "search-wrap"}>
+          <input
+            ref={searchRef}
+            className="search"
+            type="search"
+            value={query}
+            placeholder="Tìm theo tên…"
+            aria-label="Tìm theo tên"
+            aria-keyshortcuts="Control+K Meta+K /"
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key !== "Escape") return;
+              e.preventDefault();
+              if (query) setQuery("");
+              else e.currentTarget.blur();
+            }}
+          />
+          {shortcut && !query && (
+            <kbd className="search-kbd" aria-hidden="true">{shortcut}</kbd>
+          )}
+        </div>
+        <label className="sort">
+          <span className="sr-only">Sắp xếp</span>
+          <select
+            className="sort-select"
+            value={sort}
+            aria-label="Sắp xếp"
+            onChange={(e) => isSortId(e.target.value) && setSort(e.target.value)}
+          >
+            {sorts.map((s) => (
+              <option key={s.id} value={s.id}>{s.label}</option>
+            ))}
+          </select>
+        </label>
         <div className="filters">
           {filters.map((f) => (
             <button

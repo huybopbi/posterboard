@@ -167,6 +167,16 @@ Gallery có thanh lọc theo thể loại. Dữ liệu nằm ở `content/catego
 
 Sau mỗi lần publish, thêm dòng cho các `id` mới vào `content/categories.json`. Không chắc thể loại nào thì ghi `["other"]`. Bundle phụ `slug-2`, `slug-3` cần dòng riêng.
 
+## 8b. Sắp xếp và trường `addedAt`
+
+Thanh công cụ có ô "Sắp xếp" (lưu ở `?sort=` và `localStorage` khóa `pb-sort`):
+
+- **Phổ biến nhất** (mặc định): không có analytics nên không có lượt xem. Thứ tự là trường tùy chọn `featured` (số nhỏ đứng trước), rồi thứ tự trong `content/catalog.json`. Không bịa lượt xem.
+- **Mới cập nhật**: sắp theo `addedAt` (ISO), mới nhất trước, hòa thì theo thứ tự catalog.
+- **Dung lượng** lớn → nhỏ / nhỏ → lớn: theo `bytes` (kích thước file `.tendies`), script đã ghi sẵn.
+
+`addedAt` là thời điểm `id` lần đầu vào catalog. Giá trị của các mục cũ lấy từ lịch sử git của `content/catalog.json` (ngày author của commit đầu tiên chứa `id`). `scripts/build-previews.mjs` giữ `addedAt` cũ theo `id` (hoặc theo `fileName` khi file được render lại); mục mới nhận thời điểm chạy publish. Đừng sửa tay hay xóa `addedAt`, nếu không mục đó sẽ thành "mới".
+
 ## 9. Commit và đưa lên web
 
 ```bash
