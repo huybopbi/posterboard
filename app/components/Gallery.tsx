@@ -124,13 +124,6 @@ export function Gallery({ items, assetBase = "" }: Props) {
 
       {/* Sticky toolbar */}
       <div className="toolbar" ref={toolbarRef}>
-        <input
-          className="search"
-          value={query}
-          placeholder="Tìm theo tên…"
-          aria-label="Tìm theo tên"
-          onChange={(e) => setQuery(e.target.value)}
-        />
         <div className="filters">
           {filters.map((f) => (
             <button

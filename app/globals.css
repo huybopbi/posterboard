@@ -317,20 +317,6 @@ button, input { font: inherit; color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 
-.search {
-  flex: 1 1 200px;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid transparent;
-  border-radius: 12px;
-  padding: 9px 14px;
-  font-size: 15px;
-  outline: none;
-  transition: background 0.15s, border-color 0.15s;
-}
-.search:focus {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.22);
-}
 
 .filters {
   display: flex;
