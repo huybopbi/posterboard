@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { categories, getCategories, isCategoryId } from "@/lib/categories";
 import { resolveWallpaper } from "@/lib/assets";
 import { isHiddenDuplicate } from "@/lib/duplicates";
@@ -102,27 +102,12 @@ export function Gallery({ items, assetBase = "" }: Props) {
       : Array.from({ length: SHOWCASE_SIZE }, (_, i) => phones[Math.floor(i * step)]);
   }, [ready]);
 
-  const toolbarRef = useRef<HTMLDivElement>(null);
-  const browse = useCallback(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    toolbarRef.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-  }, []);
-
   return (
     <main className="page">
-      <Hero
-        query={query}
-        category={category}
-        onCategoryChange={setCategory}
-        categoryCounts={categoryCounts}
-        totalCount={totalCount}
-        visibleCount={visible.length}
-        showcase={showcase}
-        onBrowse={browse}
-      />
+      <Hero totalCount={totalCount} showcase={showcase} />
 
       {/* Sticky toolbar */}
-      <div className="toolbar" ref={toolbarRef}>
+      <div className="toolbar">
         <input
           className="search"
           value={query}
