@@ -20,8 +20,8 @@ const filters: Array<{ id: "all" | PosterType; label: string }> = [
 const sorts = [
   { id: "popular",   label: "Phổ biến nhất" },
   { id: "newest",    label: "Mới cập nhật" },
-  { id: "size-desc", label: "Dung lượng: lớn → nhỏ" },
-  { id: "size-asc",  label: "Dung lượng: nhỏ → lớn" },
+  { id: "size-desc", label: "Dung lượng ↓" },
+  { id: "size-asc",  label: "Dung lượng ↑" },
 ] as const;
 type SortId = (typeof sorts)[number]["id"];
 const SORT_KEY = "pb-sort";
