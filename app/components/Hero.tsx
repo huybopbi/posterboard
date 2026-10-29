@@ -78,10 +78,6 @@ export function Hero({
             <dt>Thể loại</dt>
             <dd>{categories.length}</dd>
           </div>
-          <div className="hero-stat">
-            <dt>Định dạng</dt>
-            <dd>.tendies</dd>
-          </div>
         </dl>
       </div>
 
