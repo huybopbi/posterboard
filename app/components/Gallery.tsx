@@ -72,6 +72,68 @@ export function Gallery({ items, assetBase = "" }: Props) {
     window.history.replaceState(null, "", url);
   }, []);
 
+  // Preview: ?preview=<id>. pushState on open so Back closes the modal;
+  // popstate (and the initial load) re-read the param. Unknown ids are dropped.
+  const byId = useMemo(() => new Map(ready.map((item) => [item.id, item])), [ready]);
+  useEffect(() => {
+    const read = (initial: boolean) => {
+      const id = new URLSearchParams(window.location.search).get("preview");
+      const item = id ? byId.get(id) ?? null : null;
+      setActive(item);
+      if (initial && id && !item) {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("preview");
+        window.history.replaceState(window.history.state, "", url);
+      }
+    };
+    read(true);
+    const onPop = () => read(false);
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [byId]);
+
+  const openPreview = useCallback((item: WallpaperItem) => {
+    setActive(item);
+    const url = new URL(window.location.href);
+    url.searchParams.set("preview", item.id);
+    window.history.pushState({ pbPreview: item.id }, "", url);
+  }, []);
+
+  const closePreview = useCallback(() => {
+    const state = window.history.state as { pbPreview?: string } | null;
+    if (state?.pbPreview) {
+      // We pushed this entry; going back removes the param and popstate closes the modal.
+      window.history.back();
+      return;
+    }
+    setActive(null);
+    const url = new URL(window.location.href);
+    url.searchParams.delete("preview");
+    window.history.replaceState(null, "", url);
+  }, []);
+
+  // Title follows the open preview.
+  useEffect(() => {
+    if (!active) return;
+    // Next's metadata hydration can rewrite <title> after a direct ?preview= load,
+    // so keep re-applying ours while the modal is open.
+    const want = `${formatDisplayName(active.name)} · Posterboards`;
+    const base = document.title === want ? null : document.title;
+    let saved = base;
+    const apply = () => {
+      if (document.title === want) return;
+      saved = document.title;
+      document.title = want;
+    };
+    apply();
+    const observer = new MutationObserver(apply);
+    observer.observe(document.head, { subtree: true, childList: true, characterData: true });
+    return () => {
+      observer.disconnect();
+      if (saved !== null) document.title = saved;
+    };
+  }, [active]);
+
   // Quick search: Ctrl/Cmd+K anywhere, "/" when not already typing.
   useEffect(() => {
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -275,7 +337,7 @@ export function Gallery({ items, assetBase = "" }: Props) {
               key={item.id}
               item={item}
               eager={index < 6}
-              onOpen={setActive}
+              onOpen={openPreview}
             />
           ))}
         </section>
@@ -289,7 +351,7 @@ export function Gallery({ items, assetBase = "" }: Props) {
       {active && (
         <WallpaperPreview
           item={active}
-          onClose={() => setActive(null)}
+          onClose={closePreview}
         />
       )}
     </main>

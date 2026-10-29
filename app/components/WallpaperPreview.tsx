@@ -32,6 +32,42 @@ export function WallpaperPreview({ item, onClose }: Props) {
     };
   }, [onClose]);
 
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    if (!copied) return;
+    const t = window.setTimeout(() => setCopied(false), 1800);
+    return () => window.clearTimeout(t);
+  }, [copied]);
+
+  const handleShare = async () => {
+    const url = new URL(window.location.pathname, window.location.origin);
+    url.searchParams.set("preview", item.id);
+    const link = url.toString();
+    const mobile = window.matchMedia("(pointer: coarse)").matches;
+    if (mobile && typeof navigator.share === "function") {
+      try {
+        await navigator.share({ title: formatDisplayName(item.name), url: link });
+        return;
+      } catch (err) {
+        if ((err as Error)?.name === "AbortError") return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopied(true);
+      return;
+    } catch {}
+    const ta = document.createElement("textarea");
+    ta.value = link;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { if (document.execCommand("copy")) setCopied(true); } catch {}
+    ta.remove();
+  };
+
   const handleReady = useCallback(() => setReady(true), []);
 
   const handleScreenChange = (next: "locked" | "unlock") => {
@@ -138,6 +174,17 @@ export function WallpaperPreview({ item, onClose }: Props) {
           >
             <span aria-hidden="true">↺</span>
             Xem lại chuyển động
+          </button>
+
+          {/* Share */}
+          <button
+            className="replay-btn share-btn"
+            type="button"
+            onClick={handleShare}
+            aria-live="polite"
+          >
+            <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>
+            {copied ? "Đã sao chép" : "Sao chép link"}
           </button>
 
           {/* Download */}
