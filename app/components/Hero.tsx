@@ -1,12 +1,10 @@
 "use client";
 
-import type { FormEvent } from "react";
 import { categories } from "@/lib/categories";
 import type { WallpaperItem } from "@/lib/types";
 
 type Props = {
   query: string;
-  onQueryChange: (value: string) => void;
   category: string;
   onCategoryChange: (id: string) => void;
   categoryCounts: Map<string, number>;
@@ -18,7 +16,6 @@ type Props = {
 
 export function Hero({
   query,
-  onQueryChange,
   category,
   onCategoryChange,
   categoryCounts,
@@ -28,11 +25,6 @@ export function Hero({
   onBrowse,
 }: Props) {
   const filtering = query.trim() !== "" || category !== "all";
-
-  const submit = (event: FormEvent) => {
-    event.preventDefault();
-    onBrowse();
-  };
 
   const pick = (id: string) => {
     onCategoryChange(id);
@@ -50,25 +42,6 @@ export function Hero({
           Xem trước lớp nền và lớp nổi của từng wallpaper .tendies, rồi tải file gốc về dùng trên iOS.
         </p>
 
-        <form className="hero-search" role="search" onSubmit={submit}>
-          <label className="visually-hidden" htmlFor="hero-search-input">
-            Tìm wallpaper theo tên
-          </label>
-          <svg className="hero-search-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
-            <path d="m20 20-4.2-4.2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-          <input
-            id="hero-search-input"
-            className="hero-search-input"
-            type="search"
-            value={query}
-            placeholder="Tìm wallpaper theo tên…"
-            autoComplete="off"
-            enterKeyHint="search"
-            onChange={(e) => onQueryChange(e.target.value)}
-          />
-        </form>
         <p className="hero-status" aria-live="polite">
           {filtering ? `Đang hiển thị ${visibleCount} / ${totalCount} wallpaper` : ""}
         </p>

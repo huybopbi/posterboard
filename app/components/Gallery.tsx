@@ -112,7 +112,6 @@ export function Gallery({ items, assetBase = "" }: Props) {
     <main className="page">
       <Hero
         query={query}
-        onQueryChange={setQuery}
         category={category}
         onCategoryChange={setCategory}
         categoryCounts={categoryCounts}
@@ -124,6 +123,13 @@ export function Gallery({ items, assetBase = "" }: Props) {
 
       {/* Sticky toolbar */}
       <div className="toolbar" ref={toolbarRef}>
+        <input
+          className="search"
+          value={query}
+          placeholder="Tìm theo tên…"
+          aria-label="Tìm theo tên"
+          onChange={(e) => setQuery(e.target.value)}
+        />
         <div className="filters">
           {filters.map((f) => (
             <button
