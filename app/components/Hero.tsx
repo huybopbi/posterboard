@@ -12,7 +12,7 @@ export function Hero({ totalCount, showcase }: Props) {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="hero-brand">Tendies</p>
+        <p className="hero-brand">Posterboards</p>
         <h1 id="hero-title" className="hero-title">
           Kho wallpaper PosterBoard miễn phí cho iPhone
         </h1>

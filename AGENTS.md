@@ -182,3 +182,13 @@ git push origin main
 Vercel chỉ chạy `next build`. Nó không đọc R2 và không chạy publish. Redeploy project từ `main` thì https://posterboard-one.vercel.app/ mới hiện wallpaper mới.
 
 Kiểm tra local bằng `npm run dev`. Tìm đúng tên file mới, mở preview, và tải file `.tendies`. Số wallpaper trên đầu trang là số mục catalog sau khi đã bỏ các `id` trong `content/duplicates.json`.
+
+## 10. SEO
+
+Cấu hình SEO nằm ở:
+
+- `lib/site.ts`: tên site (`Posterboards`), tiêu đề, mô tả, locale và origin chính. Origin mặc định là `https://posterboards.vercel.app`. Khi gắn domain riêng, đặt biến môi trường `NEXT_PUBLIC_SITE_URL` (ví dụ `https://ten-mien.com`, không có đường dẫn) trong Vercel rồi redeploy, hoặc sửa `DEFAULT_SITE_URL` trong file này. Canonical, Open Graph, sitemap, robots và JSON-LD đều lấy origin từ đây.
+- `app/layout.tsx`: metadata, viewport, `preconnect` tới `assetBase`.
+- `app/page.tsx`: JSON-LD (WebSite và CollectionPage). `numberOfItems` tính lúc build từ catalog, bỏ các `id` trong `content/duplicates.json`, nên không cần sửa tay sau khi publish.
+- `app/robots.ts`, `app/sitemap.ts`, `app/manifest.ts`: đều `force-static` để chạy với `output: "export"`. Sitemap chỉ có trang chủ vì từng wallpaper chưa có URL riêng.
+- `public/og.png` (1200x630), `app/icon.png`, `app/apple-icon.png`, `app/favicon.ico`: sinh bằng `node scripts/make-og.mjs`. Script lấy 5 poster từ catalog qua `assetBase` nên cần mạng và font Inter. Chạy lại khi muốn đổi ảnh chia sẻ, rồi commit các file ảnh.
