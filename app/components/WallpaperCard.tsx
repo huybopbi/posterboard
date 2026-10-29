@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { WallpaperItem } from "@/lib/types";
+import { formatDisplayName } from "@/lib/displayName";
 
 type Props = {
   item: WallpaperItem;
@@ -33,7 +34,7 @@ export function WallpaperCard({ item, eager = false, onOpen }: Props) {
       onClick={() => onOpen(item)}
       role="button"
       tabIndex={0}
-      aria-label={`Xem trước ${item.name}`}
+      aria-label={`Xem trước ${formatDisplayName(item.name)}`}
       onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onOpen(item)}
     >
       {/* Skeleton */}
@@ -47,7 +48,7 @@ export function WallpaperCard({ item, eager = false, onOpen }: Props) {
           ref={imgRef}
           className={`card-img${loaded ? " done" : ""}`}
           src={item.poster}
-          alt={`Wallpaper ${item.name.replace(/_+/g, " ").trim()}`}
+          alt={`Wallpaper ${formatDisplayName(item.name)}`}
           loading={eager ? "eager" : "lazy"}
           fetchPriority={eager ? "high" : "low"}
           decoding="async"
@@ -65,7 +66,7 @@ export function WallpaperCard({ item, eager = false, onOpen }: Props) {
             {item.type === "collections" ? "Collections" : item.type === "photos" ? "Photos" : "Mercury"}
           </span>
         </div>
-        <span className="card-name">{item.name}</span>
+        <span className="card-name">{formatDisplayName(item.name)}</span>
         <div className="card-footer">
           <span className="card-size">{formatBytes(item.bytes)}</span>
           <a

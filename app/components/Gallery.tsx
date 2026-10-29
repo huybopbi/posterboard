@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { categories, getCategories, isCategoryId } from "@/lib/categories";
 import { resolveWallpaper } from "@/lib/assets";
 import { isHiddenDuplicate } from "@/lib/duplicates";
+import { formatDisplayName } from "@/lib/displayName";
 import type { PosterType, WallpaperItem } from "@/lib/types";
 import { Hero } from "./Hero";
 import { WallpaperCard } from "./WallpaperCard";
@@ -62,7 +63,10 @@ export function Gallery({ items, assetBase = "" }: Props) {
       if (isHiddenDuplicate(item.id)) return false;
       if (filter !== "all" && item.type !== filter) return false;
       if (!needle) return true;
-      return item.name.toLowerCase().includes(needle);
+      return (
+        item.name.toLowerCase().includes(needle) ||
+        formatDisplayName(item.name).toLowerCase().includes(needle)
+      );
     });
   }, [ready, query, filter]);
 

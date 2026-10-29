@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { WallpaperItem } from "@/lib/types";
+import { formatDisplayName } from "@/lib/displayName";
 import { PhoneFrame } from "./PhoneFrame";
 
 type Props = {
@@ -83,7 +84,7 @@ export function WallpaperPreview({ item, onClose }: Props) {
         <div className="preview-info-col">
           {/* Title */}
           <div className="preview-head">
-            <h2 id="preview-title" className="preview-title">{item.name}</h2>
+            <h2 id="preview-title" className="preview-title">{formatDisplayName(item.name)}</h2>
             <p className="preview-meta">
               {item.width}×{item.height} · {formatBytes(item.bytes)} · {kindLabel}
             </p>
