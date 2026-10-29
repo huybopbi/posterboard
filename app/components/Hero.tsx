@@ -17,7 +17,7 @@ export function Hero({ totalCount, showcase }: Props) {
           Kho wallpaper PosterBoard miễn phí cho iPhone
         </h1>
         <p className="hero-sub">
-          Xem trước lớp nền và lớp nổi của từng wallpaper .tendies, rồi tải file gốc về dùng trên iOS.
+          Xem trước mô phỏng lớp nền và lớp nổi của từng wallpaper .tendies. Hiệu ứng trên web chỉ mang tính tham khảo và có thể khác với thực tế trên iOS. Tải file gốc về để dùng.
         </p>
 
         <dl className="hero-stats">
