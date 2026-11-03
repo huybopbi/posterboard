@@ -148,8 +148,17 @@ function stateNumber(setValue) {
 }
 
 function collectStateOverrides(layer, stateName, into) {
-  for (const state of asArray(layer.states?.LKState)) {
-    if (attr(state, "name") !== stateName) continue;
+  // Some templates (e.g. WWDC 2022) name states "Locked Light" / "Unlock Dark"
+  // instead of plain "Locked" / "Unlock". Prefer the exact name, then Dark (matches the dark gallery and the night-sky background), then any variant.
+  const states = asArray(layer.states?.LKState);
+  const names = states.map((state) => attr(state, "name"));
+  const chosen = names.includes(stateName)
+    ? stateName
+    : names.includes(`${stateName} Dark`)
+      ? `${stateName} Dark`
+      : names.find((name) => typeof name === "string" && name.startsWith(`${stateName} `));
+  for (const state of states) {
+    if (attr(state, "name") !== chosen) continue;
     for (const setValue of asArray(state.elements?.LKStateSetValue)) {
       const targetId = attr(setValue, "targetId");
       const keyPath = attr(setValue, "keyPath");
