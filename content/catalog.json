@@ -5249,6 +5249,66 @@
       "sourceSha256": "b66249cbbccb4d1c706dbd1ad5dfb656a78a7e12fc69153eef606dd47e415c60"
     },
     {
+      "id": "four-seasons-tree",
+      "name": "Four Seasons Tree",
+      "type": "collections",
+      "kind": "layered",
+      "width": 390,
+      "height": 844,
+      "poster": "previews/four-seasons-tree/0129aa2c2180-r3/poster.jpg",
+      "bg": "previews/four-seasons-tree/0129aa2c2180-r3/bg.webp",
+      "fg": "previews/four-seasons-tree/0129aa2c2180-r3/fg.webp",
+      "unlockBg": "previews/four-seasons-tree/0129aa2c2180-r3/bg-unlock.webp",
+      "unlockFg": "previews/four-seasons-tree/0129aa2c2180-r3/fg-unlock.webp",
+      "transitionFrames": [
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-01.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-01.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-02.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-02.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-03.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-03.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-04.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-04.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-05.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-05.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-06.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-06.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-07.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-07.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-08.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-08.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-09.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-09.webp"
+        },
+        {
+          "bg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-bg-10.webp",
+          "fg": "previews/four-seasons-tree/0129aa2c2180-r3/transition-fg-10.webp"
+        }
+      ],
+      "download": "originals/four-seasons-tree/0129aa2c2180/Four Seasons Tree.tendies",
+      "fileName": "Four Seasons Tree.tendies",
+      "bytes": 20665514,
+      "sourceSha256": "0129aa2c2180493c5b5c2053fd198a22122c50cb7aa79ba0e21909086c8cc247",
+      "addedAt": "2026-11-03T02:25:23.652Z"
+    },
+    {
       "id": "french-lays-everywhere",
       "name": "French_Lays_Everywhere_",
       "type": "collections",
