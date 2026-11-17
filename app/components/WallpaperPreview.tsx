@@ -100,7 +100,7 @@ export function WallpaperPreview({ item, onClose }: Props) {
 
         {/* Phone */}
         <div className="preview-phone-col">
-          <div style={{ position: "relative" }}>
+          <div className="preview-phone-stage">
             <PhoneFrame
               key={item.id}
               item={item}
@@ -136,7 +136,7 @@ export function WallpaperPreview({ item, onClose }: Props) {
           </div>
 
           {/* Screen state toggle */}
-          <div>
+          <div className="preview-toggle">
             <div className="screen-toggle" role="group" aria-label="Trạng thái màn hình">
               <button
                 className="screen-btn"
@@ -164,28 +164,28 @@ export function WallpaperPreview({ item, onClose }: Props) {
               : "Các lớp chuyển sang vị trí sau khi mở khóa. Dock hiện lên từ phía dưới."}
           </p>
 
-          {/* Replay */}
-          <button
-            className="replay-btn"
-            type="button"
-            onClick={handleReplay}
-            disabled={!ready}
-            title="Xem lại hoạt ảnh chuyển trạng thái"
-          >
-            <span aria-hidden="true">↺</span>
-            Xem lại chuyển động
-          </button>
+          <div className="preview-actions">
+            <button
+              className="replay-btn"
+              type="button"
+              onClick={handleReplay}
+              disabled={!ready}
+              title="Xem lại hoạt ảnh chuyển trạng thái"
+            >
+              <span aria-hidden="true">↺</span>
+              Xem lại chuyển động
+            </button>
 
-          {/* Share */}
-          <button
-            className="replay-btn share-btn"
-            type="button"
-            onClick={handleShare}
-            aria-live="polite"
-          >
-            <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>
-            {copied ? "Đã sao chép" : "Sao chép link"}
-          </button>
+            <button
+              className="replay-btn share-btn"
+              type="button"
+              onClick={handleShare}
+              aria-live="polite"
+            >
+              <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>
+              {copied ? "Đã sao chép" : "Sao chép link"}
+            </button>
+          </div>
 
           {/* Download */}
           <a

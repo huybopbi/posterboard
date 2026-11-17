@@ -587,6 +587,9 @@ button, input { font: inherit; color: inherit; }
   position: fixed;
   inset: 0;
   z-index: 50;
+  width: 100%;
+  height: 100dvh;
+  max-height: 100svh;
   background: rgba(0, 0, 0, 0.80);
   backdrop-filter: blur(28px) saturate(150%);
   -webkit-backdrop-filter: blur(28px) saturate(150%);
@@ -599,6 +602,7 @@ button, input { font: inherit; color: inherit; }
   position: relative;
   display: flex;
   flex: 1;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -607,6 +611,7 @@ button, input { font: inherit; color: inherit; }
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  min-height: 0;
   padding: 28px 20px 28px 28px;
 }
 
@@ -618,6 +623,20 @@ button, input { font: inherit; color: inherit; }
   padding: 28px 28px 28px 20px;
   overflow-y: auto;
   min-width: 0;
+  min-height: 0;
+}
+
+.preview-phone-stage {
+  position: relative;
+  flex-shrink: 1;
+  min-height: 0;
+}
+
+.preview-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
 }
 
 /* close button */
@@ -757,7 +776,7 @@ button, input { font: inherit; color: inherit; }
 
 .phone {
   position: relative;
-  height: min(80vh, 660px);
+  height: min(80vh, 80dvh, 660px);
   aspect-ratio: 390 / 844;
   border-radius: var(--radius-phone);
   overflow: hidden;
@@ -844,21 +863,47 @@ button, input { font: inherit; color: inherit; }
 @media (max-width: 640px) {
   .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
-  .preview-wrap { flex-direction: column; overflow-y: auto; }
+  .preview-wrap {
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+    height: 100%;
+  }
   .preview-phone-col {
-    flex: none;
-    padding: 20px 0 0;
+    flex: 1 1 0;
+    min-height: 0;
+    padding: 16px 16px 8px;
     width: 100%;
     justify-content: center;
+    align-items: center;
+    container-type: size;
   }
-  /* On mobile, size phone by width so it fills the screen properly */
-  .phone {
+  /* Scale the frame to the leftover height so tags/toggles/buttons stay on screen */
+  .preview-phone-stage {
+    width: min(260px, 68vw, 100cqw, calc(100cqh * 390 / 844));
     height: auto;
-    width: min(260px, 68vw);
+    aspect-ratio: 390 / 844;
+    max-height: 100%;
   }
-  .preview-info-col { padding: 16px 20px 20px; }
-  .preview-title { font-size: 20px; }
-  .download-btn { margin-top: 0; }
+  .phone {
+    width: 100%;
+    height: 100%;
+  }
+  .preview-info-col {
+    flex: 0 0 auto;
+    padding: 10px 20px max(16px, env(safe-area-inset-bottom));
+    gap: 8px;
+    overflow: visible;
+  }
+  .preview-title { font-size: 18px; }
+  .preview-desc { font-size: 13px; }
+  .preview-actions { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .replay-btn { padding: 7px 12px; font-size: 12px; }
+  .download-btn { margin-top: 0; padding: 12px 20px; font-size: 14px; }
+}
+
+@media (max-width: 640px) and (max-height: 700px) {
+  .preview-desc { display: none; }
 }
 
 /* ── Reduced motion ───────────────────────────── */
