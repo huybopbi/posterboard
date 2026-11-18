@@ -16,6 +16,10 @@ export type WallpaperItem = {
   unlockFg?: string;
   transitionFrames?: Array<{ bg?: string; fg?: string }>;
   video?: string;
+  /** Looping mp4 of the Locked composite for wallpapers whose layers animate continuously (flipbooks, swinging sprites). */
+  loop?: string;
+  /** True when Locked and Unlock look the same, so the loop keeps playing after unlocking. */
+  loopUnlocked?: boolean;
   download: string;
   fileName: string;
   bytes: number;

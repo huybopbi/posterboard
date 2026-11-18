@@ -88,6 +88,7 @@ export function WallpaperPreview({ item, onClose }: Props) {
   };
 
   const kindLabel =
+    item.loop               ? (item.kind === "layered" ? "Depth wallpaper · chuyển động" : "Hình nền chuyển động") :
     item.kind === "layered" ? "Depth wallpaper" :
     item.kind === "video"   ? "Video wallpaper" :
                               "Ảnh tĩnh";
@@ -130,6 +131,7 @@ export function WallpaperPreview({ item, onClose }: Props) {
           <div className="preview-badges">
             {item.kind === "layered" && <span className="badge badge-depth">Depth</span>}
             {item.kind === "video"   && <span className="badge badge-video">Video</span>}
+            {item.loop && <span className="badge badge-video">Live</span>}
             <span className="badge">
               {item.type === "collections" ? "Collections" : item.type === "photos" ? "Photos" : "Mercury"}
             </span>

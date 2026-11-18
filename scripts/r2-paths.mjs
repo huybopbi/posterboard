@@ -23,7 +23,7 @@ export function previewObjectKey(publicPath, sha256) {
   const id = parts[1];
   const file = parts.slice(2).join("/");
   // Revision segment busts the immutable cache when a preview is rendered again.
-  return { id, file, key: `previews/${id}/${sha12(sha256)}-r5/${file}` };
+  return { id, file, key: `previews/${id}/${sha12(sha256)}-r6/${file}` };
 }
 
 export function originalObjectKey(id, sha256, fileName) {
@@ -39,7 +39,7 @@ export function diskForPreviewKey(outputRoot, key) {
 }
 
 export function itemObjectKeys(item) {
-  const keys = [item.download, item.poster, item.bg, item.fg, item.unlockBg, item.unlockFg, item.video];
+  const keys = [item.download, item.poster, item.bg, item.fg, item.unlockBg, item.unlockFg, item.video, item.loop];
   for (const frame of item.transitionFrames ?? []) keys.push(frame.bg, frame.fg);
   return keys.filter(Boolean);
 }
@@ -66,6 +66,7 @@ export function relocateItem(item, sha256) {
     unlockBg: map(item.unlockBg),
     unlockFg: map(item.unlockFg),
     video: map(item.video),
+    loop: map(item.loop),
     download: originalObjectKey(item.id, sha256, item.fileName),
     transitionFrames: item.transitionFrames?.map((frame) => ({
       ...(frame.bg ? { bg: map(frame.bg) } : {}),

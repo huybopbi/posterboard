@@ -62,6 +62,7 @@ export function WallpaperCard({ item, eager = false, onOpen }: Props) {
         <div className="card-badges">
           {item.kind === "layered" && <span className="badge badge-depth">Depth</span>}
           {item.kind === "video" && <span className="badge badge-video">Video</span>}
+          {item.loop && <span className="badge badge-video">Live</span>}
           <span className="badge">
             {item.type === "collections" ? "Collections" : item.type === "photos" ? "Photos" : "Mercury"}
           </span>

@@ -109,8 +109,12 @@ export function PhoneFrame({
   const fgShift = interactive ? `translate(${shift.x * 16}px, ${shift.y * 16}px)` : "none";
 
   const frame = frames[Math.round(progress * (frames.length - 1))];
+  // The loop video is the whole Locked composite (background + depth layer), so it replaces both
+  // still layers while it is showing. Wallpapers whose Unlock state differs fall back to the
+  // rendered transition frames as soon as the unlock starts.
+  const showLoop = Boolean(item.loop) && (item.loopUnlocked || progress < 0.02);
   const bgSrc = frame?.bg;
-  const fgSrc = frame?.fg;
+  const fgSrc = showLoop ? undefined : frame?.fg;
 
   const clockOpacity = Math.max(0, Math.min(1, 1 - progress * 1.6));
 
@@ -131,7 +135,21 @@ export function PhoneFrame({
       onPointerLeave={interactive ? () => setShift({ x: 0, y: 0 }) : undefined}
     >
       {/* Frames are preloaded before controls are enabled, so direct swaps do not flash. */}
-      {item.video ? (
+      {item.loop && (
+        <video
+          key={item.loop}
+          className="layer"
+          src={item.loop}
+          poster={item.bg ?? item.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          style={{ transform: bgShift, visibility: showLoop ? "visible" : "hidden" }}
+        />
+      )}
+      {item.loop && showLoop ? null : item.video ? (
         <video
           className="layer"
           src={item.video}

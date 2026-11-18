@@ -26,6 +26,9 @@ const catalogPath = path.join(root, "content", "catalog.json");
 const IMAGE_EXT = new Set([".heic", ".heif", ".png", ".jpg", ".jpeg", ".webp"]);
 const VIDEO_EXT = new Set([".mov", ".mp4", ".m4v"]);
 const RENDER_SCALE = 2;
+const LOOP_FPS = 15;
+const LOOP_MAX_SECONDS = 8;
+const LOOP_MAX_WIDTH = 540;
 
 const xmlParser = new XMLParser({
   ignoreAttributes: false,
@@ -36,7 +39,11 @@ const xmlParser = new XMLParser({
 });
 
 function parseCaml(text) {
-  const cleaned = text.replace(/<!--[\s\S]*?(?:-->|$)/g, "");
+  // Keyframe lists mix <integer> and <real> children; the parser groups children by tag, which would
+  // reorder them. Give every plain number one tag so <values>/<keyTimes> keep document order.
+  const cleaned = text
+    .replace(/<!--[\s\S]*?(?:-->|$)/g, "")
+    .replace(/<(integer|real|float|double)(\s[^>]*?)\/>/g, "<num$2/>");
   return xmlParser.parse(cleaned);
 }
 
@@ -162,10 +169,20 @@ function collectStateOverrides(layer, stateName, into) {
     for (const setValue of asArray(state.elements?.LKStateSetValue)) {
       const targetId = attr(setValue, "targetId");
       const keyPath = attr(setValue, "keyPath");
-      const value = stateNumber(setValue);
-      if (!targetId || !keyPath || !Number.isFinite(value)) continue;
+      if (!targetId || !keyPath) continue;
       const current = into.get(targetId) ?? {};
-      current[keyPath] = value;
+      if (keyPath === "position") {
+        const raw = attr(setValue.value, "value");
+        if (typeof raw !== "string") continue;
+        const [x, y] = parsePair(raw, NaN, NaN);
+        if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
+        current["position.x"] = x;
+        current["position.y"] = y;
+      } else {
+        const value = stateNumber(setValue);
+        if (!Number.isFinite(value)) continue;
+        current[keyPath] = value;
+      }
       into.set(targetId, current);
     }
   }
@@ -191,7 +208,7 @@ function imageSrc(layer) {
   return imageFromContents(layer?.contents);
 }
 
-function childLayers(layer) {
+function childLayers(layer, zOf = null) {
   const sublayers = layer?.sublayers;
   if (!sublayers || typeof sublayers !== "object") return [];
   const children = [];
@@ -201,11 +218,200 @@ function childLayers(layer) {
       if (child && typeof child === "object") children.push(child);
     }
   }
-  children.sort((a, b) => num(attr(a, "zPosition")) - num(attr(b, "zPosition")));
-  return children;
+  // zPosition can be switched by a state (e.g. the fan "transformation" wallpapers swap which layer is on top).
+  const z = (child) => (zOf ? zOf(child) : num(attr(child, "zPosition")));
+  return children
+    .map((child, index) => ({ child, index, z: z(child) }))
+    .sort((a, b) => a.z - b.z || a.index - b.index)
+    .map((entry) => entry.child);
 }
 
-function placedBox(layer, parentOrigin, overrides, canvasHeight, transition) {
+// ---------------------------------------------------------------------------
+// Looping layer animations (<animations> on a layer, e.g. CAKeyframeAnimation on contents for a
+// flipbook, or a swinging transform.rotation.z). iOS plays these continuously on the lock screen,
+// independent of the Locked/Unlock states, so they are rendered into a looping video.
+
+const LOOP_KEYS = new Set([
+  "contents",
+  "position",
+  "position.x",
+  "position.y",
+  "transform.rotation.z",
+  "transform.rotation",
+  "opacity",
+  "hidden",
+  "bounds",
+  "bounds.size.width",
+  "bounds.size.height",
+  "transform.scale",
+  "transform.scale.xy",
+  "transform.scale.x",
+  "transform.scale.y",
+  "transform.translation.x",
+  "transform.translation.y",
+]);
+
+function keyframeValue(node, tag) {
+  if (!node || typeof node !== "object") return null;
+  if (tag === "CGImage") return { src: decodeSrc(attr(node, "src")) };
+  const raw = attr(node, "value");
+  if (tag === "num" || tag === "NSNumber") {
+    const n = num(raw, NaN);
+    return Number.isFinite(n) ? n : null;
+  }
+  if (typeof raw !== "string") return null;
+  const parts = raw.trim().split(/\s+/).map(Number);
+  if (parts.some((part) => !Number.isFinite(part))) return null;
+  if (tag === "CGPoint" || tag === "CGSize") return parts.slice(0, 2);
+  if (tag === "CGRect") return parts.slice(0, 4);
+  return parts.length === 1 ? parts[0] : null;
+}
+
+function keyframeList(container) {
+  if (!container || typeof container !== "object") return [];
+  const out = [];
+  for (const [tag, value] of Object.entries(container)) {
+    if (tag.startsWith("@_")) continue;
+    for (const node of asArray(value)) {
+      const parsed = keyframeValue(node, tag);
+      if (parsed != null) out.push(parsed);
+    }
+  }
+  return out;
+}
+
+function parseLoopAnimations(layer) {
+  const cached = loopCache.get(layer);
+  if (cached) return cached;
+  const list = [];
+  for (const anim of asArray(layer?.animations?.animation)) {
+    const type = attr(anim, "type");
+    const keyPath = attr(anim, "keyPath");
+    if (!LOOP_KEYS.has(keyPath)) continue;
+    let values = [];
+    if (type === "CAKeyframeAnimation") values = keyframeList(anim.values);
+    else if (type === "CABasicAnimation") {
+      const from = keyframeList({ [Object.keys(anim.fromValue ?? {})[0] ?? "x"]: anim.fromValue });
+      const to = keyframeList({ [Object.keys(anim.toValue ?? {})[0] ?? "x"]: anim.toValue });
+      // <fromValue type="real" value=".."/> form
+      const direct = (node) => {
+        const v = num(attr(node, "value"), NaN);
+        return Number.isFinite(v) ? v : null;
+      };
+      const a = direct(anim.fromValue) ?? from[0];
+      const b = direct(anim.toValue) ?? to[0];
+      if (a != null && b != null) values = [a, b];
+    } else continue;
+    if (values.length < 2) continue;
+    const keyTimes = keyframeList(anim.keyTimes).filter((v) => typeof v === "number");
+    const duration = num(attr(anim, "duration"), 0);
+    const speed = num(attr(anim, "speed"), 1);
+    if (!(duration > 0.01) || !(Math.abs(speed) > 0)) continue;
+    const repeatCount = attr(anim, "repeatCount");
+    const repeatDuration = attr(anim, "repeatDuration");
+    list.push({
+      keyPath,
+      values,
+      keyTimes: keyTimes.length === values.length ? keyTimes : null,
+      discrete: attr(anim, "calculationMode") === "discrete",
+      additive: String(attr(anim, "additive")) === "1",
+      autoreverses: String(attr(anim, "autoreverses")) === "1",
+      repeats:
+        String(repeatCount) === "inf" ||
+        num(repeatCount, 0) > 1 ||
+        String(repeatDuration) === "inf" ||
+        num(repeatDuration, 0) > duration,
+      duration,
+      speed,
+      beginTime: num(attr(anim, "beginTime"), 0),
+      timeOffset: num(attr(anim, "timeOffset"), 0),
+    });
+  }
+  loopCache.set(layer, list);
+  return list;
+}
+const loopCache = new WeakMap();
+
+function animationPeriod(anim) {
+  return ((anim.autoreverses ? 2 : 1) * anim.duration) / Math.abs(anim.speed);
+}
+
+function sampleAnimation(anim, seconds) {
+  let local = (seconds - anim.beginTime) * anim.speed + anim.timeOffset;
+  const cycle = anim.duration * (anim.autoreverses ? 2 : 1);
+  if (anim.repeats) local = ((local % cycle) + cycle) % cycle;
+  else local = Math.max(0, Math.min(cycle, local));
+  let f = local / anim.duration;
+  if (anim.autoreverses && f > 1) f = 2 - f;
+  f = Math.max(0, Math.min(1, f));
+  const { values } = anim;
+  const n = values.length;
+  if (anim.discrete) {
+    if (anim.keyTimes) {
+      let index = 0;
+      for (let i = 0; i < n; i += 1) if (anim.keyTimes[i] <= f) index = i;
+      return values[index];
+    }
+    return values[Math.min(n - 1, Math.floor(f * n))];
+  }
+  const times = anim.keyTimes ?? values.map((_, i) => i / (n - 1));
+  let i = 0;
+  while (i < n - 2 && f > times[i + 1]) i += 1;
+  const span = times[i + 1] - times[i];
+  const t = span > 0 ? Math.max(0, Math.min(1, (f - times[i]) / span)) : 1;
+  const a = values[i];
+  const b = values[i + 1];
+  if (typeof a === "number" && typeof b === "number") return a + (b - a) * t;
+  if (Array.isArray(a) && Array.isArray(b)) return a.map((v, k) => v + ((b[k] ?? v) - v) * t);
+  return t < 0.5 ? a : b;
+}
+
+// Values a layer's looping animations produce at `seconds` (null when not animating this frame).
+function animatedValues(layer, seconds) {
+  if (seconds == null) return null;
+  const anims = parseLoopAnimations(layer);
+  if (!anims.length) return null;
+  const out = { values: {}, additive: {}, contents: null };
+  const put = (key, value, additive) => {
+    if (!Number.isFinite(value)) return;
+    out.values[key] = additive ? (out.values[key] ?? 0) + value : value;
+    if (additive) out.additive[key] = true;
+  };
+  for (const anim of anims) {
+    const v = sampleAnimation(anim, seconds);
+    if (v == null) continue;
+    switch (anim.keyPath) {
+      case "contents":
+        if (v?.src) out.contents = v.src;
+        break;
+      case "position":
+        if (Array.isArray(v)) {
+          put("position.x", v[0], anim.additive);
+          put("position.y", v[1], anim.additive);
+        }
+        break;
+      case "bounds":
+        if (Array.isArray(v) && v.length >= 4) {
+          put("bounds.size.width", v[2], false);
+          put("bounds.size.height", v[3], false);
+        }
+        break;
+      case "transform.rotation":
+        put("transform.rotation.z", v, anim.additive);
+        break;
+      case "transform.scale":
+      case "transform.scale.xy":
+        put("transform.scale.x", v, false);
+        put("transform.scale.y", v, false);
+        break;
+      default:
+        if (typeof v === "number") put(anim.keyPath, v, anim.additive);
+    }
+  }
+  return out;
+}
+
+function placedBox(layer, parentOrigin, overrides, canvasHeight, transition, animated = null) {
   const over = overrides.get(attr(layer, "id")) ?? {};
   const from = transition?.from.get(attr(layer, "id")) ?? {};
   const to = transition?.to.get(attr(layer, "id")) ?? {};
@@ -213,21 +419,34 @@ function placedBox(layer, parentOrigin, overrides, canvasHeight, transition) {
   const [px0, py0] = parsePair(attr(layer, "position"), 0, 0);
   const [ax, ay] = parsePair(attr(layer, "anchorPoint"), 0.5, 0.5);
   const value = (key, fallback) => {
-    if (!transition) return over[key] ?? fallback;
-    const start = from[key] ?? fallback;
-    const end = to[key] ?? fallback;
-    return start + (end - start) * transition.progress;
+    let base;
+    if (!transition) base = over[key] ?? fallback;
+    else {
+      const start = from[key] ?? fallback;
+      const end = to[key] ?? fallback;
+      base = start + (end - start) * transition.progress;
+    }
+    const anim = animated?.values[key];
+    if (anim == null) return base;
+    return animated.additive[key] ? base + anim : anim;
   };
+  const scaleBoth = value("transform.scale.xy", value("transform.scale", 1));
+  const sx = value("transform.scale.x", scaleBoth);
+  const sy = value("transform.scale.y", scaleBoth);
   const w = value("bounds.size.width", bounds.w);
   const h = value("bounds.size.height", bounds.h);
   const ox = value("bounds.origin.x", bounds.x);
   const oy = value("bounds.origin.y", bounds.y);
   const px = value("position.x", px0);
   const py = value("position.y", py0);
+  const tx = value("transform.translation.x", 0);
+  const ty = value("transform.translation.y", 0);
   const parentW = parentOrigin.w ?? 0;
   const parentH = parentOrigin.h ?? 0;
   const parentOx = parentOrigin.ox ?? 0;
   const parentOy = parentOrigin.oy ?? 0;
+  const psx = parentOrigin.sx ?? 1;
+  const psy = parentOrigin.sy ?? 1;
   const hasParent = parentW > 1 && parentH > 1;
   const inside =
     !hasParent ||
@@ -237,12 +456,19 @@ function placedBox(layer, parentOrigin, overrides, canvasHeight, transition) {
       py <= parentOy + parentH * 1.25);
   const localX = inside ? px - parentOx : px;
   const localY = inside ? py - parentOy : py;
-  const anchorX = (inside ? parentOrigin.x : 0) + localX;
+  const flipped = inside && parentOrigin.flipped;
+  const anchorX = (inside ? parentOrigin.x + localX * psx : localX) + tx * psx;
   const anchorY =
-    inside && parentOrigin.flipped ? parentOrigin.y + parentOrigin.h - localY : (inside ? parentOrigin.y : 0) + localY;
+    (flipped
+      ? parentOrigin.y + (parentOrigin.h - localY) * psy
+      : (inside ? parentOrigin.y + localY * psy : localY)) + (flipped ? -ty : ty) * psy;
+  const csx = psx * sx;
+  const csy = psy * sy;
+  const dw = w * Math.abs(csx);
+  const dh = h * Math.abs(csy);
   return {
-    w,
-    h,
+    w: dw,
+    h: dh,
     ax,
     ay,
     cssX: anchorX,
@@ -250,13 +476,16 @@ function placedBox(layer, parentOrigin, overrides, canvasHeight, transition) {
     rot: value("transform.rotation.z", num(attr(layer, "transform.rotation.z"), 0)),
     opacity: value("opacity", num(attr(layer, "opacity"), 1)),
     hidden: value("hidden", num(attr(layer, "hidden"), 0)),
+    zPosition: value("zPosition", num(attr(layer, "zPosition"), 0)),
     childOrigin: {
-      x: anchorX - ax * w,
-      y: anchorY - ay * h,
+      x: anchorX - ax * dw,
+      y: anchorY - ay * dh,
       w,
       h,
       ox,
       oy,
+      sx: csx,
+      sy: csy,
       flipped: String(attr(layer, "geometryFlipped")) === "1",
     },
   };
@@ -530,12 +759,27 @@ function layerColor(layer) {
   return { ...color, alpha: color.alpha * num(attr(node, "opacity"), 1) };
 }
 
+function zOrderFor(overrides, transition) {
+  return (child) => {
+    const id = attr(child, "id");
+    const base = num(attr(child, "zPosition"));
+    if (!id) return base;
+    if (transition) {
+      const side = transition.progress < 0.5 ? transition.from : transition.to;
+      return side.get(id)?.zPosition ?? base;
+    }
+    return overrides.get(id)?.zPosition ?? base;
+  };
+}
+
 async function drawLayers(layer, parentOrigin, overrides, transition, canvas, entries, caPrefix, overlays, stats) {
   if (!layer || typeof layer !== "object") return 0;
   if (String(attr(layer, "hidden")) === "1") return 0;
   const canvasW = Math.round(canvas.width * canvas.scale);
   const canvasH = Math.round(canvas.height * canvas.scale);
-  const box = placedBox(layer, parentOrigin, overrides, canvas.height, transition);
+  const animated = animatedValues(layer, canvas.time);
+  if (animated) stats.animated += 1;
+  const box = placedBox(layer, parentOrigin, overrides, canvas.height, transition, animated);
   const visible = box.hidden < 0.5 && box.w >= 1 && box.h >= 1 && box.opacity > 0 && intersects(box, canvasW, canvasH, canvas.scale);
   const fill = layerColor(layer);
   if (visible && fill && fill.alpha > 0.01) {
@@ -554,14 +798,25 @@ async function drawLayers(layer, parentOrigin, overrides, transition, canvas, en
       stats.shapes += 1;
     }
   }
-  const src = imageSrc(layer);
+  const src = animated?.contents ?? imageSrc(layer);
   if (src && visible) {
     const asset = lookupEntry(entries, caPrefix, src);
     if (!asset) console.warn(`  missing asset ${src}`);
     else {
       try {
-        const placed = await rasterLayer(await rasterInput(asset.getData()), box, canvas.scale);
-        const clipped = await clipToCanvas(placed.png, placed.left, placed.top, canvasW, canvasH);
+        // Loop renders draw the same static layers many times; reuse the placed raster.
+        const cacheKey = canvas.cache && !animated
+          ? `${asset.name}|${box.w.toFixed(2)}|${box.h.toFixed(2)}|${box.opacity.toFixed(3)}|${box.rot.toFixed(4)}|${box.ax}|${box.ay}|${box.cssX.toFixed(2)}|${box.cssY.toFixed(2)}`
+          : null;
+        let clipped = cacheKey ? canvas.cache.get(cacheKey) : undefined;
+        if (clipped === undefined) {
+          const placed = await rasterLayer(await rasterInput(asset.getData()), box, canvas.scale);
+          clipped = await clipToCanvas(placed.png, placed.left, placed.top, canvasW, canvasH);
+          if (cacheKey) {
+            if (canvas.cache.size > 400) canvas.cache.clear();
+            canvas.cache.set(cacheKey, clipped);
+          }
+        }
         if (clipped) {
           overlays.push(clipped);
           stats.images += 1;
@@ -571,20 +826,39 @@ async function drawLayers(layer, parentOrigin, overrides, transition, canvas, en
       }
     }
   }
-  for (const child of childLayers(layer)) {
+  for (const child of childLayers(layer, zOrderFor(overrides, transition))) {
     await drawLayers(child, box.childOrigin, overrides, transition, canvas, entries, caPrefix, overlays, stats);
   }
 }
 
-async function renderBundle(entries, caPrefix, keySize, transparent, state) {
+function hasLoopAnimations(layer) {
+  if (!layer || typeof layer !== "object") return false;
+  if (String(attr(layer, "hidden")) === "1") return false;
+  if (parseLoopAnimations(layer).length) return true;
+  return childLayers(layer).some(hasLoopAnimations);
+}
+
+function loopDuration(layer, acc = []) {
+  if (!layer || typeof layer !== "object" || String(attr(layer, "hidden")) === "1") return acc;
+  for (const anim of parseLoopAnimations(layer)) acc.push(animationPeriod(anim));
+  for (const child of childLayers(layer)) loopDuration(child, acc);
+  return acc;
+}
+
+async function renderBundle(entries, caPrefix, keySize, transparent, state, timing = null) {
   const caml = entries.find((entry) => entry.name === `${caPrefix}/main.caml`);
-  const root = caml ? asArray(parseCaml(caml.getData().toString("utf8"))?.caml?.CALayer)[0] : null;
-  const canvas = canvasFor(root, keySize);
+  const root =
+    timing?.roots?.get(caPrefix) ??
+    (caml ? asArray(parseCaml(caml.getData().toString("utf8"))?.caml?.CALayer)[0] : null);
+  const base = canvasFor(root, keySize);
+  // Loop frames only feed a <=720px video, so render them smaller.
+  const loopScale = timing ? Math.min(1, LOOP_MAX_WIDTH / Math.max(1, base.width * base.scale)) : 1;
+  const canvas = { ...base, scale: base.scale * loopScale, time: timing?.time ?? null, cache: timing?.cache ?? null };
   const canvasW = Math.max(1, Math.round(canvas.width * canvas.scale));
   const canvasH = Math.max(1, Math.round(canvas.height * canvas.scale));
   let background = { r: 0, g: 0, b: 0, alpha: transparent ? 0 : 1 };
   const overlays = [];
-  const stats = { images: 0, shapes: 0 };
+  const stats = { images: 0, shapes: 0, animated: 0 };
 
   if (root) {
     if (!transparent) background = layerColor(root) ?? background;
@@ -638,7 +912,10 @@ async function renderBundle(entries, caPrefix, keySize, transparent, state) {
   });
   if (overlays.length) pipeline = pipeline.composite(overlays);
   return {
-    webp: await pipeline.webp({ quality: 82, alphaQuality: 90 }).toBuffer(),
+    // Loop frames are intermediate only: fast PNG instead of a WebP encode per frame.
+    webp: timing
+      ? await pipeline.png({ compressionLevel: 0 }).toBuffer()
+      : await pipeline.webp({ quality: 82, alphaQuality: 90 }).toBuffer(),
     drawn,
     images: stats.images,
     width: canvasW,
@@ -672,10 +949,10 @@ async function writeVideo(videoEntry, destDir, ffmpeg) {
   };
 }
 
-async function renderStack(entries, byRole, keySize, state) {
-  let background = byRole.background ? await renderBundle(entries, byRole.background, keySize, false, state) : null;
-  const floating = byRole.floating ? await renderBundle(entries, byRole.floating, keySize, true, state) : null;
-  const foreground = byRole.foreground ? await renderBundle(entries, byRole.foreground, keySize, true, state) : null;
+async function renderStack(entries, byRole, keySize, state, timing = null) {
+  let background = byRole.background ? await renderBundle(entries, byRole.background, keySize, false, state, timing) : null;
+  const floating = byRole.floating ? await renderBundle(entries, byRole.floating, keySize, true, state, timing) : null;
+  const foreground = byRole.foreground ? await renderBundle(entries, byRole.foreground, keySize, true, state, timing) : null;
   const imageLayer = [background, floating, foreground].find((layer) => layer?.images > 0);
   if (background && !background.images && imageLayer) background = null;
   const base = imageLayer ?? background ?? floating ?? foreground;
@@ -700,6 +977,96 @@ async function renderStack(entries, byRole, keySize, state) {
     fgBuffer,
     points: base?.points ?? { width: keySize.width, height: keySize.height, scale: RENDER_SCALE },
   };
+}
+
+
+async function stackThumb(stack) {
+  const base = stack.background?.webp
+    ? sharp(stack.background.webp)
+    : stack.fgBuffer
+      ? sharp(stack.fgBuffer).flatten({ background: "#000" })
+      : null;
+  if (!base) return null;
+  let image = base;
+  if (stack.background?.webp && stack.fgBuffer) {
+    image = sharp(await base.composite([{ input: stack.fgBuffer, left: 0, top: 0 }]).png().toBuffer());
+  }
+  const full = await image.flatten({ background: "#000" }).jpeg({ quality: 92 }).toBuffer();
+  const thumb = await sharp(full).resize(90, 180, { fit: "fill" }).removeAlpha().raw().toBuffer();
+  return { full, thumb };
+}
+
+function changedFraction(a, b, threshold = 24) {
+  if (!a || !b || a.length !== b.length) return 1;
+  let changed = 0;
+  for (let i = 0; i < a.length; i += 3) {
+    const d = Math.max(Math.abs(a[i] - b[i]), Math.abs(a[i + 1] - b[i + 1]), Math.abs(a[i + 2] - b[i + 2]));
+    if (d > threshold) changed += 1;
+  }
+  return changed / (a.length / 3);
+}
+
+// Renders the Locked composite over time when layers carry looping <animations> (flipbooks,
+// swinging/floating sprites) and encodes it as loop.mp4. Returns null when nothing visibly moves.
+async function writeLoop(entries, byRole, keySize, destDir) {
+  const roots = new Map();
+  for (const prefix of Object.values(byRole)) {
+    if (!prefix) continue;
+    const root = bundleRoot(entries, prefix);
+    if (root) roots.set(prefix, root);
+  }
+  const animatedRoots = [...roots.values()].filter(hasLoopAnimations);
+  if (!animatedRoots.length) return null;
+  const periods = animatedRoots.flatMap((root) => loopDuration(root)).filter((p) => p > 0.05);
+  const longest = periods.length ? Math.max(...periods) : 1;
+  const seconds = Math.min(LOOP_MAX_SECONDS, Math.max(1, longest));
+  const count = Math.max(2, Math.round(seconds * LOOP_FPS));
+  const framesDir = path.join(destDir, ".loop-frames");
+  ensureDir(framesDir);
+  const cache = new Map();
+  let first = null;
+  let moved = 0;
+  try {
+    for (let i = 0; i < count; i += 1) {
+      const stack = await renderStack(entries, byRole, keySize, "Locked", { time: i / LOOP_FPS, roots, cache });
+      const shot = await stackThumb(stack);
+      if (!shot) return null;
+      fs.writeFileSync(path.join(framesDir, `f-${String(i).padStart(4, "0")}.jpg`), shot.full);
+      if (!first) first = shot.thumb;
+      // Low threshold: dark flipbooks (e.g. Blackwall's red light streaks) move subtly.
+      else moved = Math.max(moved, changedFraction(first, shot.thumb, 8));
+    }
+    if (moved < 0.002) return null;
+    const loopPath = path.join(destDir, "loop.mp4");
+    const encode = spawnSync(
+      "ffmpeg",
+      [
+        "-y",
+        "-framerate",
+        String(LOOP_FPS),
+        "-i",
+        path.join(framesDir, "f-%04d.jpg"),
+        "-vf",
+        `scale='min(${LOOP_MAX_WIDTH},iw)':-2`,
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "26",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        loopPath,
+      ],
+      { stdio: "ignore" },
+    );
+    if (encode.status !== 0 || !fs.existsSync(loopPath)) return null;
+    return { name: "loop.mp4", moved, seconds, frames: count };
+  } finally {
+    fs.rmSync(framesDir, { recursive: true, force: true });
+  }
 }
 
 async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
@@ -778,6 +1145,7 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       }
     }
 
+    const looseCover = Boolean(photoFallback);
     let locked = { background: null, floating: null, foreground: null };
     let unlocked = locked;
     let background = null;
@@ -861,6 +1229,18 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       throw new Error(`empty poster for ${fileName} (${id})`);
     }
 
+    let loop = null;
+    let loopUnlocked = false;
+    // A flat-poster photo fallback (e.g. a small animated logo on black) still gets its real loop.
+    if (ffmpeg && !looseCover && !videoName && stackCount(locked, "drawn") > 0) {
+      loop = await writeLoop(entries, byRole, keySize, destDir);
+      if (loop) {
+        // No Locked/Unlock difference: keep the loop playing after "Mở khóa" too, like iOS does.
+        const [a, b] = await Promise.all([stackThumb(locked), stackThumb(unlocked)]);
+        loopUnlocked = Boolean(photoFallback) || changedFraction(a?.thumb, b?.thumb) < 0.005;
+      }
+    }
+
     const stem = path.basename(fileName, path.extname(fileName));
     items.push({
       id,
@@ -876,12 +1256,13 @@ async function buildOne(filePath, usedIds, ffmpeg, outputRoot, preferredIds) {
       ...(fs.existsSync(unlockFgPath) ? { unlockFg: `/previews/${id}/fg-unlock.webp` } : {}),
       transitionFrames,
       ...(videoName ? { video: `/previews/${id}/${videoName}` } : {}),
+      ...(loop ? { loop: `/previews/${id}/${loop.name}`, ...(loopUnlocked ? { loopUnlocked: true } : {}) } : {}),
       download: `/tendies/${encodeURIComponent(fileName)}`,
       fileName,
       bytes,
     });
     console.log(
-      `${fileName} -> ${id} (lock bg ${locked.background?.drawn ?? 0}/fg ${locked.floating?.drawn ?? 0}+${locked.foreground?.drawn ?? 0}, unlock bg ${unlocked.background?.drawn ?? 0}/fg ${unlocked.floating?.drawn ?? 0}+${unlocked.foreground?.drawn ?? 0}${photoFallback ? ", photo fallback" : ""})`,
+      `${fileName} -> ${id} (lock bg ${locked.background?.drawn ?? 0}/fg ${locked.floating?.drawn ?? 0}+${locked.foreground?.drawn ?? 0}, unlock bg ${unlocked.background?.drawn ?? 0}/fg ${unlocked.floating?.drawn ?? 0}+${unlocked.foreground?.drawn ?? 0}${photoFallback ? ", photo fallback" : ""}${loop ? `, loop ${loop.seconds.toFixed(1)}s/${loop.frames}f moved ${(loop.moved * 100).toFixed(1)}%${loopUnlocked ? " always" : ""}` : ""})`,
     );
   }
   return items;
@@ -1108,6 +1489,13 @@ async function main() {
           for (const item of relocated) {
             const poster = path.join(outputRoot, item.id, "poster.jpg");
             if (fs.existsSync(poster)) fs.copyFileSync(poster, path.join(checkDir, `${item.id}.jpg`));
+            // PUBLISH_KEEP=<dir>: keep every rendered file plus the item JSON for inspection.
+            if (process.env.PUBLISH_KEEP) {
+              const keepDir = path.join(process.env.PUBLISH_KEEP, item.id);
+              fs.rmSync(keepDir, { recursive: true, force: true });
+              fs.cpSync(path.join(outputRoot, item.id), keepDir, { recursive: true });
+              fs.writeFileSync(path.join(keepDir, "item.json"), `${JSON.stringify(item, null, 2)}\n`);
+            }
           }
         } else {
           for (const item of relocated) await uploadRendered(client, config.bucket, item, job.filePath, outputRoot);

@@ -17,6 +17,7 @@ export function resolveWallpaper(assetBase: string | undefined, item: WallpaperI
     unlockBg: url(item.unlockBg),
     unlockFg: url(item.unlockFg),
     video: url(item.video),
+    loop: url(item.loop),
     download: url(item.download) ?? item.download,
     transitionFrames: item.transitionFrames?.map((frame) => ({
       bg: url(frame.bg),

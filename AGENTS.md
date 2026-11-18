@@ -120,6 +120,10 @@ Poster phẳng hoặc gần như một màu thì script ném `empty poster for <
 
 `PUBLISH_CONCURRENCY=1` khi file có nhiều ảnh HEIC. Mặc định script tự chọn từ 1 đến 4 tiến trình.
 
+`PUBLISH_KEEP=/thu/muc` (chỉ khi `PUBLISH_DRY=1`) giữ lại toàn bộ file render của từng id cùng `item.json` để so khung hình.
+
+Layer có `<animations>` chạy lặp (flipbook `CAKeyframeAnimation` trên `contents`, xoay/lắc `transform.rotation.z`, trôi `position`…) được render thành `loop.mp4` (15 fps, tối đa 8 giây, rộng ≤ 540 px) và ghi vào catalog là `loop`. Nếu khung Khóa và Mở khóa giống nhau thì có thêm `loopUnlocked: true` để web phát tiếp sau khi mở khóa. File có loop render lâu hơn nhiều (30–90 giây mỗi file).
+
 ## 6. Publish
 
 Chạy lại bước đối chiếu ở mục 3. `missing` vẫn phải là 0.
